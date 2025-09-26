@@ -19,7 +19,7 @@ cd helm-optimizer
 pip install -r requirements.txt
 ```
 
-### Basic Usage
+## Basic Usage
 
 **Configure settings** in `run.sh`:
 ```bash
@@ -111,21 +111,6 @@ class my_benchmark:
 2. **Add to the scenarios list** in `run.sh`:
 ```bash
 scenarios=("my_benchmark")
-```
-
-## 🛠️ Development
-
-### Adding New Models
-
-The framework supports any model compatible with DSPy's `LM` interface:
-
-```python
-# In main.py
-lm = dspy.LM(
-    model=args.model,
-    api_base=args.api_base,
-    api_key=args.api_key,
-)
 ```
 
 ## 🙏 Acknowledgments
