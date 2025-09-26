@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 77-year-old man presents to the emergency department with a complaint of sudden onset weakness in his right upper extremity. At home, the patient thought he was simply dehydrated, but he rapidly began to have trouble speaking. When his wife noted this she brought him into the hospital. On arrival to the emergency department, the patient is not responding to verbal stimuli and only withdraws his left upper extremity and lower extremity to pain. His past medical history is notable for hypertension and atrial fibrillation treated with metoprolol, apixaban, and lisinopril. His temperature is 99.0°F (37.2°C), blood pressure is 170\/100 mmHg, pulse is 95\/min, and respirations are 16\/min. The patient has a seizure and subsequently demonstrates agonal breathing. He no longer responds to painful stimuli. A fingerstick blood glucose is 122 mg\/dL. Which of the following is the most likely etiology of this patient's symptoms?\nA. Intracerebral hemorrhage\nB. Subdural hematoma\nC. Subarachnoid hemorrhage\nD. Epidural hematoma\nAnswer:",
+        "reasoning": "The patient presents with sudden onset right-sided weakness and speech difficulty, which rapidly progressed to unresponsiveness, withdrawal to pain, and ultimately agonal breathing after a seizure. His history of hypertension and atrial fibrillation, coupled with being on apixaban (an anticoagulant), strongly suggests an increased risk of intracranial hemorrhage. The rapid deterioration and seizure are more characteristic of a hemorrhagic stroke than an ischemic stroke.\n\n*   **Intracerebral hemorrhage (ICH)** is the most likely diagnosis given the sudden onset of focal neurological deficits, rapid deterioration, hypertension, anticoagulation, and seizure.\n*   **Subdural hematoma** typically presents with a more gradual onset of symptoms, especially in the elderly. While possible, the acute presentation and rapid decline make it less likely.\n*   **Subarachnoid hemorrhage (SAH)** usually presents with a severe headache (\"thunderclap headache\") which is not mentioned in the scenario. While SAH can cause neurological deficits, the presentation is less typical.\n*   **Epidural hematoma** is usually associated with trauma, which is not mentioned in the history. Also, epidural hematomas typically have a lucid interval followed by rapid deterioration.",
+        "output": "A",
+        "answer": "A"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 55-year-old man presents to the emergency department with chest pressure and diaphoresis. His symptoms started at work when he was lifting boxes. He states that he currently feels crushing pressure over his chest. He is given aspirin and an ECG is performed in triage, as seen in Figure A. His past medical history is notable for diabetes and obesity. He has smoked 1 pack of cigarettes per day for the past 30 years. His temperature is 97.9°F (36.6°C), blood pressure is 155\/99 mmHg, pulse is 110\/min, respirations are 22\/min, and oxygen saturation is 98% on room air. Physical exam reveals an uncomfortable, diaphoretic man. His heart and breath sounds are unremarkable. A repeat ECG in the emergency department is performed, also seen in Figure A. The patient’s chest pain is worse when the ECG in the emergency department is taken, compared to the one taken in triage. He is given nitroglycerin, with minimal improvement in his symptoms. A troponin level is drawn. Which of the following is the most appropriate next step in management?\nA. Repeat ECG in 10 minutes\nB. Cardiac catheterization\nC. Heparin\nD. Chest radiograph\nAnswer:",
+        "output": "A"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A girl presents to her pediatrician for a well-child visit. Her mother reports that she is eating well at home and sleeping well throughout the night. She can jump and walk up and down stairs with both feet on each step. In the doctor’s office, the patient builds a 6-cube tower and imitates a circle. She seems to have a vocabulary of over 50 words that she uses in 2-word sentences. The patient enjoys playing near other children and sometimes argues over toys with her older brother. Her temperature is 98.6°F (37°C), blood pressure is 92\/56 mmHg, pulse is 106\/min, and respirations are 23\/min. On physical exam, she appears well developed and well nourished, and she is following along her growth curves. The child is assessed as developmentally normal. Which of the following is an additional milestone associated with this child’s age?\nA. Cuts with scissors\nB. Turns pages in book\nC. Follows two-step commands\nD. Points to one body part\nAnswer:",
+        "output": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

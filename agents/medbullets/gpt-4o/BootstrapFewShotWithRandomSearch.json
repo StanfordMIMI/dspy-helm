@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 60-year-old woman presents to the emergency department with back pain after gardening. Her pain is 7\/10 in severity, non-radiating, and not relieved by rest. She has never experienced this pain in the past and denies fever, night sweats, unintentional weight loss, and bowel or bladder incontinence. She has hypertension for which she takes hydrochlorothiazide and had a recent asthma flare requiring a prednisone taper. She does not drink alcohol or smoke. Her temperature is 98.6°F (37.0°C), blood pressure is 120\/80 mmHg, pulse is 90\/min, and respirations are 18\/min. Physical exam reveals an uncomfortable middle-aged woman in no acute distress. There is no tenderness to palpation of the spinous processes. Flexion of the hip with the knee extended while the patient is supine does not elicit any pain, nor does forced dorsiflexion of the foot at terminal hip extension. She has 5\/5 strength to hip flexion, extension, abduction, and adduction; knee flexion and extension; and ankle dorsiflexion and plantarflexion bilaterally. Bilateral patellar and Achilles reflexes are 2+. Serum laboratory results are as follows: Hemoglobin: 12.0 g\/dL Creatinine: 1.1 mg\/dL Ca2+: 10.6 mg\/dL Which of the following is the most likely diagnosis?\nA. Spondylolisthesis\nB. Lumbosacral strain\nC. Herniated disc\nD. Multiple myeloma\nAnswer:",
+        "reasoning": "The clinical scenario describes a 60-year-old woman with acute onset back pain related to gardening, with a pain level of 7\/10 severity. She denies associated systemic symptoms such as fever, night sweats, or weight loss, and her examination doesn't show neurological deficits or spinal tenderness. Her recent use of prednisone for an asthma flare does not show any significant side effects like osteoporosis here. Laboratory findings are mostly normal, including hemoglobin, creatinine, and calcium level (slightly high, but not sufficient alone to indicate multiple myeloma). The clinical examination does not reveal any signs typical of serious spinal pathology.\n\nGiven the likelihood and the presentation:\n- **Spondylolisthesis** (A) usually causes radicular pain and may show neurological deficits, not indicated here.\n- **Lumbosacral strain** (B) is common with activities like gardening due to muscle overuse or strain, fitting the scenario well with no neurological deficits.\n- **Herniated disc** (C) usually presents with radicular pain and neurological findings, not seen here.\n- **Multiple myeloma** (D) is unlikely without other systemic symptoms or notable lab abnormalities.\n\nBased on presentation and the circumstances, the most likely diagnosis for acute back pain after physical activity without neurological or serious systemic signs is **Lumbosacral strain** (B).",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A newborn boy is assessed in the newborn nursery due to central cyanosis that does not respond to oxygen therapy. The patient was born to a G1P1 mother at 39 weeks gestation. The mother had diabetes that was managed with exercise and insulin during the pregnancy. The mother has never been vaccinated and did not follow routine prenatal care. The newborn's temperature is 99.5°F (37.5°C), blood pressure is 70\/30 mmHg, pulse is 160\/min, respirations are 27\/min, and oxygen saturation is 80% on room air. The initial workup of the patient includes a chest radiograph seen in Figure A as well as lab values as seen below. Hemoglobin: 14 g\/dL Hematocrit: 42% Leukocyte count: 6,500\/mm^3 with normal differential Platelet count: 197,000\/mm^3 Serum: Na+: 139 mEq\/L Cl-: 101 mEq\/L K+: 4.3 mEq\/L HCO3-: 24 mEq\/L BUN: 12 mg\/dL Glucose: 99 mg\/dL Creatinine: 0.5 mg\/dL Ca2+: 10.0 mg\/dL AST: 12 U\/L ALT: 10 U\/L An electrocardiogram is obtained as seen in Figure B. Which of the following is the most likely diagnosis?\nA. Truncus arteriosus\nB. Transposition of the great vessels\nC. Tricuspid valve atresia\nD. Total anomalous pulmonary venous return\nAnswer:",
+        "reasoning": "Based on the clinical scenario provided, we are considering a newborn with central cyanosis unresponsive to oxygen therapy. This is suggestive of a congenital heart defect causing mixing of oxygenated and deoxygenated blood.\n\nImportant points to consider include:\n- The central cyanosis unresponsive to oxygen therapy points towards a right-to-left shunt or significant mixing lesion.\n- Mother's diabetes increases the risk for certain cardiac anomalies.\n- Absence of prenatal care means potentially undiagnosed prenatal exposures and conditions.\n\nReviewing the options:\n- **A. Truncus arteriosus:** Typically presents with cyanosis due to mixed blood flow through a single vessel that serves the systemic and pulmonary circulation. Unlikely to present as immediate severe cyanosis at birth without additional signs like pulmonary congestion.\n- **B. Transposition of the great vessels:** Often presents with severe cyanosis immediately after birth. The aorta and pulmonary artery are switched, leading to two parallel circulations. Requires immediate intervention or maintaining PDA for survival.\n- **C. Tricuspid valve atresia:** Generally causes cyanosis due to absent tricuspid valve, causing hypoplastic right ventricle. Often associated with other defects to sustain life.\n- **D. Total anomalous pulmonary venous return (TAPVR):** This defect results in mixing as all pulmonary veins drain into systemic venous circulation. Severe cyanosis can present if obstruction is present.\n\nThe severity of the cyanosis and the lack of improvement with oxygen point towards Transposition of the Great Vessels (option B), as this condition is characterized by severe immediate cyanosis due to parallel circulations with no mixing unless a shunt (ASD, VSD, or PDA) exists.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 64-year-old woman presents to the emergency room with whole-body itching. She noticed her symptoms while in the bathtub at home. She has never had symptoms like this before. Over the previous several months she has had episodes of joint swelling and pain in her hands as well as redness, burning pain, and swelling of her hands and feet. Her medical history is significant for type 2 diabetes mellitus, hypertension, and osteoporosis for which she takes metformin, enalapril, and alendronate. She was found to have a deep vein thrombosis of her left leg 3 months prior to presentation. Her temperature is 98.6°F (37.0°C), pulse is 80\/min, blood pressure is 135\/85 mmHg, and respirations are 13\/min. Physical exam is notable for a woman in discomfort with excoriations over the skin on her forearms. Laboratory tests are shown below.\n\nSerum:\nNa+: 135 mEq\/L\nCl-: 100 mEq\/L\nK+: 5.0 mEq\/L\nHCO3-: 22 mEq\/L\nBUN: 19 mg\/dL\nGlucose: 130 mg\/dL\nCreatinine: 1.0 mg\/dL\n\nHematocrit: 64%\nLeukocyte count: 19,000 cells\/mm^3 with normal differential\nPlatelet count: 900,000\/mm^3\n\nWhich of the following is the most appropriate long-term treatment?\nA. Hydroxyurea\nB. Cyclophosphamide\nC. Prednisone\nD. Diphenhydramine\nAnswer:",
+        "reasoning": "The clinical scenario describes a patient with pruritus, joint swelling, pain, and swelling in her hands and feet, as well as a recent episode of deep vein thrombosis. Her laboratory tests reveal significant erythrocytosis indicated by a high hematocrit, leukocytosis, and thrombocytosis. These findings are suggestive of a myeloproliferative disorder, such as polycythemia vera. The symptoms of pruritus after contact with warm water (aquagenic pruritus) are characteristic. Polycythemia vera involves increased production of red cells, white cells, and platelets, which explains the elevated hematocrit, leukocyte count, and platelet count.\n\nIn polycythemia vera, the mainstay of long-term management is usually reducing the blood cell concentration to prevent complications such as thrombosis. Hydroxyurea, a cytoreductive agent that helps decrease the production of blood cells, is often used for this purpose. Other management strategies might involve phlebotomy and low-dose aspirin, but among the provided options, hydroxyurea specifically addresses the cytoreductive need and is commonly used for long-term treatment.\n\nTherefore, hydroxyurea is the most appropriate option for long-term management, addressing the significant hematologic abnormalities.",
+        "output": "A",
+        "answer": "A"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

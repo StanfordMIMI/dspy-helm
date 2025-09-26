@@ -1,0 +1,49 @@
+{
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 4-year-old girl presents to the emergency department after persistent vomiting and complaints that her abdomen hurts.\n1 Her parents came home to their daughter like this while she was at home being watched by the babysitter.\n2 The child is otherwise healthy.\n3 Family history is notable for depression, suicide, neuropathic pain, diabetes, hypertension, cancer, and angina.\n4 The child is now minimally responsive and confused.\n5 Her temperature is 100 F (37.8 C), blood pressure is 100\/60\n6 mmHg, pulse is 140\/min, respirations are 22\/min, and oxygen saturation is 100% on room air.\n7 Physical exam is notable for a confused girl who is vomiting bloody emesis into a basin.\n8 Laboratory studies are ordered as seen below.\n\n\n9 Serum:\n\n10 Na+: 140 mEq\/L\n\n11 Cl-:\n12 101 mEq\/L\nK+: 3.9 mEq\/L\n\n13 HCO3-: 11 mEq\/\n14 L\nBUN:\n15 20 mg\/dL\n\n16 Glucose: 99 mg\/dL\nCreatinine: 1.0 mg\n17 \/dL\n\n\n18 Radiography is notable for a few radiopaque objects in the stomach.\n19 Urine and serum toxicology are pending.\n20 Suspect lead toxicity.\n\nAnswer:",
+        "reasoning": "The clinical features—including vomiting, abdominal pain, metabolic acidosis (HCO3‑ of 11 mEq\/L), bloody emesis, and radiopaque objects in the stomach—are most consistent with iron poisoning, not lead toxicity. Therefore, sentence 20 is the error and should be corrected to suspect iron toxicity.",
+        "output": "20 Suspect iron toxicity.",
+        "answer": "20 Suspect iron toxicity."
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 61-year-old man comes to the physician because of several episodes of dark urine over the past 2 weeks.\n1 He does not have dysuria or flank pain.\n2 He works in a factory that produces dyes.\n3 Since an accident at work 5 years ago, he has had moderate hearing loss bilaterally.\n4 He takes no medications.\n5 He has smoked a pack of cigarettes daily for 29 years and drinks one alcoholic beverage daily.\n6 Vital signs are within normal limits.\n7 Physical examination shows no abnormalities.\n8 His urine is pink; urinalysis shows 80 RBC\/hpf but no WBCs.\n9 Cystoscopy shows a 3-cm mass in the bladder mucosa.\n10 The mass is resected.\n11 Pathologic examination shows an urothelial carcinoma with penetration into the muscular layer.\n12 An x-ray of the chest and a CT scan of the abdomen and pelvis with contrast show a normal upper urinary tract and normal lymph nodes.\n13 Patient was recommended a radical cystectomy.\n\nAnswer:",
+        "reasoning": "All sentences in the clinical note have been carefully reviewed. The narrative details a 61-year-old man with episodes of dark urine and associated risk factors (exposure to dyes, cigarette smoking) and presents key findings consistent with bladder cancer. The workup, including cystoscopy, transurethral resection, histologic examination showing muscle invasion, and imaging studies to exclude metastatic spread, is appropriately described. The recommendation for radical cystectomy is a standard treatment for muscle-invasive bladder cancer. There are no identified medical errors in the text.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 47-year-old woman comes to the physician because of a 5-month history of insomnia.\n1 She frequently experiences leg discomfort when trying to fall asleep that is relieved temporarily by movement.\n2 Her husband tells her that she frequently flexes her ankles upward when she sleeps.\n3 She appears fatigued and anxious.\n4 Physical examination shows no abnormalities.\n5 Laboratory studies including a complete blood count and iron studies are within the reference range.\n6 Patient is prescribed ropinirole.\n\nAnswer:",
+        "output": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+  "lm": null,
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 53-year-old African-American woman presents to her primary care doctor with increasing difficulty climbing the stairs. She noticed the weakness approximately 3 months ago. It has gotten progressively worse since that time. She has also noticed increasing difficulty combing her hair, standing from a seated position, and experiences muscle aches. Her medical history is significant for hypertension treated with lifestyle modification and gastroesophageal reflux disease (GERD). Her temperature is 98.6°F (37.0°C), blood pressure is 130\/65 mmHg, pulse is 80\/min, and respirations are 16\/min. She has 3\/5 strength to shoulder abduction and hip flexion bilaterally. Her strength is 5\/5 to wrist extension and ankle plantar flexion. No skin rashes are noted. Which of the following is the most accurate test to confirm this patient’s diagnosis?\nA. Serum creatine kinase\nB. Muscle biopsy\nC. Electromyography\nD. Serum aldolase\nAnswer:",
+        "reasoning": "Let's analyze this clinical scenario:\n\nThe patient is a 53-year-old African-American woman presenting with:\n- Progressive proximal muscle weakness (difficulty climbing stairs, combing hair, standing from seated position)\n- Muscle aches\n- Symptoms for approximately 3 months\n- Medical history of hypertension and GERD\n- Physical exam shows 3\/5 strength in proximal muscles (shoulder abduction, hip flexion) but normal strength (5\/5) in distal muscles (wrist extension, ankle plantar flexion)\n- No skin rashes noted\n\nThis clinical picture is highly suggestive of an inflammatory myopathy, most likely polymyositis or dermatomyositis (though the absence of skin rashes makes dermatomyositis less likely). The key features supporting this diagnosis are:\n- Symmetric proximal muscle weakness\n- Preserved distal muscle strength\n- Progressive course over months\n- Muscle pain\n\nNow, let's consider the diagnostic options:\n\nA. Serum creatine kinase (CK): This is a sensitive marker for muscle damage and is typically elevated in inflammatory myopathies. However, it's not specific to any particular muscle disease.\n\nB. Muscle biopsy: This is considered the gold standard for diagnosing inflammatory myopathies. It can show characteristic histopathological findings such as inflammatory infiltrates, muscle fiber necrosis, and regeneration. It can also help differentiate between polymyositis, dermatomyositis, and inclusion body myositis.\n\nC. Electromyography (EMG): This can show myopathic changes but is not specific for inflammatory myopathies.\n\nD. Serum aldolase: Like CK, this is a marker of muscle damage but is less sensitive and specific than CK.\n\nAmong these options, muscle biopsy (B) is the most accurate test to confirm the diagnosis of an inflammatory myopathy, as it provides definitive histopathological evidence.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 44-year-old homeless man presents to the emergency department after being stabbed multiple times in the abdomen. The patient is intoxicated and is unable to offer further history. His temperature is 97.5°F (36.4°C), blood pressure is 92\/52 mmHg, pulse is 145\/min, respirations are 33\/min, and oxygen saturation is 90% on room air. He is intubated to protect his airway, given 2 units of packed red blood cells, and sent to the operating room for an exploratory laparotomy. The patient is subsequently admitted to the intensive care unit. He is extubated the next day and appears well. His vitals are within normal limits. Physical exam reveals sparse hair that is falling out throughout the patient’s body. He has a rash by the corners of his mouth. The patient has multiple loose bowel movements and on day 6 the patient’s surgical wound does not appear to be healing. It is held together only by the sutures with minimal underlying healing. Which of the following is most likely deficient in this patient?\nA. Thiamine\nB. Vitamin C\nC. Zinc\nD. Riboflavin\nAnswer:",
+        "reasoning": "Let me analyze this clinical scenario to determine which vitamin or mineral deficiency is most likely present in this patient:\n\nKey findings:\n1. 44-year-old homeless man\n2. Signs of poor nutrition (homelessness suggests possible malnutrition)\n3. Specific physical findings:\n   - Sparse hair that is falling out\n   - Rash at corners of mouth\n   - Multiple loose bowel movements\n   - Poor wound healing (wound held together only by sutures with minimal healing by day 6)\n\nLet's consider each option:\n\nA. Thiamine (Vitamin B1) deficiency:\n- Causes Wernicke-Korsakoff syndrome, beriberi\n- Symptoms include confusion, ataxia, ophthalmoplegia, peripheral neuropathy, heart failure\n- Not typically associated with hair loss, rash at mouth corners, or poor wound healing\n\nB. Vitamin C deficiency (Scurvy):\n- Can cause poor wound healing\n- Associated with bleeding gums, petechiae, ecchymoses\n- Not typically associated with hair loss or rash at mouth corners\n\nC. Zinc deficiency:\n- Causes alopecia (hair loss)\n- Perioral and acral dermatitis (rash around mouth)\n- Diarrhea\n- Impaired wound healing\n- More common in malnourished populations, including homeless individuals\n- All symptoms in this case match zinc deficiency\n\nD. Riboflavin (Vitamin B2) deficiency:\n- Can cause angular stomatitis (cracks at corners of mouth)\n- Not typically associated with hair loss, diarrhea, or poor wound healing\n\nBased on the constellation of symptoms (hair loss, perioral rash, diarrhea, and poor wound healing), zinc deficiency is the most likely diagnosis. This matches all the clinical findings described in the case.",
+        "output": "C",
+        "answer": "C"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 65-year-old man presents to the emergency department for evaluation of left arm and leg weakness. He was walking in the park about 45 minutes prior to arrival when the patient stumbled and fell. He had sudden weakness in his left leg and was unable to grasp a handrail with his left hand. He currently takes no medications. His temperature is 98.0°F (36.6°C), blood pressure is 128\/89 mmHg, pulse is 130\/min, and respirations are 18\/min. On exam, he has 3\/5 strength in the left upper and lower extremities and a left-sided facial droop. A non-contrast CT scan of the head is performed, which suggests parenchymal ischemia in the distribution of the right middle cerebral artery. An ECG is performed, as shown in Figure A. He is given intravenous alteplase with rapid improvement in his strength deficits and facial asymmetry. Which of the following is the most appropriate long-term therapy for secondary stroke prevention for this patient?\nA. Aspirin\nB. Rivaroxaban\nC. Cardiac pacemaker\nD. Atorvastatin\nAnswer:",
+        "output": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given a detailed clinical scenario with patient information and multiple-choice options, simulate the analytical thinking of a medical professional by identifying key clinical findings, evaluating their significance, and comparing them against established medical guidelines and knowledge. Provide a step-by-step reasoning path and select the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

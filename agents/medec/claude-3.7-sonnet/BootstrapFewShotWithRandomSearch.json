@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 45-year-old man comes to the physician because of intermittent lower back pain for 1 week.\n1 His symptoms began shortly after lifting heavy boxes at work.\n2 He has not had any fever, chills, or weight loss.\n3 He has a history of peptic ulcer disease.\n4 Ibuprofen was prescribed.\n5 He does not smoke or drink alcohol.\n6 His vital signs are within normal limits.\n7 Examination shows mild paraspinal lumbar tenderness.\n8 Neurologic examination shows no focal findings.\n9 An x-ray of the spine shows no abnormalities.\n\nAnswer:",
+        "reasoning": "I need to review each sentence of the clinical note to check for any medical errors.\n\nSentence 0: \"A 45-year-old man comes to the physician because of intermittent lower back pain for 1 week.\"\n- This is medically accurate. Lower back pain is a common complaint.\n\nSentence 1: \"His symptoms began shortly after lifting heavy boxes at work.\"\n- This is medically accurate. Lifting heavy objects is a common cause of lower back pain.\n\nSentence 2: \"He has not had any fever, chills, or weight loss.\"\n- This is medically accurate. The absence of these symptoms helps rule out infection or malignancy.\n\nSentence 3: \"He has a history of peptic ulcer disease.\"\n- This is medically accurate. It's relevant medical history.\n\nSentence 4: \"Ibuprofen was prescribed.\"\n- This is where I see a potential error. Ibuprofen (an NSAID) is generally contraindicated in patients with peptic ulcer disease as it can exacerbate ulcers and increase the risk of gastrointestinal bleeding. This is not an appropriate medication given the patient's history.\n\nSentence 5: \"He does not smoke or drink alcohol.\"\n- This is medically accurate. It's relevant social history.\n\nSentence 6: \"His vital signs are within normal limits.\"\n- This is medically accurate.\n\nSentence 7: \"Examination shows mild paraspinal lumbar tenderness.\"\n- This is medically accurate and consistent with lower back strain.\n\nSentence 8: \"Neurologic examination shows no focal findings.\"\n- This is medically accurate.\n\nSentence 9: \"An x-ray of the spine shows no abnormalities.\"\n- This is medically accurate.\n\nThe error is in sentence 4. Ibuprofen should not be prescribed to a patient with a history of peptic ulcer disease. A more appropriate medication would be acetaminophen (Tylenol), which does not have the same gastrointestinal side effects.",
+        "output": "4 Acetaminophen was prescribed.",
+        "answer": "4 Acetaminophen was prescribed."
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 40-year-old woman comes to the physician for the evaluation of a 4-month history of reddening of the nose and cheeks.\n1 She has no itching or pain.\n2 She first noticed the redness while on a recent holiday in Spain, where she stayed at the beach and did daily wine tastings.\n3 She has tried several brands of sunscreen, stopped going outside in the middle of the day, and has not drunk alcohol since her trip, but the facial redness persists.\n4 She has no history of serious illness.\n5 Her younger sister has acne vulgaris, and her mother has systemic lupus erythematosus.\n6 The patient reports that she has had a lot of stress lately due to relationship problems with her husband.\n7 She does not smoke.\n8 Her vital signs are within normal limits.\n9 Examination shows erythema of the nose, chin, and medial cheeks with scant papules and telangiectasias.\n10 There are no comedones or blisters.\n11 The remainder of the examination shows no abnormalities.\n12 In addition to behavioral modifications, the patient is started on topical metronidazole.\n\nAnswer:",
+        "reasoning": "I need to review this clinical note line by line to check for any medical errors.\n\n0. A 40-year-old woman comes to the physician for the evaluation of a 4-month history of reddening of the nose and cheeks. - This is factually correct.\n\n1. She has no itching or pain. - This is factually correct.\n\n2. She first noticed the redness while on a recent holiday in Spain, where she stayed at the beach and did daily wine tastings. - This is factually correct.\n\n3. She has tried several brands of sunscreen, stopped going outside in the middle of the day, and has not drunk alcohol since her trip, but the facial redness persists. - This is factually correct.\n\n4. She has no history of serious illness. - This is factually correct.\n\n5. Her younger sister has acne vulgaris, and her mother has systemic lupus erythematosus. - This is factually correct.\n\n6. The patient reports that she has had a lot of stress lately due to relationship problems with her husband. - This is factually correct.\n\n7. She does not smoke. - This is factually correct.\n\n8. Her vital signs are within normal limits. - This is factually correct.\n\n9. Examination shows erythema of the nose, chin, and medial cheeks with scant papules and telangiectasias. - This is factually correct.\n\n10. There are no comedones or blisters. - This is factually correct.\n\n11. The remainder of the examination shows no abnormalities. - This is factually correct.\n\n12. In addition to behavioral modifications, the patient is started on topical metronidazole. - This is factually correct. Topical metronidazole is an appropriate treatment for what appears to be rosacea, which is consistent with the clinical presentation (erythema of central face with telangiectasias but no comedones).\n\nAfter reviewing all sentences, I don't find any medical errors in this clinical note. The patient's presentation, history, examination findings, and treatment plan are all consistent with a diagnosis of rosacea.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 25-year-old woman comes to the physician for a routine health maintenance examination.\n1 Her last visit was 3 years ago.\n2 She feels well.\n3 One year ago, she underwent a tubectomy after the delivery of her third child.\n4 She does not take any medications.\n5 Physical examination shows no abnormalities.\n6 Loop electrosurgical excision procedure was recommended after a Pap smear showed a high-grade squamous intraepithelial lesion.\n\nAnswer:",
+        "reasoning": "Let me review each sentence in the clinical note to check for any medical errors:\n\n0. \"A 25-year-old woman comes to the physician for a routine health maintenance examination.\" - This appears medically accurate.\n\n1. \"Her last visit was 3 years ago.\" - This is a factual statement about the patient's history, no medical error.\n\n2. \"She feels well.\" - This is a simple statement about the patient's subjective feeling, no medical error.\n\n3. \"One year ago, she underwent a tubectomy after the delivery of her third child.\" - A tubectomy is a sterilization procedure where the fallopian tubes are cut, tied, or blocked to prevent pregnancy. This is a correct medical term and context.\n\n4. \"She does not take any medications.\" - This is a factual statement about the patient's medication status, no medical error.\n\n5. \"Physical examination shows no abnormalities.\" - This is a statement about examination findings, no medical error.\n\n6. \"Loop electrosurgical excision procedure was recommended after a Pap smear showed a high-grade squamous intraepithelial lesion.\" - This sentence is medically accurate. A high-grade squamous intraepithelial lesion (HSIL) is a precancerous condition detected on a Pap smear, and loop electrosurgical excision procedure (LEEP) is an appropriate recommended treatment for this finding.\n\nAfter reviewing all sentences, I don't see any medical errors in the clinical note.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Within the Interaction Thinking School, the model developed by:\nA. Faye Abdellah\nB. Callista Roy.\nC. Dorothy Johnson.\nD. Rosmarie Parse\nE. Hildegard Peplau.\nAnswer:",
+        "reasoning": "The Interaction Thinking School is associated with the work of Hildegard Peplau. Her theory focuses on the interpersonal relationship between the nurse and the patient.",
+        "output": "E",
+        "answer": "E"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: A 78-year-old man who underwent cardiac catheterization with revascularization of the right coronary artery 3 weeks ago and consulted for nausea and vomiting of 3 days of evolution. It presents arterial pressure of 185\/85 mm Hg and purple lesions on the toes of both feet. In the analytical, urea 230 mg \/ dL and creatinine 5.8 mg \/ dL were observed. What is the most likely diagnosis?\nA. Malignant arterial hypertension.\nB. Acute tubular necrosis by contrast.\nC. Rapidly progressive renal failure.\nD. Renal atheroembolic disease.\nE. Bilateral renal artery stenosis.\nAnswer:",
+        "reasoning": "The patient's presentation includes recent cardiac catheterization with revascularization, hypertension, nausea, vomiting, elevated urea and creatinine, and purple lesions on the toes. These findings strongly suggest renal atheroembolic disease. The recent cardiac catheterization is a risk factor for atheroemboli dislodging and traveling to the kidneys. The elevated urea and creatinine indicate renal dysfunction. The purple lesions on the toes (livedo reticularis or \"trash toes\") are characteristic of atheroemboli lodging in small vessels. While acute tubular necrosis by contrast is possible, the presence of the toe lesions makes atheroembolic disease more likely. Malignant hypertension could cause renal damage, but the toe lesions are not typical. Rapidly progressive renal failure is a general term and doesn't explain the specific findings. Bilateral renal artery stenosis could cause hypertension and renal dysfunction, but the toe lesions are not typical.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: The results of the evaluation of a prevention program carried out in a specific context, environment and population refer to the concept of:\nA. Effectiveness.\nB. Efficiency.\nC. Effectiveness.\nD. Feasibility.\nE. Sustainability\nAnswer:",
+        "reasoning": "The question asks about the concept that describes the results of a prevention program evaluation in a specific context, environment, and population.\n\n*   **Effectiveness** refers to how well a program or intervention achieves its intended outcomes in a real-world setting. This aligns with the description in the question.\n*   **Efficiency** relates to the resources used to achieve those outcomes (e.g., cost-effectiveness).\n*   **Feasibility** concerns whether a program can be implemented successfully.\n*   **Sustainability** refers to the ability of a program to continue operating over time.\n\nTherefore, the most appropriate answer is effectiveness.",
+        "output": "A",
+        "answer": "A"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

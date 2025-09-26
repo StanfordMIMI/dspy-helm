@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 36-year-old G3P2002 woman presents to her obstetrician’s office for her 1st prenatal visit at 10 weeks and 2 days gestation. She has felt nauseous the last several mornings and has been tired for a few weeks. The patient has had 2 uncomplicated spontaneous vaginal deliveries at full term with her last child born 6 years ago. She is concerned about the risk of Down syndrome in this fetus, as her sister gave birth to an affected child at age 43. She has a history of generalized anxiety disorder, atopic dermatitis, and she is currently on escitalopram. Her temperature is 98.6°F (37.0°C), pulse is 70\/min, blood pressure is 121\/67 mmHg, and respirations are 13\/min. The patient appears anxious, but overall comfortable, and cardiopulmonary and abdominal exams are unremarkable. Pelvic exam reveals normal external genitalia, a closed and soft cervix, a 10-week-sized uterus, and no adnexal masses. Which of the following is the most appropriate next step for definitively determining whether this patient’s fetus has Down syndrome?\nA. Anatomy ultrasound\nB. Genetic testing of patient’s sister\nC. Nuchal translucency test\nD. Chorionic villus sampling\nAnswer:",
+        "reasoning": "Chorionic villus sampling (CVS) is the diagnostic test that can definitively diagnose chromosomal abnormalities like Down syndrome and is typically performed between 10 and 13 weeks of gestation.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A newborn boy is assessed in the newborn nursery due to central cyanosis that does not respond to oxygen therapy. The patient was born to a G1P1 mother at 39 weeks gestation. The mother had diabetes that was managed with exercise and insulin during the pregnancy. The mother has never been vaccinated and did not follow routine prenatal care. The newborn's temperature is 99.5°F (37.5°C), blood pressure is 70\/30 mmHg, pulse is 160\/min, respirations are 27\/min, and oxygen saturation is 80% on room air. The initial workup of the patient includes a chest radiograph seen in Figure A as well as lab values as seen below. Hemoglobin: 14 g\/dL Hematocrit: 42% Leukocyte count: 6,500\/mm^3 with normal differential Platelet count: 197,000\/mm^3 Serum: Na+: 139 mEq\/L Cl-: 101 mEq\/L K+: 4.3 mEq\/L HCO3-: 24 mEq\/L BUN: 12 mg\/dL Glucose: 99 mg\/dL Creatinine: 0.5 mg\/dL Ca2+: 10.0 mg\/dL AST: 12 U\/L ALT: 10 U\/L An electrocardiogram is obtained as seen in Figure B. Which of the following is the most likely diagnosis?\nA. Truncus arteriosus\nB. Transposition of the great vessels\nC. Tricuspid valve atresia\nD. Total anomalous pulmonary venous return\nAnswer:",
+        "reasoning": "This newborn presents with central cyanosis that does not improve with oxygen, which immediately raises suspicion for a cyanotic congenital heart defect. Given the maternal history of diabetes—known to be a risk factor for transposition of the great vessels—the most consistent diagnosis is transposition of the great vessels. Additionally, the radiographic findings in transposition are often described as an \"egg on a string\" appearance due to the narrow mediastinum, and the clinical presentation is consistent with the diagnosis.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 32-year-old G1P0 woman at 12 weeks gestation presents to her obstetrician for a follow-up appointment. She first presented 4 weeks ago with bilateral hand tremors. At that time, she was found to have a thyroid-stimulating hormone (TSH) concentration <0.01 mU\/L and an elevated free T4. She was started on propranolol and propylthiouracil. The dosage of both medications has been titrated to the maximum dose. She reports mild improvement in her symptoms but continues to experience sweating and palpitations. She has a past medical history of polycystic ovary syndrome. Her family history is notable for hypothyroidism in her mother. She does not smoke cigarettes, stopped drinking alcohol prior to pregnancy, and does not use drugs. Her temperature is 97.6°F (36.4°C), blood pressure is 113\/70 mmHg, pulse is 126\/min, and respirations are 18\/min. On physical exam, she appears anxious, mildly diaphoretic and has a non-tender prominence on her neck which is shown in Figure A. Which of the following is the most appropriate next step in management?\nA. Oral iodinated contrast\nB. Thyroidectomy in the 2nd trimester\nC. Methimazole\nD. Continue routine prenatal care only\nAnswer:",
+        "reasoning": "The patient is a pregnant woman in her first trimester who has been maximized on both propylthiouracil and propranolol but continues to exhibit signs of hyperthyroidism. In pregnancy, PTU is preferred during the first trimester to avoid the teratogenic effects of methimazole; however, if the disease remains uncontrolled despite maximal medical therapy, definitive treatment such as thyroidectomy may be considered. The optimal time for thyroidectomy in pregnancy is the second trimester, when the risks to both fetus and mother are minimized. Therefore, the most appropriate next step is thyroidectomy in the 2nd trimester.",
+        "output": "B",
+        "answer": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

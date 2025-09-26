@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Which statement is true in relation to the Electron Repulsion Model of the Valencia layer applied to AB n molecules:\nA. The AB2 molecules are always linear.\nB. The AB6 molecules are always octahedral.\nC. The AB3 molecules are always triangular.\nD. The AB4 molecules are always tetrahedral.\nE. The AB5 molecules are always trigonal bipyramidal.\nAnswer:",
+        "reasoning": "The Valence Shell Electron Pair Repulsion (VSEPR) model predicts the geometry of molecules based on minimizing electron pair repulsion.\n\n*   **A. The AB2 molecules are always linear.** This is incorrect. AB2 molecules can be bent if the central atom has lone pairs (e.g., SO2).\n*   **B. The AB6 molecules are always octahedral.** This is generally true. AB6 molecules with no lone pairs on the central atom adopt an octahedral geometry to minimize repulsion.\n*   **C. The AB3 molecules are always triangular.** This is incorrect. AB3 molecules can be trigonal planar (e.g., BF3) or trigonal pyramidal (e.g., NH3) depending on whether there are lone pairs on the central atom.\n*   **D. The AB4 molecules are always tetrahedral.** This is incorrect. AB4 molecules can be tetrahedral (e.g., CH4) or square planar (e.g., XeF4) or see-saw (e.g., SF4) depending on whether there are lone pairs on the central atom.\n*   **E. The AB5 molecules are always trigonal bipyramidal.** This is incorrect. AB5 molecules can be trigonal bipyramidal (e.g., PCl5) or square pyramidal (e.g., BrF5) depending on whether there are lone pairs on the central atom.\n\nTherefore, the most accurate statement is that AB6 molecules are always octahedral.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Which of the following interventions is NOT part of the training in defecatory habits for the treatment of corporpresis?\nA. The use of enemas to achieve initial disimpaction and prevent constipation.\nB. The establishment of a specific time of the day to carry out the defecation on a regular basis.\nC. Positive contingent punishment to defecation in inappropriate places (underwear).\nD. Provide restrictions and dietary recommendations.\nE. The reinforcement for keeping the clothes clean at the end of the day.\nAnswer:",
+        "output": "C"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Point out the correct answer regarding the regulation of hematopoiesis:\nA. Altitude inhibits hematopoiesis.\nB. Erythropoietin inhibits hematopoiesis.\nC. Hypoxia stimulates the production of erythropoietin.\nD. Erythropoietin is synthesized in the liver.\nE. Erythropoietin does not influence the production of red blood cells.\nAnswer:",
+        "output": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

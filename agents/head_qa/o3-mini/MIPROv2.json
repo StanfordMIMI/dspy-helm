@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: A 78-year-old man who underwent cardiac catheterization with revascularization of the right coronary artery 3 weeks ago and consulted for nausea and vomiting of 3 days of evolution. It presents arterial pressure of 185\/85 mm Hg and purple lesions on the toes of both feet. In the analytical, urea 230 mg \/ dL and creatinine 5.8 mg \/ dL were observed. What is the most likely diagnosis?\nA. Malignant arterial hypertension.\nB. Acute tubular necrosis by contrast.\nC. Rapidly progressive renal failure.\nD. Renal atheroembolic disease.\nE. Bilateral renal artery stenosis.\nAnswer:",
+        "reasoning": "The patient is an elderly man who recently underwent a cardiac catheterization with revascularization. Three weeks later, he presents with nausea, vomiting, a significant rise in urea and creatinine, and purple lesions on his toes—a description consistent with a \"blue toe\" syndrome. This constellation of findings strongly suggests renal atheroembolic disease (cholesterol embolization syndrome), which occurs when cholesterol plaques from atherosclerotic vessels embolize following manipulation (such as catheterization), leading to both renal failure and cutaneous manifestations. The timeline (three weeks) further supports this diagnosis compared to contrast-induced acute tubular necrosis, which typically presents sooner.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: The results of the evaluation of a prevention program carried out in a specific context, environment and population refer to the concept of:\nA. Effectiveness.\nB. Efficiency.\nC. Effectiveness.\nD. Feasibility.\nE. Sustainability\nAnswer:",
+        "reasoning": "The evaluation results of a prevention program, in the context of a specific setting, environment, and population, measure how well the program achieves its intended health outcomes. This aspect is known as its effectiveness.",
+        "output": "A",
+        "answer": "A"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: They use a reverse transcriptase during their replication:\nA. Papovavirus.\nB. Polyomavirus\nC. Hepadnavirus.\nD. Parvovirus.\nE. Herpesvirus.\nAnswer:",
+        "reasoning": "Hepadnaviruses, such as the Hepatitis B virus, replicate using a reverse transcriptase enzyme. This enzyme converts their pregenomic RNA into DNA, a unique replication mechanism among DNA viruses.",
+        "output": "C",
+        "answer": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "You are an AI developed for critical medical examinations where accuracy could directly impact patient care outcomes. With these questions potentially guiding treatment decisions or providing necessary insights into patient diagnoses, every choice matters. You need to precisely analyze the inputs, apply extensive biomedical knowledge, and output the letter corresponding to the correct answer.\n\nEnsure the reasoning is thorough yet concise and reflects a solid understanding of complex scientific principles. Your outputs should be definitive and closely tied to the most crucial information given within the question context.\n\nUse your expertise to identify the correct choice from options, ensuring the highest level of reliability and precision in your answers.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

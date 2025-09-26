@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 70-year-old man comes to the physician for a follow-up evaluation.\n1 Eight months ago, he presented with a 6-month history of increased urinary frequency, difficulty to initiate urination, and straining to maintain the urinary stream.\n2 Digital rectal examination showed symmetrically enlarged, nontender prostate with rubbery texture.\n3 Laboratory studies showed a prostate-specific antigen (PSA) level of 2 ng\/mL. Abdominal ultrasound showed a post-void residual urine volume of 250 ml and bladder wall thickening.\n4 The patient received appropriate treatment.\n5 His vital signs are within normal limits.\n6 Laboratory studies now show a PSA level of 1 ng\/mL. Dutasteride was prescribed.\n\nAnswer:",
+        "reasoning": "The clinical note describes a patient with symptoms of benign prostatic hyperplasia (BPH). The patient's PSA level is initially 2 ng\/mL and decreases to 1 ng\/mL after treatment. Dutasteride is a 5-alpha reductase inhibitor used to treat BPH. It is appropriate to prescribe dutasteride in this case. Therefore, there are no errors in the text.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 34-year-old man with AIDS comes to the physician because of a 2-day history of decreasing vision and seeing black spots in his right eye.\n1 He has no pain and the left eye is asymptomatic.\n2 He was treated for fungal esophagitis 6 months ago with fluconazole.\n3 He was diagnosed with Kaposi's sarcoma 2 years ago.\n4 Current medications include efavirenz, tenofovir, emtricitabine, azithromycin, trimethoprim-sulfamethoxazole, multivitamins, and a nutritional supplement.\n5 He is 170 cm (5 ft 7 in) tall and weighs 45 kg (99 lbs);BMI is 15.6 kg\/m2.\n6 His temperature is 37 C (98.6 F), pulse is 89\/min, and blood pressure is 110\/70 mm\n7 Hg.\n8 Examination shows cervical lymphadenopathy.\n9 There are multiple violaceous plaques seen over his trunk and extremities.\n10 Fundoscopic examination shows granular yellow-white opacities around the retinal vessels and multiple areas of dot-blot hemorrhages.\n11 His CD4+ T-lymphocyte count is 36\/mm3.\n12 Cytomegalovirus retinitis suspected.\n\nAnswer:",
+        "reasoning": "The clinical note describes a patient with AIDS presenting with vision problems, likely due to cytomegalovirus (CMV) retinitis. The patient's history of Kaposi's sarcoma and fungal esophagitis, along with his current medications and low CD4+ count, are consistent with AIDS. The fundoscopic examination findings of granular yellow-white opacities and dot-blot hemorrhages are also suggestive of CMV retinitis. The patient is currently on azithromycin and trimethoprim-sulfamethoxazole, which are not standard treatments for CMV retinitis. The patient should be started on appropriate antiviral therapy for CMV retinitis, such as ganciclovir, valganciclovir, foscarnet, or cidofovir.\n\nThe text appears to be medically accurate and does not contain any errors.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 21-year-old college student comes to the physician for intermittent palpitations.\n1 She does not have chest pain or shortness of breath.\n2 The symptoms started 2 days ago, on the night after she came back to her dormitory after a 4-hour-long bus trip from home.\n3 A day ago, she went to a party with friends.\n4 The palpitations have gotten worse since then and occur more frequently.\n5 The patient has smoked 5 cigarettes daily for the past 3 years.\n6 She drinks 4â€“6 alcoholic beverages with friends once or twice a week and occasionally uses marijuana.\n7 She is sexually active with her boyfriend and takes oral contraceptive pills.\n8 She does not appear distressed.\n9 Her pulse is 100\/min and irregular, blood pressure is 140\/85 mm\n10 Hg, and respirations are at 25\/min.\n11 Physical examination shows a fine tremor in both hands, warm extremities, and swollen lower legs.\n12 The lungs are clear to auscultation.\n13 An ECG is shown below.\n14 Order pending to administer intravenous adenosine.\n\nAnswer:",
+        "output": "14 Order pending to measure TSH levels."
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

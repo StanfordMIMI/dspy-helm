@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 28-year-old woman with a history of intravenous drug use is brought to the emergency department because of a 1-day history of fatigue, yellow eyes, confusion, and blood in her stools.\n1 She appears ill.\n2 Her temperature is 38.1 C (100.6 F).\n3 Physical examination shows pain in the right upper quadrant, diffuse jaundice with scleral icterus, and bright red blood in the rectal vault.\n4 Further evaluation demonstrates virions in her blood, some of which have a partially double-stranded DNA genome while others have a single-stranded RNA genome.\n5 Infection with deltavirus is suspected.\n6 They are found to share an identical lipoprotein envelope.\n\nAnswer:",
+        "reasoning": "The clinical narrative describes a patient with risk factors for viral hepatitis (intravenous drug use) who presents with signs consistent with acute hepatic dysfunction (fatigue, jaundice, confusion, and gastrointestinal bleeding that may be related to liver decompensation). The evaluation details two types of viral genomes: one with a partially double-stranded DNA genome (consistent with hepatitis B) and another with a single-stranded RNA genome (consistent with hepatitis D). It also notes that the virions share an identical lipoprotein envelope, which is medically accurate given that hepatitis D (deltavirus) depends on hepatitis B virus surface antigen to form its envelope. All statements are consistent and accurate; therefore, the text does not contain a medical error.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 70-year-old man comes to the physician because of episodes of watery stools for the past 6 weeks.\n1 During this period, he has also had recurrent episodes of reddening of the face, neck, and chest that last up to 30 minutes, especially following alcohol consumption.\n2 He has hypertension.\n3 He smoked one pack of cigarettes daily for 20 years but quit 8 years ago.\n4 He drinks two glasses of wine daily.\n5 Current medications include enalapril.\n6 He appears pale.\n7 He is 185 cm (6 ft 1 in) tall and weighs 67 kg (147.7 lb); BMI is 19.6 kg\/m2.\n8 His temperature is 36.7 C (98 F), pulse is 85\/min, and\n9 blood pressure is 130\/85 mm\n10 Hg.\n11 Scattered expiratory wheezing is heard throughout both lung fields.\n12 Cardiac examination shows no abnormalities.\n13 The abdomen is soft and mildly tender.\n14 The remainder of the physical examination shows no abnormalities.\n15 Patient was diagnosed with a VIPoma.\n16 A complete blood count and serum concentrations of urea nitrogen and creatinine were within the reference range.\n\nAnswer:",
+        "reasoning": "The clinical narrative presents a 70-year-old man with watery diarrhea, flushing episodes especially following alcohol consumption, and wheezing on lung examination, which are characteristic features of carcinoid syndrome. VIPoma, by contrast, typically presents with watery diarrhea (WDHA syndrome) but does not usually involve flushing or wheezing. Hence, the error is in sentence 15 where the diagnosis is stated as VIPoma. The corrected diagnosis should be carcinoid syndrome.",
+        "output": "15 Patient was diagnosed with carcinoid syndrome.",
+        "answer": "15 Patient was diagnosed with carcinoid syndrome."
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 7-year-old girl is brought to the physician by her parents for the evaluation of pubic hair development.\n1 She has a history of a fracture in each leg and one fracture in her right arm.\n2 Her performance at school is good.\n3 There is no family history of serious illness.\n4 She takes no medications.\n5 Vital signs are within normal limits.\n6 Genital examination shows coarse, dark hair along the labia.\n7 The breast glands are enlarged and the breast bud extends beyond the areolar diameter.\n8 Congenital adrenal hyperplasia is suspected.\n9 There are several hyperpigmented macules with rough, serpiginous borders of different sizes on the lower and upper extremities.\n10 The remainder of the examination shows no abnormalities.\n\nAnswer:",
+        "output": "8 McCune-Albright syndrome is suspected."
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Within the Interaction Thinking School, the model developed by:\nA. Faye Abdellah\nB. Callista Roy.\nC. Dorothy Johnson.\nD. Rosmarie Parse\nE. Hildegard Peplau.\nAnswer:",
+        "reasoning": "I need to identify which nursing theorist belongs to the Interaction Thinking School.\n\nLet me analyze each option:\n\nA. Faye Abdellah - She developed the \"21 Nursing Problems\" theory and is associated with the Patient-Centered Approaches. She's not primarily known for interaction theory.\n\nB. Callista Roy - She developed the Adaptation Model, which is categorized under Systems Theory rather than Interaction Theory.\n\nC. Dorothy Johnson - She developed the Behavioral System Model, which is also categorized under Systems Theory.\n\nD. Rosmarie Parse - She developed the Human Becoming Theory, which falls under the Unitary Process school of thought.\n\nE. Hildegard Peplau - She developed the Interpersonal Relations Theory and is considered the founder of the Interaction Thinking School in nursing. Her work focuses on the nurse-patient relationship as an interpersonal process.\n\nBased on this analysis, Hildegard Peplau is the theorist who developed a model within the Interaction Thinking School.",
+        "output": "E",
+        "answer": "E"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: A 78-year-old man who underwent cardiac catheterization with revascularization of the right coronary artery 3 weeks ago and consulted for nausea and vomiting of 3 days of evolution. It presents arterial pressure of 185\/85 mm Hg and purple lesions on the toes of both feet. In the analytical, urea 230 mg \/ dL and creatinine 5.8 mg \/ dL were observed. What is the most likely diagnosis?\nA. Malignant arterial hypertension.\nB. Acute tubular necrosis by contrast.\nC. Rapidly progressive renal failure.\nD. Renal atheroembolic disease.\nE. Bilateral renal artery stenosis.\nAnswer:",
+        "reasoning": "Let's analyze this case carefully:\n\n1. Patient profile: 78-year-old man\n2. Recent procedure: Cardiac catheterization with revascularization 3 weeks ago (which involves contrast media and arterial manipulation)\n3. Current symptoms:\n   - Nausea and vomiting for 3 days\n   - Hypertension (185\/85 mm Hg)\n   - Purple lesions on toes of both feet\n   - Elevated urea (230 mg\/dL) and creatinine (5.8 mg\/dL) indicating severe renal failure\n\nThe key diagnostic clues here are:\n- The timing (3 weeks after catheterization)\n- The purple lesions on toes (suggesting embolic phenomena)\n- The severe renal failure\n\nThis presentation is classic for renal atheroembolic disease (also called cholesterol crystal embolization). During cardiac catheterization, manipulation of the aorta and arteries can dislodge cholesterol crystals from atherosclerotic plaques. These crystals can embolize to small arteries in the kidneys and extremities. The timing is characteristic - typically occurring 1-4 weeks after the procedure (unlike contrast nephropathy which occurs within 24-72 hours).\n\nThe purple lesions on the toes (likely \"blue toe syndrome\") represent cutaneous manifestations of cholesterol emboli to the small vessels of the skin.\n\nLet's quickly rule out the other options:\n- Malignant hypertension: While the patient has hypertension, the timing after catheterization and the toe lesions point elsewhere\n- Acute tubular necrosis by contrast: Occurs within days of contrast exposure, not 3 weeks later\n- Rapidly progressive renal failure: Too vague, and doesn't explain the toe lesions\n- Bilateral renal artery stenosis: Wouldn't explain the acute presentation or toe lesions\n\nTherefore, the most likely diagnosis is renal atheroembolic disease (option D).",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: They use a reverse transcriptase during their replication:\nA. Papovavirus.\nB. Polyomavirus\nC. Hepadnavirus.\nD. Parvovirus.\nE. Herpesvirus.\nAnswer:",
+        "reasoning": "I need to identify which of the listed virus families uses reverse transcriptase during replication.\n\nReverse transcriptase is an enzyme that converts RNA to DNA, which is the opposite of the normal flow of genetic information (DNA to RNA). This process is characteristic of retroviruses, but some other virus families also use reverse transcriptase.\n\nLet me analyze each option:\n\nA. Papovavirus - This is an older classification term that included papillomaviruses and polyomaviruses. These are DNA viruses that do not use reverse transcriptase.\n\nB. Polyomavirus - These are small DNA viruses that replicate in the nucleus using host cell DNA polymerases. They do not use reverse transcriptase.\n\nC. Hepadnavirus - This family includes hepatitis B virus (HBV). Hepadnaviruses are partially double-stranded DNA viruses that use reverse transcriptase during their replication cycle. They have a unique replication strategy where they produce RNA intermediates that are then reverse transcribed back to DNA.\n\nD. Parvovirus - These are small, single-stranded DNA viruses that replicate using host cell machinery. They do not use reverse transcriptase.\n\nE. Herpesvirus - These are large, double-stranded DNA viruses that replicate in the nucleus using viral DNA polymerase. They do not use reverse transcriptase.\n\nBased on this analysis, the virus family that uses reverse transcriptase during replication is Hepadnavirus.",
+        "output": "C",
+        "answer": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

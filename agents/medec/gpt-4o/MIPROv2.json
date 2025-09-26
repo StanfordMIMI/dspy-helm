@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 3-year-old girl with cystic fibrosis is brought to the physician for a follow-up examination.\n1 Her mother has noticed that the child has had multiple falls over the past 4 months while walking, especially in the evening.\n2 Her current medications include pancreatic enzyme supplements, an albuterol inhaler, and acetylcysteine.\n3 She is at the 10th percentile for height and the 5th percentile for weight.\n4 Examination shows dry skin, and cone shaped elevated papules on the trunk and extremities.\n5 There is an irregularly shaped foamy gray patch on the left conjunctiva.\n6 The remainder of the examination shows no abnormalities.\n7 Zinc was administered.\n\nAnswer:",
+        "reasoning": "The medical narrative describes a 3-year-old girl with cystic fibrosis and includes certain clinical features that need to be verified for accuracy. Cystic fibrosis is associated with fat malabsorption, which can lead to deficiencies in fat-soluble vitamins and other nutrients. The symptoms described in the text, especially the dry skin and cone-shaped elevated papules, along with the foamy gray patch on the conjunctiva (Bitot's spots), suggest a vitamin A deficiency, which is common in cystic fibrosis patients due to malabsorption.\n\nSentence 7 states \"Zinc was administered,\" which seems incorrect given the clinical presentation. Zinc deficiency typically presents with symptoms like poor wound healing, changes in taste or odor perception, and skin rash (often around the mouth and extremities) but does not explain the findings such as Bitot's spots and dry skin. The administration of Vitamin A would be more appropriate given the context.",
+        "output": "7 Vitamin A was administered.",
+        "answer": "7 Vitamin A was administered."
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 33-year-old man is brought to the emergency department 20 minutes after losing control over his bicycle and colliding with a parked car.\n1 The handlebar of the bicycle hit his lower abdomen.\n2 On arrival, he is alert and oriented.\n3 His pulse is 90\/min, respirations are\n4 17\/min and blood pressure is 110\/70 mm\n5 Hg.\n6 Pulse oximetry on room air shows an oxygen saturation of 97%.\n7 The pupils are equal and reactive to light.\n8 There are multiple bruises over his chest and lower extremities.\n9 The lungs are clear to auscultation.\n10 Cardiac examination shows no abnormalities.\n11 The abdomen is soft and nontender.\n12 There is no pelvic instability.\n13 Rectal examination is unremarkable.\n14 A complete blood count, prothrombin time, and serum concentrations of glucose, creatinine, and electrolytes are within the reference range.\n15 Urine dipstick is mildly positive for blood.\n16 Microscopic examination of the urine shows 20 RBCs\/hpf.\n17 Plan for observation and follow-up.\n\nAnswer:",
+        "reasoning": "The clinical narrative describes the case of a 33-year-old man who had a bicycle accident and was brought to the emergency department. The narrative includes his vital signs, examinations, laboratory tests, and the plan for follow-up. The text appears to be thorough and consistent with no apparent medical error in any sentence upon examination.\n\n1. The initial description mentions the mechanism of injury (handlebar hitting lower abdomen) which matches the later findings of hematuria (blood in urine) and RBCs in urine.\n2. The vitals are checked and are within normal limits for an adult, confirming that he is stable (Pulse: 90\/min, Respirations: 17\/min, Blood Pressure: 110\/70 mmHg, Pulse Oximetry: 97% on room air).\n3. Physical examination details are consistent and show no signs of immediate severe abdominal trauma (soft, nontender abdomen, no pelvic instability) or any other major external injuries.\n4. The laboratory tests confirm normal blood results but a mild positive finding for blood in urine, which correlates with the described trauma.\n5. The plan for observation and follow-up aligns without any discrepancies mentioned in the narrative.\n\nConsidering all of the given information, it does not include any medical error.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 45-year-old man comes to the emergency department because of chills and numerous skin lesions for 1 week.\n1 He has also had watery diarrhea, nausea, and abdominal pain for the past 2 weeks.\n2 The skin lesions are nonpruritic and painless.\n3 He was diagnosed with HIV infection approximately 20 years ago.\n4 He has not taken any medications for over 5 years.\n5 He sleeps in homeless shelters and parks.\n6 Vital signs are within normal limits.\n7 Examination shows several bright red, friable nodules on his face, trunk, extremities.\n8 The liver is palpated 3 cm below the right costal margin.\n9 His CD4+ T-lymphocyte count is 180\/mm3\n10 (N â‰¥ 500).\n11 A rapid plasma reagin test is negative.\n12 Abdominal ultrasonography shows hepatomegaly and a single intrahepatic 1.0 x 1.2-cm hypodense lesion.\n13 Pathology report indicates infection by Bartonella henselae.\n14 Biopsy of a skin lesion shows vascular proliferation and abundant neutrophils.\n\nAnswer:",
+        "reasoning": "In this clinical note, we are given a narrative about a patient with a history of HIV infection presenting with skin lesions, abdominal symptoms, and homelessness. The note summarizes the examination findings, lab results, diagnostic imaging, and pathology reports.\n\n1. Review of the sentences reveals that the focus is on the clinical presentation of a patient possibly suffering from bacillary angiomatosis caused by Bartonella henselae.\n\n2. All the sentences are presented in a coherent fashion, providing evidence of an oral or cutaneous manifestation due to Bartonella infection in an immunocompromised individual, as suggested by the details given and the context of the disease.\n\n3. No explicit medical errors are noted in descriptions of the symptoms, examination findings, laboratory results, or the pathology report as stated in the clinical text.\n\nHence, the text adheres to medical plausibility and follows a logical and consistent presentation flow, indicating that there is no error present.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

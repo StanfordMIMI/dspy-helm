@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Reactions in which there are no intermediates are described as:\nA. Concerted.\nB. Polar\nC. Radicals\nD. Homolitic\nE. Heterolithic\nAnswer:",
+        "reasoning": "In chemical reactions that occur without any intermediates, all bond-breaking and bond-forming processes occur in a single concerted step, which is characteristic of concerted reactions.",
+        "output": "A",
+        "answer": "A"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Polarography is an analytical technique that refers to:\nA. The absorption of electromagnetic radiation.\nB. The emission of electromagnetic radiation.\nC. The voltametry with mercury electrode.\nD. The use of palladium as a reference electrode.\nE. To the potential of asymmetry.\nAnswer:",
+        "reasoning": "Polarography is a voltammetry technique in which the current is measured as a function of the applied potential, typically using a dropping mercury electrode. This is a key technique in electrochemical analysis.",
+        "output": "C",
+        "answer": "C"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: 𝐸𝑎 According to the Arrhenius equation, k = 𝐴𝑒 𝑅𝑇\nA. The kinetic constant (k) decreases with increasing temperature.\nB. The pre-exponential factor (A) is dimensionless.\nC. In reactions with higher activation energy (Ea), the kinetic constant (k) depends enormously on the temperature.\nD. The pre-exponential factor (A) and the kinetic constant (k) are inversely proportional.\nE. The Arrhenius parameters are the kinetic constant (k) and the preexponential factor (A).\nAnswer:",
+        "output": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

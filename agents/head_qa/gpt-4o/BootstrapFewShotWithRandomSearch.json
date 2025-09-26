@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Patients with dysphagia should avoid the following foods, EXCEPT:\nA. Homogeneous purees.\nB. With a fibrous texture, such as asparagus, pineapple, serrano ham.\nC. That contain thorns and bones.\nD. They crumble in the mouth, like rice, potato chips.\nE. Sticky and dense foods, like sliced ​​bread.\nAnswer:",
+        "reasoning": "Dysphagia refers to difficulty in swallowing. Patients with dysphagia often require foods that are easy to swallow and do not pose a choking hazard. Foods that are homogeneous purees are smooth and without particles, making them safe for these patients. As a result, dysphagia patients typically avoid foods with fibrous textures, sharp particles, sticky consistencies, or items that crumble easily due to their swallowing difficulty.",
+        "output": "A",
+        "answer": "A"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: The phase of meiosis where the pairs of homologous chromosomes are aligned along the equatorial plane is called:\nA. Profase I.\nB. Metaphase II.\nC. Profase II.\nD. Metaphase I.\nE. Prometaphase I.\nAnswer:",
+        "reasoning": "During meiosis, the process includes two stages: Meiosis I and Meiosis II. In Meiosis I, homologous chromosomes are separated, and in Meiosis II, sister chromatids are separated. The question asks about the phase where homologous chromosomes are aligned along the equatorial plane.\n\n- Profase I is the first stage of Meiosis I where chromosomes begin to condense and pair up, but they are not yet aligned on the equatorial plane.\n- Metaphase II is a stage in Meiosis II, where sister chromatids are aligned on the equatorial plane, not homologous chromosomes.\n- Profase II occurs in Meiosis II; this is the preparation before chromosomes align for the second division, but it involves sister chromatids, not homologous chromosomes.\n- Metaphase I is the correct phase in Meiosis I where homologous chromosomes are aligned along the equatorial plane before they are separated in Anaphase I.\n- Prometaphase I involves the nuclear envelope breaking down and microtubules attaching to the kinetochores, preceding the alignment of chromosomes on the equatorial plane.\n\nTherefore, the correct answer is Metaphase I.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: How does the increase in temperature affect the reaction between antigen and antibody?\nA. Increases the reaction rate and decreases binding affinity.\nB. It decreases the reaction rate and increases the binding affinity.\nC. Increases the reaction rate and binding affinity.\nD. Decreases the reaction rate and binding affinity.\nE. None of the above options is correct.\nAnswer:",
+        "reasoning": "The reaction between antigen and antibody involves binding interactions that are typically stabilized by non-covalent bonds such as hydrogen bonds, ionic interactions, and van der Waals forces. An increase in temperature generally leads to increased molecular movement, which can increase the reaction rate initially due to more frequent collisions between molecules. However, higher temperatures may lead to destabilization of the non-covalent bonds crucial for stable antigen-antibody binding, therefore decreasing binding affinity.\n\nTherefore, the logical effect of increased temperature would be an increase in reaction rate but a decrease in binding affinity due to the destabilization of interactions responsible for specific binding.",
+        "output": "A",
+        "answer": "A"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 50-year-old woman comes to the physician for a routine health maintenance examination.\n1 She has no personal or family history of serious illness.\n2 She smoked one pack of cigarettes daily for 5 years during her 20s.\n3 Her pulse is 70\/min, and blood pressure is 120\/78 mm\n4 Hg.\n5 A colonoscopy was performed.\n6 Serum lipid studies and glucose concentration are within the reference ranges.\n\nAnswer:",
+        "reasoning": "I need to check each sentence of the clinical note for medical errors. Let me go through them one by one:\n\n0. \"A 50-year-old woman comes to the physician for a routine health maintenance examination.\" - This is a standard introduction with no medical errors.\n\n1. \"She has no personal or family history of serious illness.\" - This is a clear statement about medical history with no errors.\n\n2. \"She smoked one pack of cigarettes daily for 5 years during her 20s.\" - This is a clear statement about smoking history with no errors.\n\n3. \"Her pulse is 70\/min, and blood pressure is 120\/78 mm\" - The pulse rate and first part of blood pressure are correctly stated.\n\n4. \"Hg.\" - This is the continuation of the blood pressure measurement from the previous line. \"Hg\" is the correct abbreviation for mercury in blood pressure measurements.\n\n5. \"A colonoscopy was performed.\" - This is a simple statement about a procedure with no errors.\n\n6. \"Serum lipid studies and glucose concentration are within the reference ranges.\" - This is a correct statement about laboratory results.\n\nThe only potential issue I see is that sentences 3 and 4 appear to be split, with the blood pressure measurement spanning across two lines. However, this doesn't constitute a medical error - it's just how the text is formatted. The blood pressure is correctly stated as 120\/78 mm Hg, which is a normal reading.\n\nSince I don't detect any medical errors in the content, the answer should be \"CORRECT\".",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 3-year-old girl with cystic fibrosis is brought to the physician for a follow-up examination.\n1 Her mother has noticed that the child has had multiple falls over the past 4 months while walking, especially in the evening.\n2 Her current medications include pancreatic enzyme supplements, an albuterol inhaler, and acetylcysteine.\n3 She is at the 10th percentile for height and the 5th percentile for weight.\n4 Examination shows dry skin, and cone shaped elevated papules on the trunk and extremities.\n5 There is an irregularly shaped foamy gray patch on the left conjunctiva.\n6 The remainder of the examination shows no abnormalities.\n7 Zinc was administered.\n\nAnswer:",
+        "reasoning": "Let me analyze this clinical note sentence by sentence to check for any medical errors:\n\nSentence 0: \"A 3-year-old girl with cystic fibrosis is brought to the physician for a follow-up examination.\"\n- This is a factual statement about the patient and reason for visit. No errors.\n\nSentence 1: \"Her mother has noticed that the child has had multiple falls over the past 4 months while walking, especially in the evening.\"\n- This describes a symptom reported by the mother. No errors.\n\nSentence 2: \"Her current medications include pancreatic enzyme supplements, an albuterol inhaler, and acetylcysteine.\"\n- These are appropriate medications for cystic fibrosis. No errors.\n\nSentence 3: \"She is at the 10th percentile for height and the 5th percentile for weight.\"\n- This describes the patient's growth parameters. No errors.\n\nSentence 4: \"Examination shows dry skin, and cone shaped elevated papules on the trunk and extremities.\"\n- This describes skin findings consistent with nutritional deficiency. No errors.\n\nSentence 5: \"There is an irregularly shaped foamy gray patch on the left conjunctiva.\"\n- This describes an eye finding that could be consistent with Bitot's spots, which are associated with vitamin A deficiency. No errors.\n\nSentence 6: \"The remainder of the examination shows no abnormalities.\"\n- This is a standard statement about the rest of the exam. No errors.\n\nSentence 7: \"Zinc was administered.\"\n- Here's the error. Based on the clinical presentation (dry skin, cone-shaped papules, Bitot's spots), the patient is showing signs of vitamin A deficiency, not zinc deficiency. While zinc deficiency can cause skin manifestations, the specific eye finding (Bitot's spots) is pathognomonic for vitamin A deficiency. The correct treatment would be vitamin A supplementation, not zinc.\n\nThe error is in sentence 7. It should state that vitamin A was administered, not zinc.",
+        "output": "7 Vitamin A was administered.",
+        "answer": "7 Vitamin A was administered."
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 31-year-old woman comes to the physician because of a 5-month history of intermittent flank pain.\n1 Over the past 2 years, she has had five urinary tract infections.\n2 Her blood pressure is 150\/88 mm\n3 Hg.\n4 Physical examination shows bilateral, nontender upper abdominal masses.\n5 Serum studies show a urea nitrogen concentration of 29 mg\/dL and a creatinine concentration of 1.4 mg\/dL. Renal ultrasonography shows bilaterally enlarged kidneys with multiple parenchymal anechoic masses.\n6 Patient is diagnosed with autosomal dominant polycystic kidney disease.\n\nAnswer:",
+        "reasoning": "Let's go through each sentence and check for medical errors:\n\n0. \"A 31-year-old woman comes to the physician because of a 5-month history of intermittent flank pain.\" - This seems medically accurate and appropriate.\n\n1. \"Over the past 2 years, she has had five urinary tract infections.\" - This is a reasonable clinical history detail, no errors.\n\n2. \"Her blood pressure is 150\/88 mm\" - This is incomplete as it doesn't include the unit \"Hg\" but that appears in the next line.\n\n3. \"Hg.\" - This is the continuation of the blood pressure measurement. Together with line 2, it forms \"Her blood pressure is 150\/88 mm Hg.\" which is medically accurate.\n\n4. \"Physical examination shows bilateral, nontender upper abdominal masses.\" - This is consistent with polycystic kidney disease, where enlarged kidneys may be palpable as abdominal masses.\n\n5. \"Serum studies show a urea nitrogen concentration of 29 mg\/dL and a creatinine concentration of 1.4 mg\/dL. Renal ultrasonography shows bilaterally enlarged kidneys with multiple parenchymal anechoic masses.\" - These lab values show mild renal impairment, and the ultrasound findings are consistent with polycystic kidney disease.\n\n6. \"Patient is diagnosed with autosomal dominant polycystic kidney disease.\" - This diagnosis is consistent with the clinical presentation (flank pain, UTIs, hypertension, bilateral kidney masses, renal impairment, and ultrasound findings of multiple cysts).\n\nThe only unusual thing is that sentences 2 and 3 are split, but this is not a medical error - it's just a formatting issue. The blood pressure of 150\/88 mm Hg indicates hypertension, which is commonly associated with polycystic kidney disease.\n\nI don't see any medical errors in this clinical note. All the findings and the diagnosis are consistent with autosomal dominant polycystic kidney disease.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

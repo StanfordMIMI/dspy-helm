@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: To assess social development in childhood and adolescence, what factors influence the selection of suitable procedures?\nA. The availability of instruments that allow obtaining valid and reliable measures in this area.\nB. The age of the child and his \/ her linguistic expression skills.\nC. The nature of the behavior or ability to be evaluated, the level of development and the form of manifestation of the behavior, individually or in a group.\nD. The skills and experience of the evaluator with the procedures and evaluation techniques commonly used in this area.\nE. Access to standardized tests according to age, sex and special conditions.\nAnswer:",
+        "reasoning": "I need to determine which factor is most important when selecting procedures to assess social development in childhood and adolescence.\n\nLet me analyze each option:\n\nA. The availability of instruments that allow obtaining valid and reliable measures in this area.\n- While having valid and reliable instruments is important, this is a constraint rather than a primary factor in selecting the most appropriate assessment procedure.\n\nB. The age of the child and his\/her linguistic expression skills.\n- This is certainly an important consideration, as developmental assessments must be age-appropriate and account for language abilities, but it's not comprehensive enough.\n\nC. The nature of the behavior or ability to be evaluated, the level of development and the form of manifestation of the behavior, individually or in a group.\n- This is the most comprehensive answer. It considers the specific behaviors being assessed, developmental level, and the context of the behavior (individual vs. group), which are all critical factors in selecting appropriate assessment procedures.\n\nD. The skills and experience of the evaluator with the procedures and evaluation techniques commonly used in this area.\n- While evaluator expertise is important, this is more about the quality of administration rather than the selection of appropriate procedures.\n\nE. Access to standardized tests according to age, sex and special conditions.\n- Like option A, this is more about availability constraints rather than the primary factors that should guide selection.\n\nOption C provides the most comprehensive and developmentally-focused criteria for selecting appropriate social development assessment procedures.",
+        "output": "C",
+        "answer": "C"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: In which patient would an urgent coronary angiography be performed?\nA. 66-year-old diabetic woman with a single episode of pain at rest and elevation of troponins.\nB. A 77-year-old man admitted for two 30-minute episodes of pain with a decrease in the ST segment on the ECG during the episode of pain.\nC. A 55-year-old man who, after a week of treatment with double antiaggregation, underwent an isotopic ergometry showing extensive ischemia in the anterior face.\nD. A 65-year-old woman with pain at rest and positive clinical ergometry in the third stage of Bruce.\nE. A 55-year-old patient admitted for chest pain and dyspnea saturating 80% despite the administration of oxygen and with an ECG with ST-segment depression in the anterolateral aspect that does not revert with the administration of intravenous nitroglycerin.\nAnswer:",
+        "reasoning": "I need to determine which patient scenario represents the most urgent indication for coronary angiography.\n\nLet me analyze each option:\n\nA. 66-year-old diabetic woman with a single episode of pain at rest and elevation of troponins.\n- Pain at rest suggests unstable angina\n- Elevated troponins indicate myocardial damage\/infarction\n- This represents a non-ST elevation myocardial infarction (NSTEMI)\n- This is an urgent situation but may not be the most urgent\n\nB. A 77-year-old man admitted for two 30-minute episodes of pain with a decrease in the ST segment on the ECG during the episode of pain.\n- ST depression during pain indicates ischemia\n- This represents unstable angina or possible NSTEMI\n- Similar urgency to option A\n\nC. A 55-year-old man who, after a week of treatment with double antiaggregation, underwent an isotopic ergometry showing extensive ischemia in the anterior face.\n- Already on dual antiplatelet therapy\n- Scheduled stress test showing ischemia\n- This is concerning but appears to be a stable patient under treatment\n\nD. A 65-year-old woman with pain at rest and positive clinical ergometry in the third stage of Bruce.\n- Pain at rest is concerning\n- Positive stress test at stage 3 (moderate exercise) indicates significant but not necessarily immediate threat\n- Less urgent than A or B\n\nE. A 55-year-old patient admitted for chest pain and dyspnea saturating 80% despite oxygen administration and with an ECG with ST-segment depression in the anterolateral aspect that does not revert with the administration of intravenous nitroglycerin.\n- Severe hypoxemia (80% despite oxygen)\n- Chest pain with persistent ECG changes\n- Not responding to nitroglycerin\n- This represents a very unstable patient with likely acute coronary syndrome complicated by possible pulmonary edema or other serious complication\n- This is the most urgent scenario requiring immediate intervention\n\nOption E represents the most unstable patient with signs of acute coronary syndrome not responding to medical therapy and with respiratory compromise. This patient would require the most urgent coronary angiography.",
+        "output": "E",
+        "answer": "E"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: The reactivity of various carbonyl groups is determined by their relative stability. The order of reactivity towards nucleophiles is:\nA. Amides> Esters> Ketones> Aldehydes.\nB. Aldehydes> Ketones> Esters> Amides.\nC. Amides> Ketones> Aldehydes> Esters.\nD. Aldehydes> Esters> Ketones> Amides.\nE. Amides> Ketones> Esters> Aldehydes.\nAnswer:",
+        "output": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

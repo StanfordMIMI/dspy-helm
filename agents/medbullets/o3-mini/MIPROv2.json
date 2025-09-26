@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 53-year-old African-American woman presents to her primary care doctor with increasing difficulty climbing the stairs. She noticed the weakness approximately 3 months ago. It has gotten progressively worse since that time. She has also noticed increasing difficulty combing her hair, standing from a seated position, and experiences muscle aches. Her medical history is significant for hypertension treated with lifestyle modification and gastroesophageal reflux disease (GERD). Her temperature is 98.6°F (37.0°C), blood pressure is 130\/65 mmHg, pulse is 80\/min, and respirations are 16\/min. She has 3\/5 strength to shoulder abduction and hip flexion bilaterally. Her strength is 5\/5 to wrist extension and ankle plantar flexion. No skin rashes are noted. Which of the following is the most accurate test to confirm this patient’s diagnosis?\nA. Serum creatine kinase\nB. Muscle biopsy\nC. Electromyography\nD. Serum aldolase\nAnswer:",
+        "reasoning": "The patient, a 53-year-old woman, presents with a several-month history of progressive proximal muscle weakness in the shoulders and hips, which is characteristic of inflammatory myopathies such as polymyositis. Although initial laboratory tests (e.g., an elevated serum creatine kinase level) are useful in screening for muscle injury, the definitive diagnosis of polymyositis is best confirmed by a muscle biopsy. The biopsy can reveal endomysial inflammation with T-cell infiltrates and muscle fiber necrosis, which is the gold standard for diagnosing this condition.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 44-year-old homeless man presents to the emergency department after being stabbed multiple times in the abdomen. The patient is intoxicated and is unable to offer further history. His temperature is 97.5°F (36.4°C), blood pressure is 92\/52 mmHg, pulse is 145\/min, respirations are 33\/min, and oxygen saturation is 90% on room air. He is intubated to protect his airway, given 2 units of packed red blood cells, and sent to the operating room for an exploratory laparotomy. The patient is subsequently admitted to the intensive care unit. He is extubated the next day and appears well. His vitals are within normal limits. Physical exam reveals sparse hair that is falling out throughout the patient’s body. He has a rash by the corners of his mouth. The patient has multiple loose bowel movements and on day 6 the patient’s surgical wound does not appear to be healing. It is held together only by the sutures with minimal underlying healing. Which of the following is most likely deficient in this patient?\nA. Thiamine\nB. Vitamin C\nC. Zinc\nD. Riboflavin\nAnswer:",
+        "reasoning": "The patient’s clinical findings include sparse hair with hair falling out, a rash around the mouth, and poor wound healing in the postoperative period—all of which are classic signs of zinc deficiency. Though similar findings could be seen with other nutritional deficiencies, the pattern of alopecia, dermatologic changes, and delayed wound healing most specifically indicate zinc deficiency.",
+        "output": "C",
+        "answer": "C"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 65-year-old man presents to the emergency department for evaluation of left arm and leg weakness. He was walking in the park about 45 minutes prior to arrival when the patient stumbled and fell. He had sudden weakness in his left leg and was unable to grasp a handrail with his left hand. He currently takes no medications. His temperature is 98.0°F (36.6°C), blood pressure is 128\/89 mmHg, pulse is 130\/min, and respirations are 18\/min. On exam, he has 3\/5 strength in the left upper and lower extremities and a left-sided facial droop. A non-contrast CT scan of the head is performed, which suggests parenchymal ischemia in the distribution of the right middle cerebral artery. An ECG is performed, as shown in Figure A. He is given intravenous alteplase with rapid improvement in his strength deficits and facial asymmetry. Which of the following is the most appropriate long-term therapy for secondary stroke prevention for this patient?\nA. Aspirin\nB. Rivaroxaban\nC. Cardiac pacemaker\nD. Atorvastatin\nAnswer:",
+        "output": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the `inputs` field, generate the `reasoning` and `output` fields by analyzing the medical clinical scenario provided. Use systematic reasoning to evaluate the symptoms and findings, and deduce the correct choice from the options available.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

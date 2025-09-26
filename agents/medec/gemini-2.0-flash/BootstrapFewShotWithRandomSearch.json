@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 Several hours after vaginal delivery, a male newborn delivered at full-term develops tachycardia and tachypnea.\n1 His blood pressure is within normal limits.\n2 Pulse oximetry on room air shows an oxygen saturation of 79% in the right hand and 61% in the left foot.\n3 Physical examination shows bluish discoloration of the face and trunk, supraclavicular and intercostal retractions, and a machine-like murmur over the precordium.\n4 Bedside echocardiography shows pulmonary and systemic circulation are in parallel rather than in series.\n5 Alprostadil is administered.\n\nAnswer:",
+        "reasoning": "The patient is a newborn with differential cyanosis (lower saturation in the left foot compared to the right hand), tachycardia, tachypnea, a murmur, and echocardiography showing parallel circulation. This presentation is highly suggestive of a congenital heart defect, specifically transposition of the great arteries (TGA). The differential cyanosis indicates that the ductus arteriosus is providing some mixing of blood, and the lower saturation in the left foot suggests that deoxygenated blood is preferentially flowing to the lower extremities. Alprostadil is administered to maintain the patency of the ductus arteriosus. The text appears correct.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 65-year-old obese man presents to his primary care clinic feeling weak.\n1 He was in the military and stationed in Vietnam in his youth.\n2 His current weakness gradually worsened to the point that he had to call his son to help him stand to get on the ambulance.\n3 He smokes a pack of cigarettes every day and drinks a bottle of vodka a week.\n4 He has been admitted for alcohol withdrawal multiple times and has been occasionally taking thiamine, folic acid, and naltrexone.\n5 He denies taking steroids.\n6 His temperature is 98 F (36.7 C), blood pressure is 170\/90\n7 mmHg, pulse is 75\/min, and respirations are 20\/min.\n8 He is obese with a significant pannus.\n9 Hepatomegaly is not appreciable.\n10 Abdominal striae are present.\n11 His workup is notable for the following:\n\n\n12 Serum:\n\n13 Na+: 142 mEq\/L\n\n14 Cl-:\n15 102 mEq\/L\nK+: 3.9 mEq\/L\n\n16 HCO3-: 25 mEq\/L\nBUN: 24 mg\n17 \/dL\n\n18 Glucose: 292 mg\/dL\n\n19 Creatinine: 1.5 mg\/dL\n\n20 Ca2\n21 +:\n22 10.1 mg\/dL\n\n23 AST: 7 U\/L\nALT:\n24 14 U\/L\n\n25 24-hour urinary cortisol:\n26 400 Âµg\n27 (reference range < 300 Âµg)\n\n28 Serum cortisol: 45 pg\/mL\n29 (reference range < 15 pg\/mL)\n\n\n30 A 48-hour high dose dexamethasone suppression trial shows that his serum cortisol levels partially decrease to 25 pg\/mL and his adrenocorticotropin-releasing hormone (ACTH) level decreases from 10 to 6 pg\/mL\n31 (reference range > 5 pg\/mL).\n32 High-dose dexamethasone therapy for 3 months is recommended.\n\nAnswer:",
+        "output": "32 An MRI of the pituitary gland is recommended."
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 55-year-old man is brought to the emergency department 12 hours after the sudden onset of shortness of breath and substernal chest pain at rest; the pain is increased by inspiration.\n1 He has also had a nonproductive cough, fever, and malaise for the past 5 days.\n2 He does not smoke or use illicit drugs.\n3 His temperature is 38 C (100.4 F), pulse is 125\/min, respirations are 32\/min, and blood pressure is 85\/45 mm\n4 Hg.\n5 Physical examination shows distended neck veins.\n6 Auscultation of the chest discloses bilateral basilar rales and muffled heart sounds.\n7 An ECG shows sinus tachycardia, diffuse ST segment elevation, low voltage QRS complexes, and fluctuating R wave amplitude.\n8 The patient is diagnosed with a cardiac tamponade.\n\nAnswer:",
+        "output": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

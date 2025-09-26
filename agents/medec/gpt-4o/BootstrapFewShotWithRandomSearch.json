@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 21-year-old man presents to the clinic complaining of feeling tired during the day.\n1 He is concerned as his grades in school have worsened and he does not want to lose his scholarship.\n2 The patient is diagnosed with narcolepsy upon further questioning, when the patient describes frequently experiencing a dreamlike state before falling asleep and after waking up.\n3 He also has frequent nighttime awakenings where he finds himself unable to move.\n4 He denies snoring.\n5 The patient does not drink alcohol or abuse any other drugs.\n6 The patient's BMI is 21 kg\/m2, and his vital signs are all within normal limits.\n\nAnswer:",
+        "reasoning": "Upon reviewing the clinical narrative, each sentence needs to be examined for potential medical errors. The sentences outline a scenario of a 21-year-old male with symptoms suggestive of narcolepsy, including daytime tiredness, cataplexy during hypnopompic and hypnagogic states, and sleep paralysis. Judging by the details of the narrative, all described symptoms and diagnostic clues fit with the diagnosis of narcolepsy. The patient's reported behaviors and lifestyle choices, including no snoring and no substance abuse, are consistent with potential contributing or excluding factors for differential diagnosis. Vital signs and BMI being normal also do not contradict the context or cause concern for a coexisting disorder based on this note. Therefore, no logical or clinical discrepancies were found in the narrative presented. The text is medically consistent and coherent regarding the patient history, symptoms, and diagnosis given.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 55-year-old man is brought to the emergency department 3 hours after ingesting approximately 30 tablets of an unknown drug in an apparent suicide attempt.\n1 His temperature is 36.5 C (97.7 F), pulse is\n2 40\/min, respiratory rate is 19\/min, and blood pressure is 85\/50 mm\n3 Hg.\n4 Examination shows cold, clammy extremities.\n5 Scattered expiratory wheezing is heard throughout both lung fields.\n6 His fingerstick blood glucose concentration is 62 mg\/dL. ECG shows prolonged PR intervals and narrow QRS complexes.\n7 Intravenous fluid resuscitation and atropine do not improve his symptoms.\n8 Glucagon is then administered.\n\nAnswer:",
+        "reasoning": "The patient's presentation suggests beta-blocker toxicity, which aligns with his bradycardia (40\/min), hypotension (85\/50 mm Hg), prolonged PR intervals on ECG, and hypoglycemia (blood glucose concentration of 62 mg\/dL). The typical narrow QRS complexes are often seen in beta-blocker overdose as opposed to wide QRS complexes seen in some other drug overdoses (like tricyclic antidepressants). The use of atropine, a common first-line treatment, did not improve his symptoms, further indicating severe beta-blocker toxicity.\n\nIn cases of beta-blocker overdose where atropine is ineffective, the administration of glucagon is appropriate because glucagon has a positive inotropic and chronotropic effect, bypassing beta-adrenergic receptors, which helps to improve cardiovascular function in beta-blocker overdose cases.\n\nAfter reviewing the clinical narrative, it is consistent with beta-blocker overdose management protocols. Therefore, the clinical note does not contain any errors given the information presented and current medical guidelines.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 25-year-old woman comes to the physician because of a 2-day history of a burning sensation when urinating and increased urinary frequency.\n1 She is concerned about having contracted a sexually transmitted disease.\n2 Physical examination shows suprapubic tenderness.\n3 Urinalysis shows a negative nitrite test and positive leukocyte esterases.\n4 Urine culture grows organisms that show resistance to novobiocin on susceptibility testing.\n5 The patient has a Staphylococcus saprophyticus infection.\n\nAnswer:",
+        "reasoning": "In the provided clinical note, we examine the sentences for medical accuracy. The narrative suggests a urinary tract infection (UTI), possibly from a sexually transmitted disease. \n\n1. Sentence 0 describes symptoms consistent with a UTI: burning sensation when urinating and increased urinary frequency.\n2. Sentence 1 reveals the patient's concern about an STD link, which is plausible but not yet confirmed by evidence in the narrative.\n3. Sentence 2 notes suprapubic tenderness, which can indicate bladder involvement, supporting a potential diagnosis of UTI.\n4. Sentence 3 describes urinalysis findings with a negative nitrite test but positive leukocyte esterase. The absence of nitrites suggests non-nitrite-producing bacteria, like Staphylococcus saprophyticus, which matches the bacterial culture results.\n5. Sentence 4 describes urine culture findings: organisms resistant to novobiocin, typical for Staphylococcus saprophyticus.\n6. Sentence 5 correctly identifies Staphylococcus saprophyticus as involved, consistent with novobiocin resistance.\n\nUpon analysis, Sentence 5 appears to be incorrect with regard to standard antibiotic susceptibility characteristics. It incorrectly identifies novobiocin-resistant organisms as Staphylococcus saprophyticus when, in fact, Staphylococcus saprophyticus is novobiocin-resistant.\n\nThe error arises here due to prior incorrect analysis; hence, no correction is needed.",
+        "output": "CORRECT.",
+        "answer": "CORRECT."
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

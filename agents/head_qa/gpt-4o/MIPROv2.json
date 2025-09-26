@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Within the Interaction Thinking School, the model developed by:\nA. Faye Abdellah\nB. Callista Roy.\nC. Dorothy Johnson.\nD. Rosmarie Parse\nE. Hildegard Peplau.\nAnswer:",
+        "reasoning": "The Interaction Thinking School in nursing focuses on the relationships and interactions between nurses and patients. Hildegard Peplau is well-known for her work in this area, particularly for her theory of interpersonal relations, which emphasizes the nurse-patient relationship as a therapeutic process. This aligns with the principles of the Interaction Thinking School.",
+        "output": "E",
+        "answer": "E"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: A 78-year-old man who underwent cardiac catheterization with revascularization of the right coronary artery 3 weeks ago and consulted for nausea and vomiting of 3 days of evolution. It presents arterial pressure of 185\/85 mm Hg and purple lesions on the toes of both feet. In the analytical, urea 230 mg \/ dL and creatinine 5.8 mg \/ dL were observed. What is the most likely diagnosis?\nA. Malignant arterial hypertension.\nB. Acute tubular necrosis by contrast.\nC. Rapidly progressive renal failure.\nD. Renal atheroembolic disease.\nE. Bilateral renal artery stenosis.\nAnswer:",
+        "reasoning": "The patient's symptoms and history suggest a case of renal atheroembolic disease. The key points in the scenario are the recent cardiac catheterization, the presence of purple lesions on the toes (which are indicative of embolic phenomena), and the significant increase in creatinine and urea levels, suggesting renal impairment. Renal atheroembolic disease is a known complication following vascular procedures, where cholesterol crystals dislodge and embolize to small renal arteries, causing renal dysfunction and sometimes skin manifestations like livedo reticularis or purple toes.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: They use a reverse transcriptase during their replication:\nA. Papovavirus.\nB. Polyomavirus\nC. Hepadnavirus.\nD. Parvovirus.\nE. Herpesvirus.\nAnswer:",
+        "reasoning": "Reverse transcriptase is an enzyme used by certain viruses to transcribe their RNA into DNA, which is then integrated into the host's genome. This process is characteristic of retroviruses and some other viruses that use reverse transcription as part of their replication cycle. Among the options provided, Hepadnavirus is known to use reverse transcriptase. Hepadnaviruses, such as the Hepatitis B virus, have a partially double-stranded DNA genome and replicate through an RNA intermediate, utilizing reverse transcriptase to convert this RNA back into DNA.",
+        "output": "C",
+        "answer": "C"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

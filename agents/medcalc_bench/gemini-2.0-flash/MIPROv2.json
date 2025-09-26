@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: An 80-year-old female was admitted for a routine total hip replacement. She was previously receiving warfarin for paroxysmal atrial fibrillation and this had been discontinued prior to surgery. A cementless total hip replacement was performed through a direct anterior approach using a Trinity Cluster Shell, a ceramic liner, and a lateralized Metafix femoral stem with ceramic head (Corin, UK). On the evening following uneventful surgery, she was comfortable and had normal neurovascular status. She commenced mobilization and was making good progress the following day. Due to long-standing atrial fibrillation, warfarin was restarted the day after surgery for prophylaxis. Three days after surgery her haemoglobin was 6.8 g\/dL and she was transfused 4 units of blood. Overnight she developed severe pain requiring opiate analgesia and she subsequently required another transfusion of 4 units two days later. At this stage, the patient had developed a foot drop and was unable to stand. An MRI scan () demonstrated a large posterior haematoma deep to the iliotibial band and tensor fascia lata. Examination demonstrated numbness below the knee and she was unable to dorsiflex or plantarflex her foot, consistent with a sciatic nerve palsy.\nA posterior approach was used to evacuate the posterior haematoma and explore the sciatic nerve. The nerve was in continuity with no evidence of trauma other than compression from overlying haematoma. Gluteus medius was contractile. Haematoma was also evacuated from the anterior wound, and an arthrotomy was performed with lavage of the hip joint. No active bleeding was identified.\nSensation subsequently improved in the lower leg, but she continued to have a foot drop.\n\nQuestion: What is the patient's CHA2DS2-VASc Score?\n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "The CHA2DS2-VASc score is calculated based on the following criteria:\n- Congestive heart failure: 1 point\n- Hypertension: 1 point\n- Age >= 75: 2 points\n- Diabetes mellitus: 1 point\n- Stroke\/TIA\/thromboembolism: 2 points\n- Vascular disease: 1 point\n- Age 65-74: 1 point\n- Sex category (female): 1 point\n\nBased on the patient note:\n- Age: 80 years (>= 75, so 2 points)\n- Atrial fibrillation: implies risk of stroke\/TIA\/thromboembolism (but no history mentioned, so 0 points for stroke\/TIA)\n- Female: 1 point\n- Hypertension: not mentioned, so 0 points\n- Congestive heart failure: not mentioned, so 0 points\n- Diabetes mellitus: not mentioned, so 0 points\n- Vascular disease: not mentioned, so 0 points\n\nTherefore, the CHA2DS2-VASc score is 2 (age) + 1 (female) = 3.",
+        "output": "3",
+        "answer": "3"
+      },
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: The patient's last menstrual period was on 01\/03\/2018. Today's date is 07\/16\/2018.\n\nQuestion: Based on the patient's last menstrual period, what is the patient's estimated gestational age? Your answer should be a tuple, specifying the number of weeks and days (i.e. (4 weeks, 3 days), (0 weeks, 5 days), (1 week, 5 days), (8 weeks, 0 days)).\n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "To calculate the estimated gestational age, we need to find the number of days between the last menstrual period (LMP) and today's date. Then, we convert the number of days into weeks and days.\n\nLMP: 01\/03\/2018\nToday's date: 07\/16\/2018\n\nNumber of days in each month from January to July in 2018:\nJanuary: 31 - 3 = 28 days\nFebruary: 28 days (2018 is not a leap year)\nMarch: 31 days\nApril: 30 days\nMay: 31 days\nJune: 30 days\nJuly: 16 days\n\nTotal number of days = 28 + 28 + 31 + 30 + 31 + 30 + 16 = 194 days\n\nNow, we convert days to weeks and days:\nWeeks = 194 \/\/ 7 = 27 weeks\nRemaining days = 194 % 7 = 5 days\n\nTherefore, the estimated gestational age is 27 weeks and 5 days.",
+        "output": "(27 weeks, 5 days)",
+        "answer": "(27 weeks, 5 days)"
+      },
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: A 20-day-old girl was admitted to the neonatal intensive care unit with a chief complaint of poor oral intake through the emergency room. She was lethargic and did not suck well with swallowing only 10 to 20 mL of formula at a time in the last two days. However, the amount of urine did not decrease, and diapers were changed 10 to 14 times per day. Vomiting and diarrhea were not observed. She was born at 38+2 weeks of gestation with 3380 g (50th–75th percentile) via cesarean section. No abnormal findings were noted during the prenatal and immediate postnatal periods. She was the first child of healthy, nonconsanguineous Korean parents, and her family history was unremarkable. At admission, her weight was 3100 g (25th–50th percentile), length was 53 cm (50th–75th percentile), and head circumference was 36 cm (50th–75th percentile). Although vital signs were appropriate for her age (heart rate 150 beats\/min, blood pressure 78\/50 mmHg, respiratory rate 48 breaths\/min, and body temperature 36.5 °C), her lips were dry, and the capillary refill time was prolonged to 5–6 s. Physical examination revealed both thumbs in palms, frontal bossing, prominent upper lip, high arched palate, sparse frontal scalp hair, and bilateral 5th finger clinodactyly. An initial capillary blood gas analysis showed severe metabolic acidosis (pH 7.16, pCO2 28.3 mmHg, pO2 42 mmHg, HCO3−—17.3 mmol\/L, base excess—17.3 mmol\/L). With an impression of dehydration, 20 mL\/kg normal saline was infused intravenously for over 1 h before other laboratory results were obtained.\nThe laboratory tests at admission were as follows: serum sodium 113.3 mEq\/L, serum potassium 8.79 mEq\/L, serum chloride 90.8 mEq\/L, total CO2 8.1 mEq\/L, serum lactic acid 1.0 mmol\/L, serum ketone body 24 µmol\/L, blood glucose level 83 mg\/dL, blood urea nitrogen 55.1 mg\/dL, and serum creatinine 0.65 mg\/dL. Her urinalysis revealed a specific gravity of 1.014 and pH 5.0 and was negative for white blood cells and red blood cells. Her spot urine sodium and potassium levels were 74 and 27.7 mEq\/L, respectively. The serum and urine osmolality values were 232 and 229 mOsm\/kg, respectively. All the results of the neonatal screening test were normal, which included TSH (1.2 mIU\/L), 17-hydroxyprogesterone (1.6 ng\/mL), total galactose (1.0 mg\/dL), and mass spectrometry for amino acid, organic acid, fatty acid, purine, peroxisome, and carbohydrate metabolic disorders. The plasma ammonia level was within the normal limit as 97 µg\/dL. The plasma renin activity and serum aldosterone level were markedly elevated to 142.0 ng\/mL\/h (normal range, 0.32–1.84 ng\/mL\/h) and 4560 ng\/dL (normal range, 4.2–20.9 ng\/dL), respectively. Renal ultrasonography revealed no abnormalities except mild hydronephrosis in the right kidney (). No abnormal findings were found in cardiac echocardiography or brain magnetic resonance imaging.\nTo correct severe hyponatremia, 60 mL of 3% sodium chloride was initially intravenously administered over 8 h. Her urine output on the first day of admission was 8.45 mL\/kg\/h. Hyponatremia and hyperkalemia were improved with intravenous fluid and oral sodium chloride supplementation (8 mEq\/kg\/day). The patient consumed an adequate amount of milk (170–200 mL\/kg\/day), and weight gain was appropriate (40–80 g\/day) after oral sodium chloride supplementation.\nFor the genetic diagnosis of the patient, targeted exome sequencing (TES) was performed. Genomic DNA was extracted from proband blood. All exon regions of all human genes (~22,000) were captured by a Twist Human Core Exome Kit (Twist Bioscience, South San Francisco, CA, USA). The captured regions of the genome were sequenced using a NovaSeq 6000 sequencing machine (Illumina, San Diego, CA, USA). In TES, no other pathogenic\/likely pathogenic single-nucleotide variants (SNVs) or small insertion and deletion variants associated with the clinical phenotypes were identified. However, her clinical phenotypes and biochemical results indicated PHA1. Therefore, we performed a chromosomal microarray (CMA) to identify deletion-encompassing genes responsible for PHA1. CMA (CytoScan Dx, Affymetrix Cytogenetics, Santa Clara, CA, USA) revealed a 203 kb heterozygous deletion at 4q31.23: arr[GRCh37] 4q31.23(148865586_149069090)x1 (). This deletion spans exons 7–9 of NR3C2 and exons 15–23 of the ARHGAP10 gene. Haploinsufficiency of the NR3C2 gene, which encodes the mineralocorticoid receptor, is responsible for ADPHA1. However, the details of the functional role of the ARHGAP10 gene in human disease remain unclear. Parental testing showed that the deletion was paternally inherited. Her father had no history of clinical PHA1 manifestation and had normal plasma electrolytes and serum aldosterone values with only slightly elevated plasma renin activity at testing.\n\nQuestion: Based on the patient's weight, what is the patient's maintenance fluid in mL\/hr?\n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "The patient's weight at admission was 3100 g, which is 3.1 kg. Maintenance fluid is typically calculated using the 4\/2\/1 rule: 4 mL\/kg\/hr for the first 10 kg, 2 mL\/kg\/hr for the next 10 kg, and 1 mL\/kg\/hr for each kg thereafter.\n\nSince the patient weighs 3.1 kg, we only need to consider the first part of the rule: 4 mL\/kg\/hr.\n\nMaintenance fluid = 4 mL\/kg\/hr * 3.1 kg = 12.4 mL\/hr",
+        "output": "12.4",
+        "answer": "12.4"
+      }
+    ],
+    "signature": {
+      "instructions": "You are a highly skilled medical expert working in a busy emergency room. A patient presents with a complex medical history and concerning symptoms. The attending physician needs your immediate assistance in calculating a critical risk score to guide treatment decisions. The patient's life may depend on your accuracy. Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

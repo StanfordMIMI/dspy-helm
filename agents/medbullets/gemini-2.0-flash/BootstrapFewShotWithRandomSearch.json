@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 46-year-old man presents with his wife to his primary care provider for depression and strange movements. His wife reports that her husband has not been himself for the last 2 months. Whereas he was previously outgoing and “the life of the party,” the patient is now irritable and withdrawn. He is a partner at an accounting firm, but his colleagues are threatening to fire him if he continues to perform poorly at work. The patient cannot explain the recent changes to his mood and tearfully admits he fears there is something seriously wrong with him. His wife says that he is getting worse. The patient’s medical history is significant for hypertension, for which he takes lisinopril. His family history is unknown as he was adopted. The patient met his mother once and never knew his father but was told he died in his 50s. He drinks a few glasses of wine per week and has never smoked. His temperature is 98.6°F (37°C), blood pressure is 141\/87 mmHg, pulse is 81\/min, and respirations are 12\/min. On physical exam, the patient has a flat affect with a facial grimace and sudden jerky movements of his upper extremities. Which of the following is most likely to be seen on further workup?\nA. Dorsal striatum atrophy on head CT\nB. Neurofibrillary tangles on brain biopsy\nC. Alpha-synuclein aggregates on brain biopsy\nD. Frontotemporal atrophy on head CT\nAnswer:",
+        "reasoning": "The patient's presentation of depression, personality changes (irritability, withdrawal), cognitive decline (poor work performance), and chorea (sudden jerky movements) suggests Huntington's disease. The unknown family history, with a father who died in his 50s, further raises suspicion.\n\n*   **A. Dorsal striatum atrophy on head CT:** Huntington's disease is characterized by atrophy of the caudate nucleus and putamen, which are part of the dorsal striatum. This is a classic finding.\n*   **B. Neurofibrillary tangles on brain biopsy:** Neurofibrillary tangles are characteristic of Alzheimer's disease. While the patient has cognitive decline, the presence of chorea is not typical of Alzheimer's.\n*   **C. Alpha-synuclein aggregates on brain biopsy:** Alpha-synuclein aggregates (Lewy bodies) are characteristic of Parkinson's disease and Lewy body dementia. The patient's presentation is not typical of these conditions.\n*   **D. Frontotemporal atrophy on head CT:** Frontotemporal dementia can cause personality changes and cognitive decline, but chorea is not a typical feature.\n\nTherefore, the most likely finding on further workup is dorsal striatum atrophy on head CT.",
+        "output": "A",
+        "answer": "A"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 62-year-old man arrives at the emergency room complaining of chest pain and difficulty breathing. He reports that the dyspnea started 2 months ago after he had the flu. At first, the difficulty breathing occurred whenever he went up and down 1 flight of stairs, but the dyspnea progressively worsened since then. This morning, he developed chest pain and difficulty breathing while sitting at the kitchen table. The patient’s medical history is significant for hypertension, type 2 diabetes mellitus, and rheumatoid arthritis. His medications include aspirin, lisinopril, metformin, and sulfasalazine. His temperature is 97°F (36.1°C), blood pressure is 130\/78 mmHg, pulse is 88\/min, and respirations are 14\/min with an oxygen saturation of 97% O2 on room air. On physical exam, jugular venous distension during both inspiration and expiration, mild abdominal distention, and 2+ bilateral lower extremity edema is noted. A chest radiograph is obtained and the result is shown in Figure A. Which of the following is the most likely cause of this patient's symptoms?\nA. Restrictive cardiomyopathy\nB. Cirrhosis\nC. Constrictive pericarditis\nD. Cardiac tamponade\nAnswer:",
+        "output": "C"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 64-year-old man presents with nausea, vomiting, and weakness. He states that his wife made him come in when he fainted today while attempting to stand up. He otherwise states he has noticed some visual changes, including noting a yellow tint to objects. He has a history of heart failure with reduced ejection fraction, obesity, diabetes, hypertension, acute coronary syndrome, atrial fibrillation, and peripheral vascular disease. His temperature is 98.5°F (36.9°C), blood pressure is 153\/91 mmHg, pulse is 40\/min, respirations are 15\/min, and oxygen saturation is 97% on room air. Physical exam reveals a frail man who is unable to ambulate secondary to lightheadedness. His neurological exam is otherwise non-focal. An ECG is performed as seen in Figure A. Which of the following is the most likely etiology of this patient’s symptoms?\nA. Amiodarone\nB. Digoxin\nC. Diltiazem\nD. Procainamide\nAnswer:",
+        "output": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}

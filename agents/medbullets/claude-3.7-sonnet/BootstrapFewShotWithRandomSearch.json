@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 6-year-old boy presents to the emergency department after falling from his scooter. He has dull, aching pain along his left side where he hit the ground. He fell sideways off the scooter as he rounded a curve in the road. He has never had any serious injuries but that he always seems to bruise easily, especially after he started playing soccer this fall. His parents deny that he has an abnormal number of nosebleeds or bleeding from the gums. They have never seen blood in his stool or urine. His mother notes that her brother has had similar problems. His temperature is 98.6°F (37°C), blood pressure is 112\/74 mmHg, pulse is 82\/min, and respirations are 11\/min. On physical exam, the patient has extensive bruising of the lateral left thigh and tenderness to palpation. Laboratory tests are performed and reveal the following:\n\nHemoglobin: 14 g\/dL\nHematocrit: 41%\nMean corpuscular volume: 89 µm3\nReticulocyte count: 0.8%\nLeukocyte count: 4,700\/mm3\nProthrombin time (PT): 13 seconds\nPartial thromboplastin time (PTT): 56 seconds\nBleeding time (BT): 4 minutes\n\nWhich of the following is the most likely underlying pathophysiology?\nA. Anti-platelet antibodies\nB. Von Willebrand factor deficiency\nC. GP1b deficiency\nD. Factor 8 deficiency\nAnswer:",
+        "reasoning": "Let me analyze this clinical scenario and lab results to determine the most likely underlying pathophysiology:\n\nKey clinical findings:\n- 6-year-old boy with easy bruising\n- Family history (maternal uncle with similar problems)\n- No history of nosebleeds, gum bleeding, or blood in stool\/urine\n- Extensive bruising after trauma\n\nLaboratory findings:\n- Normal hemoglobin (14 g\/dL)\n- Normal hematocrit (41%)\n- Normal MCV (89 µm³)\n- Normal reticulocyte count (0.8%)\n- Normal leukocyte count (4,700\/mm³)\n- Normal PT (13 seconds)\n- Prolonged PTT (56 seconds) - this is significantly elevated\n- Normal bleeding time (4 minutes)\n\nThe key abnormality is an isolated prolonged PTT with normal PT and bleeding time. This pattern suggests an intrinsic pathway coagulation factor deficiency.\n\nLet's evaluate each option:\n\nA. Anti-platelet antibodies - Would typically cause thrombocytopenia and prolonged bleeding time, but normal platelet function tests. The normal bleeding time makes this unlikely.\n\nB. Von Willebrand factor deficiency - Would typically present with prolonged bleeding time and PTT, as VWF is involved in both platelet adhesion and factor VIII stabilization. The normal bleeding time makes this less likely.\n\nC. GP1b deficiency (Bernard-Soulier syndrome) - Would present with prolonged bleeding time due to platelet adhesion defect, but normal PTT. The normal bleeding time and prolonged PTT make this unlikely.\n\nD. Factor 8 deficiency (Hemophilia A) - Presents with isolated prolonged PTT, normal PT, and normal bleeding time. Factor VIII is part of the intrinsic pathway. This is an X-linked recessive disorder, which explains why the maternal uncle has similar problems (passed through female carriers to male children).\n\nGiven the isolated prolonged PTT, family history consistent with X-linked inheritance, and clinical presentation of easy bruising without mucosal bleeding, Factor 8 deficiency (Hemophilia A) is the most likely diagnosis.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 14-day-old girl is brought to the emergency department for diarrhea. Her mother reports that the patient began having “explosive” diarrhea 6 hours ago. The patient has little interest in feeding since leaving the hospital after her birth and has not yet regained her birth weight. Her immediate postnatal period was otherwise significant for 2 episodes of bilious vomiting that resolved with the temporary use of a nasogastric tube and expulsion of stool during a digital rectal exam. The patient passed meconium on the 3rd day of life. Her temperature is 101.8°F (38.8°C), blood pressure is 58\/37 mmHg, pulse is 148\/min, and respirations are 38\/min. On physical exam, the patient appears to be in moderate distress. She has no dysmorphic features and she has a normal S1\/S2 without any murmurs, rubs, or gallops. Her abdomen is firm and distended. A digital rectal exam reveals a tight anal sphincter and precipitates a release of gas and liquid stool. Her abdominal radiograph can be seen in Figure A. Which of the following is the most accurate test to diagnose this patient’s condition?\nA. Upper gastrointestinal series\nB. Rectal suction biopsy\nC. Contrast enema\nD. Intraoperative cholangiogram\nAnswer:",
+        "reasoning": "Let me analyze this clinical scenario:\n\nThe patient is a 14-day-old girl with:\n- \"Explosive\" diarrhea\n- Poor feeding\n- Failure to regain birth weight\n- History of bilious vomiting that resolved with NG tube\n- Passed meconium on day 3 of life (delayed)\n- Fever, tachycardia, tachypnea\n- Abdominal distension\n- Tight anal sphincter with release of gas\/liquid stool on digital exam\n\nThe key findings here point toward Hirschsprung's disease (congenital aganglionic megacolon):\n1. Delayed passage of meconium (beyond 48 hours)\n2. Abdominal distension\n3. History of bilious vomiting\n4. Tight anal sphincter\n5. Relief of symptoms with digital rectal exam\n\nThe abdominal radiograph likely shows dilated bowel loops, which would be consistent with Hirschsprung's disease.\n\nFor the diagnostic test options:\nA. Upper GI series - This would evaluate the upper GI tract but wouldn't be the most accurate for Hirschsprung's disease\nB. Rectal suction biopsy - This is the gold standard for diagnosing Hirschsprung's disease as it can demonstrate the absence of ganglion cells in the submucosal and myenteric plexuses\nC. Contrast enema - While this can show a transition zone in Hirschsprung's disease, it's not as definitive as a biopsy\nD. Intraoperative cholangiogram - This evaluates the biliary system and is not relevant for diagnosing Hirschsprung's disease\n\nThe most accurate test for diagnosing Hirschsprung's disease is a rectal suction biopsy, which would show the absence of ganglion cells.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2\/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 17-year-old high school student was in shop class when he accidentally sawed off a portion of his right index finger. The teacher applied dressings and pressure to the patient's injured digit and immediately transported the patient to the emergency department. He arrived within 20 minutes of the accident. The patient has a medical history of asthma and his only medication is albuterol. His temperature is 98.0°F (36.6°C), blood pressure is 120\/70 mmHg, pulse is 105\/min, and respirations are 17\/min. Exam was significant for pulsatile bleeding from a clean-cut wound on his right second finger. Radiography of the hand revealed a complete amputation of the right finger from the distal interphalangeal joint. The wound was cleaned, compression applied, analgesics administered, and the hand surgeons were notified. The teacher states that he left the amputated finger in the classroom, but the principal would be transporting it to the hospital. Which of the following is the correct method for transporting the amputated finger?\nA. Rinse the finger in normal saline, wrap the finger in moist gauze, put in a plastic bag, and place the bag in ice water\nB. Wrap the finger in moist gauze and place in a plastic bag\nC. Submerge the finger in ice water\nD. Rinse the finger with hydrogen peroxide, wrap the finger in moist gauze, and place on ice\nAnswer:",
+        "output": "A"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.9",
+      "dspy": "2.6.27",
+      "cloudpickle": "3.1"
+    }
+  }
+}
