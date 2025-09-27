@@ -1,4 +1,5 @@
 {
+  "predict": {
     "traces": [],
     "train": [],
     "demos": [
@@ -38,7 +39,8 @@
         }
       ]
     },
-  "lm": null,
+    "lm": null
+  },
   "metadata": {
     "dependency_versions": {
       "python": "3.9",
