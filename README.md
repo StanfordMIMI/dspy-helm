@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="700">
+
 **Figure 1** | **HELM Optimizer Workflow**. Pipeline describing (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
 
 A comprehensive framework for optimizing language models on HELM benchmarks using DSPy (Declarative Self-improving Language Programs). This toolkit enables automated prompt optimization, leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
