@@ -43,12 +43,5 @@
       ]
     },
     "lm": null
-  },
-  "metadata": {
-    "dependency_versions": {
-      "python": "3.9",
-      "dspy": "2.6.27",
-      "cloudpickle": "3.1"
-    }
   }
 }
