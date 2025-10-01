@@ -1,9 +1,13 @@
-scenarios=("medcalc_bench" "medec" "head_qa" "medbullets")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "fin_qa" "medcalc_bench" "medec" "head_qa" "medbullets")
 optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
 
 model=openai/gpt-4o
 api_base=""
 api_key=""
+
+prompt_model=openai/gpt-4o
+prompt_api_base=""
+prompt_api_key=""
 
 max_bootstrapped_demos=3
 max_labeled_demos=3
@@ -19,6 +23,9 @@ for scenario in "${scenarios[@]}"; do
             --model $model \
             --api_base "$api_base" \
             --api_key "$api_key" \
+            --prompt_model $prompt_model \
+            --prompt_api_base "$prompt_api_base" \
+            --prompt_api_key "$prompt_api_key" \
             --max_bootstrapped_demos $max_bootstrapped_demos \
             --max_labeled_demos $max_labeled_demos \
             --num_threads $num_threads \

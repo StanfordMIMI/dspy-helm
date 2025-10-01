@@ -4,10 +4,13 @@ import requests
 import os
 from sklearn.model_selection import train_test_split
 from datasets import load_dataset
-from typing import List
+from datasets import Dataset
+from typing import List, Dict, Optional, Tuple
 from urllib.parse import quote
-from bert_score import score
 import tempfile
+import re
+import random
+import json
 
 def to_example(x):
     return dspy.Example(**x).with_inputs("inputs")
@@ -223,3 +226,321 @@ class medbullets:
         train_set = [to_example(data) for data in train_data]
         val_set = [to_example(data) for data in val_data]
         return train_set, val_set
+
+class mmlu_pro:
+    LABELS = ["A","B","C","D","E","F","G","H","I","J"]
+
+    def __init__(self, test_size=0.5, seed=42):
+        self.subject =  "all"
+        self.use_chain_of_thought = True
+        self.revision = "3373e0b"
+        self.test_size = test_size
+        self.seed = seed
+
+    @staticmethod
+    def _helm_input_prefix() -> str:
+        return "What is the correct answer to this question: "
+
+    @staticmethod
+    def _helm_input_suffix() -> str:
+        return "\nChoices:\n"
+
+    @staticmethod
+    def _helm_global_suffix_cot() -> str:
+        return (
+            "Let’s think step by step. Based on your reasoning, what is the single, "
+            "most likely answer choice? Format your response as follows: "
+            "\"The correct answer is (insert answer here)\"."
+        )
+
+    @staticmethod
+    def _helm_global_suffix_nocot() -> str:
+        return 'Format your response as follows: "The correct answer is (insert answer here)".'
+
+    @staticmethod
+    def _final_uppercase_letter_instruction() -> str:
+        return (
+            'In your response, replace "insert answer here" with the single uppercase letter '
+            "corresponding to your answer."
+        )
+
+    @classmethod
+    def _choices_block(self, options: List[str]) -> str:
+        assert len(options) == 10, f"Expected 10 options, got {len(options)}"
+        return "\n".join([f"{label}. {opt}" for label, opt in zip(self.LABELS, options)])
+
+    def make_prompt(self, row: Dict) -> str:
+        question = row["question"]
+        options = row["options"]
+
+        prefix = self._helm_input_prefix()
+        suffix = self._helm_input_suffix()
+        global_suffix = (self._helm_global_suffix_cot() if self.use_chain_of_thought else self._helm_global_suffix_nocot())
+        final_inst = self._final_uppercase_letter_instruction()
+
+        prompt = (
+            f"{prefix}{question} \n"
+            f"{suffix}"
+            f"{self._choices_block(options)} \n"
+            f"{global_suffix} \n\n"
+            f"{final_inst}"
+        )
+        return prompt
+
+    @staticmethod
+    def _extract_letter(text: str) -> Optional[str]:
+        if not text:
+            return None
+        m = re.search(r"\b([A-J])\b", text.upper())
+        if not m:
+            m = re.search(r"\(([A-J])\)", text.upper())
+        return m.group(1) if m else None
+
+    @staticmethod
+    def metric(example, pred, trace=None):
+        example["answer"] = str(example["output"]).strip().upper()
+        pred["answer"] = mmlu_pro._extract_letter(pred.get("output", "")) or ""
+        return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    def load_data(self):
+        ds_all = load_dataset("TIGER-Lab/MMLU-Pro", revision=self.revision)
+        ds = ds_all["validation"]
+        split = ds.train_test_split(test_size=self.test_size, seed=self.seed)
+
+        def row_to_example(row: Dict) -> Dict:
+            return {"inputs": self.make_prompt(row), "output": str(row["answer"]).strip().upper()}
+
+        train_examples = [row_to_example(r) for r in split["train"]]
+        val_examples = [row_to_example(r) for r in split["test"]]
+
+        trainset = [to_example(x) for x in train_examples]
+        valset = [to_example(x) for x in val_examples]
+        return trainset, valset
+
+class gpqa:
+    LABELS: List[str] = ["A", "B", "C", "D"]
+    
+    def __init__(self, test_size=0.2, seed=42):
+        self.subset = "gpqa_main"
+        self.use_chain_of_thought = True
+        self.revision = "90b8e5be2b1d3d2dbfe016cdab47981150600c4a"
+        self.include_final_letter_instruction = True
+        self.test_size = test_size
+        self.seed = seed
+        self._rng = random.Random(self.seed)
+
+    @staticmethod
+    def _helm_input_prefix() -> str:
+        return "What is the correct answer to this question: "
+
+    @staticmethod
+    def _helm_input_suffix() -> str:
+        return "\nChoices: \n"
+
+    @staticmethod
+    def _helm_global_suffix_cot() -> str:
+        return (
+            "Let’s think step by step. Based on your reasoning, what is the single, "
+            "most likely answer choice? Format your response as follows: "
+            "\"The correct answer is (insert answer here)\"."
+        )
+
+    @staticmethod
+    def _helm_global_suffix_nocot() -> str:
+        return 'Format your response as follows: "The correct answer is (insert answer here)".'
+
+    @staticmethod
+    def _final_uppercase_letter_instruction() -> str:
+        return (
+            'In your response, replace "insert answer here" with the single uppercase letter '
+            "corresponding to your answer."
+        )
+
+    @classmethod
+    def _choices_block(self, shuffled_opts: List[Tuple[str, bool]]) -> str:
+        assert len(shuffled_opts) == 4, f"Expected 4 options, got {len(shuffled_opts)}"
+        lines = []
+        for label, (opt_text, _) in zip(self.LABELS, shuffled_opts):
+            lines.append(f"({label}) {opt_text}")
+        return "\n".join(lines)
+
+    def _shuffle_and_label(self, row: Dict) -> Tuple[List[Tuple[str, bool]], str]:
+        options = [(row["Correct Answer"].strip(), True), (row["Incorrect Answer 1"].strip(), False), (row["Incorrect Answer 2"].strip(), False), (row["Incorrect Answer 3"].strip(), False)]
+        self._rng.shuffle(options)
+        correct_idx = next(i for i, (_, is_correct) in enumerate(options) if is_correct)
+        gold_letter = self.LABELS[correct_idx]
+        return options, gold_letter
+
+    def make_prompt(self, row: Dict) -> Tuple[str, str]:
+        question = row["Question"].strip()
+        shuffled_opts, gold_letter = self._shuffle_and_label(row)
+        prefix = self._helm_input_prefix()
+        suffix = self._helm_input_suffix()
+        global_suffix = (self._helm_global_suffix_cot() if self.use_chain_of_thought else self._helm_global_suffix_nocot())
+
+        prompt = (
+            f"{prefix}{question} \n"
+            f"{suffix}"
+            f"{self._choices_block(shuffled_opts)} \n"
+            f"{global_suffix}"
+        )
+        if self.include_final_letter_instruction:
+            prompt += "\n\n" + self._final_uppercase_letter_instruction()
+
+        return prompt, gold_letter
+
+    @staticmethod
+    def _extract_letter(text: str) -> Optional[str]:
+        if not text:
+            return None
+        t = str(text).upper()
+        m = re.search(r"\b([A-D])\b", t)
+        if not m:
+            m = re.search(r"\(([A-D])\)", t)
+        return m.group(1) if m else None
+
+    @staticmethod
+    def metric(example, pred, trace=None):
+        example["answer"] = str(example["output"]).strip().upper()
+        pred["answer"] = gpqa._extract_letter(pred.get("output", "")) or ""
+        return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    def load_data(self):
+        ds = load_dataset("Idavidrein/gpqa", self.subset, revision=self.revision, split="train")
+        split = ds.train_test_split(test_size=self.test_size, seed=self.seed)
+
+        def row_to_example(row: Dict) -> Dict:
+            prompt, gold_letter = self.make_prompt(row)
+            return {"inputs": prompt, "output": gold_letter}
+
+        train_examples = [row_to_example(r) for r in split["train"]]
+        val_examples = [row_to_example(r) for r in split["test"]]
+
+        trainset = [to_example(x) for x in train_examples]
+        valset = [to_example(x) for x in val_examples]
+        return trainset, valset
+
+class gsm8k:
+    def __init__(self, test_size=0.1, seed=42):
+        self.base_url = "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data"
+        self.test_size = test_size
+        self.seed = seed
+
+    @staticmethod
+    def make_prompt(row):
+        return f"Q: {row['question'].strip()}\nA:"
+
+    @staticmethod
+    def _extract_final_number(text: str) -> str:
+        if text is None:
+            return ""
+        match = re.search(r"The answer is\s*([-+]?\d+)", text)
+        if match:
+            return match.group(1)
+        numbers = re.findall(r"[-+]?\d+", text)
+        return numbers[-1] if numbers else ""
+
+    @staticmethod
+    def metric(example, pred, trace=None):
+        example["answer"] = str(example["output"]).strip()
+        pred["answer"] = gsm8k._extract_final_number(pred.get("output", ""))
+        return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    def _load_split(self, split_name):
+        cache_dir = ".cache"
+        os.makedirs(cache_dir, exist_ok=True)
+        local_path = os.path.join(cache_dir, f"gsm8k_{split_name}.jsonl")
+
+        if not os.path.exists(local_path):
+            url = f"{self.base_url}/{split_name}.jsonl"
+            resp = requests.get(url)
+            resp.raise_for_status()
+            with open(local_path, "w") as f:
+                f.write(resp.text)
+
+        with open(local_path, "r") as f:
+            data = [json.loads(line) for line in f]
+        
+        os.remove(local_path)
+        if not os.listdir(cache_dir):
+            os.rmdir(cache_dir)
+        
+        return data
+
+    def load_data(self):
+        dataset = self._load_split("train")
+        ds = Dataset.from_list(dataset)
+        split = ds.train_test_split(test_size=self.test_size, seed=self.seed)
+
+        train_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"])} for row in split["train"]]
+        val_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"])} for row in split["test"]]
+
+        trainset = [to_example(x) for x in train_examples]
+        valset = [to_example(x) for x in val_examples]
+        return trainset, valset
+
+class fin_qa:
+    FINQA_URL_PREFIX = "https://github.com/czyssrs/FinQA/raw/0f16e2867befa6840783e58be38c9efb9229d742/dataset/"
+    INSTRUCTIONS = """Presented with a financial report consisting of textual contents and a structured table, given a question, generate the reasoning program in the domain specific langauge (DSL) that will be executed to get the answer.
+
+    The DSL consists of mathematical operations and table operations as executable programs. The program consists of a sequence of operations. Each operation takes a list of arguments.
+
+    There are 6 mathematical operations: add, subtract, multiply, divide, greater, exp, and 4 table aggregation operations table-max, table-min, table-sum, table-average, that apply aggregation operations on table rows. The mathematical operations take arguments of either numbers from the given reports, or a numerical result from a previous step.
+
+    The table operations take arguments of table row names. We use the special token #n to denote the result from the nth step.
+
+    For example, in the example "divide(9413, 20.01), divide(8249, 9.48), subtract(#0, #1)", the program consists of 3 steps; The first and the second division steps take arguments from the table and the text, respectively, then the third step subtracts the results from the two previous steps.
+
+    Definitions of all operations:
+
+    [["Name", "Arguments", "Output", "Description"],
+    ["add", "number1, number2", "number", "add two numbers: number1 + number2"],
+    ["subtract", "number1, number2", "number", "subtract two numbers: number1 − number2"],
+    ["multiply", "number1, number2", "number", "multiply two numbers: number1 * number2"],
+    ["divide", "number1, number2", "number", "multiply two numbers: number1 / number2"],
+    ["exp", "number1, number2", "number", "exponential: number1 ^ number2"],
+    ["greater", "number1, number2", "bool", "comparison: number1 > number2"],
+    ["table-sum", "table header", "number", "the summation of one table row"],
+    ["table-average", "table header", "number", "the average of one table row"],
+    ["table-max", "table header", "number", "the maximum number of one table row"],
+    ["table-min", "table header", "number", "the minimum number of one table row"]]
+    """
+        
+    def __init__(self, test_size=0.1, seed=42):
+        self.test_size = test_size
+        self.seed = seed
+
+    @staticmethod
+    def make_prompt(row):
+        pre_text = "Pre-table text: " + "\n".join(row["pre_text"])
+        table = "Table: " + json.dumps(row["table"])
+        post_text = "Post-table text: " + "\n".join(row["post_text"])
+        question = "Question: " + row["qa"]["question"]
+        return (fin_qa.INSTRUCTIONS + "\n\n" + "\n".join([pre_text, table, post_text, question]) + "\nProgram:")
+    
+    @staticmethod
+    def metric(example, pred, trace=None):
+        example["answer"] = example["output"]
+        pred["answer"] = pred["output"].replace("```", "").strip().replace("\n", ", ")
+        return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    def load_data(self):
+        cache_dir = ".cache"
+        os.makedirs(cache_dir, exist_ok=True)
+        train_file = os.path.join(cache_dir, "train.json")
+        
+        if not os.path.exists(train_file):
+            os.system(f"wget -O {train_file} {self.FINQA_URL_PREFIX}train.json")
+
+        with open(train_file, "r") as f:
+            data = json.load(f)
+
+        os.remove(train_file)
+        os.rmdir(cache_dir)
+        train_rows, val_rows = train_test_split(data, test_size=self.test_size, random_state=self.seed)
+        train_examples = [{"inputs": self.make_prompt(row), "output": row["qa"]["program"]} for row in train_rows]
+        val_examples = [{"inputs": self.make_prompt(row), "output": row["qa"]["program"]} for row in val_rows]
+
+        trainset = [to_example(x) for x in train_examples]
+        valset = [to_example(x) for x in val_examples]
+        return trainset, valset

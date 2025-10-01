@@ -1,20 +1,22 @@
-# HELM Benchmark Optimization with DSPy
+# Toward Reliable, Holistic Evaluation of Language Models with Prompt Optimization
 
 [![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/tbd)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="700">
 
-**Figure 1** | **HELM Optimizer Workflow**. Pipeline describing (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
+**Figure 1** | **HELM Optimization Pipeline**. Pipeline describing (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
 
-A comprehensive framework for optimizing language models on HELM benchmarks using DSPy (Declarative Self-improving Language Programs). This toolkit enables automated prompt optimization, leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
+## DSPy-HELM
+
+A comprehensive framework for optimizing language models on HELM benchmarks using DSPy. This toolkit enables automated prompt optimization, leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/StanfordMIMI/helm-optimizer.git
-cd helm-optimizer
+git clone https://github.com/StanfordMIMI/dspy-helm.git
+cd dspy-helm
 
 # Install dependencies
 pip install -r requirements.txt
@@ -24,12 +26,18 @@ pip install -r requirements.txt
 
 **Configure settings** in `run.sh`:
 ```bash
-scenarios=("medcalc_bench" "medec" "head_qa" "medbullets")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "fin_qa" "medcalc_bench" "medec" "head_qa" "medbullets")
 optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
 
+# Language model to be optimized
 model=openai/gpt-4o
 api_base="your_api_base_here"
 api_key="your_api_key_here"
+
+# Teacher language model for proposing instruction candidates (MIPROv2)
+prompt_model=openai/gpt-4o
+prompt_api_base="your_api_base_here"
+prompt_api_key="your_api_key_here"
 
 max_bootstrapped_demos=3
 max_labeled_demos=3
@@ -43,12 +51,16 @@ num_threads=1
 
 ## 📊 Supported Benchmarks
 
-| Benchmark | Description | Task Type | Metric |
-|-----------|-------------|-----------|---------|
-| **MedCalc-Bench** | Compute a specific medical value from a patient note | Computational reasoning | MedCalc Accuracy |
-| **Medec** | Detect and correct errors in medical narratives | Classification | Medical Error Flag Accuracy |
-| **HeadQA** | Medical knowledge testing | Question answering | Exact match |
-| **Medbullets** | Medical knowledge testing	 | Question answering | Exact match |
+| Benchmark         | Input → Output                        | Task                   |
+|-------------------|--------------------------------------|------------------------|
+| MMLU-Pro          | Reasoning Question → Answer           | Multi-Task Reasoning   |
+| GPQA              | Graduate Question → Answer            | Graduate-Level QA      |
+| GSM8K             | Math Problem → Solution               | Numeric Problem-Solving|
+| FinQA             | Financial Report → Answer             | Numeric Reasoning      |
+| MedCalc-Bench     | Patient Note → Computed Value         | Computational Reasoning|
+| Medec             | Medical Narrative → Errors            | Error Classification   |
+| HeadQA            | Medical Question → Answer             | USMLE-Style QA         |
+| MedBullets        | Medical Question → Answer             | USMLE-Style QA         |
 
 ## Optimization Parameters
 
@@ -59,7 +71,7 @@ num_threads=1
 ## 📁 Project Structure
 
 ```
-helm-optimizer/
+dspy-helm/
 ├── main.py              # Main optimization script
 ├── scenarios.py         # Benchmark implementations
 ├── run.sh              # Batch optimization runner
@@ -88,7 +100,7 @@ agents/
 
 To add a new HELM benchmark:
 
-1. **Implement the scenario class** in `scenarios.py`:
+**Implement the scenario class** in `scenarios.py`:
 ```python
 class my_benchmark:
     def __init__(self, test_size=0.1, seed=42):
@@ -107,11 +119,6 @@ class my_benchmark:
     def load_data(self):
         # Load and return trainset, valset
         pass
-```
-
-2. **Add to the scenarios list** in `run.sh`:
-```bash
-scenarios=("my_benchmark")
 ```
 
 ## 🙏 Acknowledgments
