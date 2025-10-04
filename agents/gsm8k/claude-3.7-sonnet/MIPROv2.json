@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: The leak in Jerry's roof drips 3 drops a minute into the pot he put under it. Each drop is 20 ml, and the pot holds 3 liters. How long will it take the pot to be full?\nA:",
+        "reasoning": "I need to calculate how long it will take for the pot to be full.\n\nGiven:\n- The leak drips 3 drops per minute\n- Each drop is 20 ml\n- The pot holds 3 liters\n\nFirst, I'll convert the pot capacity to milliliters:\n3 liters = 3 × 1000 ml = 3000 ml\n\nNext, I'll calculate how much water accumulates per minute:\n3 drops/minute × 20 ml/drop = 60 ml/minute\n\nNow I can calculate how long it will take to fill the pot:\nTime = Pot capacity ÷ Fill rate\nTime = 3000 ml ÷ 60 ml/minute = 50 minutes\n\nTherefore, it will take 50 minutes for the pot to be full.",
+        "output": "50",
+        "answer": "50"
+      },
+      {
+        "inputs": "Q: Daisy and Rose were enjoying their backyard pool with their dogs.  If there are 24 legs/paws in the pool, how many dogs do Daisy and Rose have?\nA:",
+        "output": "5"
+      },
+      {
+        "inputs": "Q: James binges on Cheezits and eats 3 bags that are 2 ounces each.  There are 150 calories in an ounce of Cheezits.  He then goes for a 40-minute run and burns 12 calories per minute.  How many excess calories did he eat?\nA:",
+        "output": "420"
+      }
+    ],
+    "signature": {
+      "instructions": "Imagine you are the last line of defense in a critical mission to ensure the accuracy of computations that will impact a major international educational initiative. Your task is to solve complex math word problems that test practical application and arithmetic precision, presented in a \"Q:\" format. For each problem, you're required to dissect the query step-by-step, intuitively apply mathematical reasoning to derive the solution, and present your final answer in an \"A:\" format. Use your reasoning skills to solve these word problems carefully, as the future of this educational program's reputation rests on the precision of your calculations.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

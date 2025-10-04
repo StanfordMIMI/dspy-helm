@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which one of the following in NOT a constraint for detection of very massive black holes with microlensing technique? \n\nChoices: \n(A) Wavelength at which the event is observed\n(B) Mass of the lensed object\n(C) Duration of microlensing event due to very massive black hole\n(D) Mass of the lensed objects and the duration of the event \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The microlensing technique relies on the gravitational lensing effect, where the gravity of a massive object (the lens) bends the light from a background source. The mass of the lensed object (the lens) directly affects the strength of the lensing effect and the duration of the microlensing event. The duration of the event is also related to the mass of the lens. The wavelength at which the event is observed can affect the detectability of the event due to factors like extinction or instrument sensitivity, but it's not a fundamental constraint in the same way as the mass and duration.\n\nTherefore, the wavelength at which the event is observed is the least direct constraint compared to the mass and duration of the event.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: While designing a high-resolution transmission electron microscope operating at an accelerating voltage of 1000 kV, Mike connected vacuum pumps to create an ultra-high vacuum state (< 10^-9 Torr) in the sample compartment, aiming to minimize the presence of gas molecules for improved electron microscopy. However, as expected, some gas particles remained inside the compartment, as detected by the mass spectrometer. Mike accurately determined the mean free path of these gas molecules in the vacuum state (< 10^-9 Torr) to be λ1, based on factors such as sample compartment volume, pressure, and temperature. However, upon initiating the electron beam, he made an intriguing observation concerning the mean free path based on electron scattering with the gas molecules. He found that the mean free path was no longer equal to λ1; rather, it was λ2, even though the sample compartment temperature remained the same.\n\nWhat can we conclude about λ2 based on the aforementioned scenario? \n\nChoices: \n(A) λ2 < λ1\n(B) λ2 >= 1.22*λ1\n(C) λ1 < λ2 < 1.22*λ1\n(D) λ2 = λ1, indicating a discrepancy in Mike's observation \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The key point is that the electron beam interacts with the gas molecules. This interaction causes scattering. The mean free path is the average distance a particle travels between collisions. If the electron beam is causing scattering, it means the electrons are colliding with the gas molecules. This implies that the effective cross-section for interaction is larger than what would be predicted based solely on the physical size of the gas molecules at that pressure and temperature. Therefore, the electrons are experiencing more frequent collisions than the gas molecules themselves would, leading to a shorter mean free path for the electrons. Thus, λ2, the mean free path based on electron scattering, must be less than λ1, the mean free path of the gas molecules themselves.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Satellites in low Earth orbit have detect thousands of astronomical objects, with localization precision in the range of about 100-200 arc minutes. The distribution of astronomical objects is isotropic.\n\nWhich set of given distances from the Sun, could be possible for these objects? \n\nChoices: \n(A) 10 light minutes, or 100 light seconds.\n(B) 1 thousand light years, or 100 thousand light years.\n(C) 1 million light years, or 1 billion light years.\n(D) 10 light years, or 100 light years. \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (C)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

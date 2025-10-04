@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: A watermelon weighs 23 pounds. If Farmer Kent sells his special watermelons for $2 a pound, how much money would he make for selling 18 watermelons of the same weight?\nA:",
+        "reasoning": "First, find the total weight of the 18 watermelons by multiplying the weight of one watermelon by the number of watermelons. Then, multiply the total weight by the price per pound to find the total amount of money Farmer Kent would make.",
+        "output": "828",
+        "answer": "828"
+      },
+      {
+        "augmented": true,
+        "inputs": "Q: Jack and Rose want to start a dog-walking business after school. They made 1,236 flyers to hand out around their neighborhood. Jack handed 120 flyers while Rose handed 320 flyers. How many flyers are left to be handed out around?\nA:",
+        "reasoning": "First, find the total number of flyers handed out by Jack and Rose by adding the number of flyers Jack handed out to the number of flyers Rose handed out.\nThen, subtract the total number of flyers handed out from the total number of flyers made to find the number of flyers left to be handed out.",
+        "output": "796",
+        "answer": "796"
+      },
+      {
+        "inputs": "Q: Ten more than twice the number of birds on the fence is 50. How many birds are on the fence?\nA:",
+        "output": "20"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

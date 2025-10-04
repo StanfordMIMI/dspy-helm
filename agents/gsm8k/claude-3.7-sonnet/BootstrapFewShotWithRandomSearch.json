@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: While driving up a road, Philip passed through 5 intersections. 4 crosswalks marked each intersection with a total of 20 lines per crosswalk. Calculate the total number of lines of the crosswalks in the five intersections.\nA:",
+        "reasoning": "I need to find the total number of lines of the crosswalks in the five intersections.\n\nGiven:\n- Philip passed through 5 intersections\n- Each intersection had 4 crosswalks\n- Each crosswalk had a total of 20 lines\n\nFirst, I'll calculate the total number of crosswalks:\nNumber of crosswalks = 5 intersections × 4 crosswalks per intersection = 20 crosswalks\n\nNow, I'll calculate the total number of lines:\nTotal number of lines = 20 crosswalks × 20 lines per crosswalk = 400 lines\n\nTherefore, the total number of lines of the crosswalks in the five intersections is 400.",
+        "output": "400",
+        "answer": "400"
+      },
+      {
+        "inputs": "Q: Barbara wants to save up for a new wristwatch that costs $100. Her parents give her an allowance of $5 a week and she can either save it all up for the watch or spend it as she wishes. 10 weeks pass and due to spending some of her money on ice cream, Barbara currently only has $20. How many more weeks does she need to save for a watch if she stops spending on other things right now?\nA:",
+        "output": "16"
+      },
+      {
+        "inputs": "Q: Martin went to a store to buy a new television set. He decided to spend no more than $1,000 and the sales clerk offered him the TV for $100 less and an additional 20% off. How much lower was the price of the television than the amount Martin decided to spend?\nA:",
+        "output": "280"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

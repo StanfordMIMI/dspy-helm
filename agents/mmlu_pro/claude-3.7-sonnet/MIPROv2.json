@@ -1,0 +1,52 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which of the following cases established the precedent that a defendant must be informed of the right to remain silent, the right to a lawyer, and protection from self-incrimination? \n\nChoices:\nA. Brown v. Board of Education\nB. Miranda v. Arizona\nC. Roe v. Wade\nD. Betts v. Brady\nE. Plessy v. Ferguson\nF. Dred Scott v. Sandford\nG. Weeks v. United States\nH. Gideon v. Wainwright\nI. Marbury v. Madison\nJ. Mapp v. Ohio \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "This question asks about which court case established the precedent that defendants must be informed of:\n1. The right to remain silent\n2. The right to a lawyer\n3. Protection from self-incrimination\n\nThese rights are known as the \"Miranda rights\" or \"Miranda warning,\" which police officers must read to suspects before interrogation. These rights came from the Supreme Court case Miranda v. Arizona (1966).\n\nLet me review the options:\n\nA. Brown v. Board of Education - This 1954 case ended racial segregation in public schools.\n\nB. Miranda v. Arizona - This 1966 case established that police must inform suspects of their rights before questioning.\n\nC. Roe v. Wade - This 1973 case dealt with abortion rights.\n\nD. Betts v. Brady - This 1942 case dealt with right to counsel in state courts.\n\nE. Plessy v. Ferguson - This 1896 case established the \"separate but equal\" doctrine.\n\nF. Dred Scott v. Sandford - This 1857 case denied citizenship to African Americans.\n\nG. Weeks v. United States - This 1914 case established the exclusionary rule at the federal level.\n\nH. Gideon v. Wainwright - This 1963 case established the right to counsel for defendants who cannot afford an attorney.\n\nI. Marbury v. Madison - This 1803 case established judicial review.\n\nJ. Mapp v. Ohio - This 1961 case extended the exclusionary rule to state courts.\n\nThe case that specifically established the requirement to inform defendants of their right to remain silent, right to a lawyer, and protection from self-incrimination is Miranda v. Arizona.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Say the pupil of your eye has a diameter of 5 mm and you have a telescope with an aperture of 50 cm. How much more light can the telescope gather than your eye? \n\nChoices:\nA. 1000 times more\nB. 50 times more\nC. 5000 times more\nD. 500 times more\nE. 10000 times more\nF. 20000 times more\nG. 2000 times more\nH. 100 times more\nI. 10 times more\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To solve this problem, I need to compare the light-gathering power of the telescope versus the eye.\n\nThe light-gathering power is proportional to the area of the aperture, which for a circular aperture is:\nArea = π × (diameter/2)²\n\nFor the eye:\n- Pupil diameter = 5 mm = 0.5 cm\n- Area_eye = π × (0.5 cm/2)² = π × 0.0625 cm² = 0.0625π cm²\n\nFor the telescope:\n- Aperture diameter = 50 cm\n- Area_telescope = π × (50 cm/2)² = π × 625 cm² = 625π cm²\n\nThe ratio of light-gathering power is:\nRatio = Area_telescope / Area_eye = 625π cm² / 0.0625π cm² = 625/0.0625 = 10,000\n\nSo the telescope can gather 10,000 times more light than the eye.\n\nLooking at the answer choices, this corresponds to option E. 10000 times more.",
+        "output": "The correct answer is (E)",
+        "answer": "The correct answer is (E)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: _______ is the direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices and programmes. \n\nChoices:\nA. Operational management\nB. Corporate governance\nC. Environmental management\nD. Business ethics management\nE. Sustainability\nF. Stakeholder management\nG. Social marketing\nH. Human resource management\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      }
+    ],
+    "signature": {
+      "instructions": "Analyze the given multiple-choice question alongside provided options, and logically deduce the correct answer through structured reasoning. Clearly articulate each step in your thought process, ensuring that you evaluate each option against contextual clues or defined concepts. After thorough evaluation, conclude with the most appropriate answer, formatted as \"The correct answer is (insert answer here)\" with the answer letter inserted appropriately.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

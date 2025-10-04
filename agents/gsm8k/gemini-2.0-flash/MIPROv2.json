@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: Jason is making sand art. He wants to fill a rectangular patch 6 inches by 7 inches with blue sand, and a square path 5 inches by 5 inches with red sand. If it takes 3 grams of sand to fill one square inch, how many grams of sand does Jason need?\nA:",
+        "reasoning": "First, calculate the area of the rectangular patch: 6 inches * 7 inches = 42 square inches.\nNext, calculate the area of the square patch: 5 inches * 5 inches = 25 square inches.\nThen, calculate the total area: 42 square inches + 25 square inches = 67 square inches.\nFinally, calculate the total amount of sand needed: 67 square inches * 3 grams/square inch = 201 grams.",
+        "output": "201",
+        "answer": "201"
+      },
+      {
+        "inputs": "Q: Penelope the pig eats 20 pounds of food per day, which is 10 times more than Greta the goose eats per day.  Milton the mouse eats 1/100 as much as Greta the goose eats per day, but Elmer the elephant eats 4000 times more than Milton the mouse does per day.  How much more, in pounds, does Elmer the elephant eat per day than Penelope the pig?\nA:",
+        "output": "60"
+      },
+      {
+        "inputs": "Q: Jessie invited 4 friends over to play. They made muffins for a snack and Jesse wants to divide them equally between herself and her friends. If they made 20 muffins in total, how many will each person have?\nA:",
+        "output": "4"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

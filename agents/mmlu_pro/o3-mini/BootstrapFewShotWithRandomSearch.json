@@ -1,0 +1,52 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In the program below, the initial value of X is 5 and the initial value of Y is 10.\nIF (X < 0){\n DISPLAY (\"Foxtrot\")\n} ELSE {\n IF (X > Y){\n  DISPLAY (\"Hotel\")\n } ELSE {\n  IF (Y > 0){\n   DISPLAY (\"November\")\n  } ELSE {\n   DISPLAY (\"Yankee\")\n  }\n }\n}\nWhat is displayed as a result of running the program? \n\nChoices:\nA. November\nB. Foxtrot\nC. Zulu\nD. Alpha\nE. Charlie\nF. Bravo\nG. Yankee\nH. Echo\nI. Hotel\nJ. Delta \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "We start with X = 5 and Y = 10.\n1. Check if X < 0. Since 5 is not less than 0, we move to the ELSE block.\n2. Inside the ELSE block, we check if X > Y. Since 5 is not greater than 10, we again move to the next ELSE block.\n3. Now, we check if Y > 0. Since 10 is greater than 0, we display \"November\".\nTherefore, the output is \"November\", which corresponds to choice A.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In contrast to _______, _______ aim to reward favourable behaviour by companies. The success of such campaigns have been heightened through the use of ___________, which allow campaigns to facilitate the company in achieving _________ . \n\nChoices:\nA. Boycotts, Buyalls, Blockchain technology, Increased Sales\nB. Buycotts, Boycotts, Digital technology, Decreased Sales\nC. Boycotts, Buycotts, Digital technology, Decreased Sales\nD. Buycotts, Boycotts, Blockchain technology, Charitable donations\nE. Boycotts, Buyalls, Blockchain technology, Charitable donations\nF. Boycotts, Buycotts, Digital technology, Increased Sales\nG. Buycotts, Boycotts, Digital technology, Increased Sales\nH. Boycotts, Buycotts, Physical technology, Increased Sales\nI. Buycotts, Buyalls, Blockchain technology, Charitable donations\nJ. Boycotts, Buycotts, Blockchain technology, Decreased Sales \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "We note that the sentence contrasts two campaign types. Boycotts are used to punish companies, while buycotts reward favourable behaviour. That means the blank should be filled as follows: “In contrast to Boycotts, Buycotts aim to reward favourable behaviour by companies.” Next, these campaigns have been strengthened by “Digital technology,” which helps the company achieve “Increased Sales.” Reviewing the options, option F reads: “Boycotts, Buycotts, Digital technology, Increased Sales,” which perfectly fits the sentence.",
+        "output": "The correct answer is (F)",
+        "answer": "The correct answer is (F)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: The symmetric group $S_n$ has $\n\\factorial{n}$ elements, hence it is not true that $S_{10}$ has 10 elements.\nFind the characteristic of the ring 2Z. \n\nChoices:\nA. 0\nB. 30\nC. 3\nD. 10\nE. 12\nF. 50\nG. 2\nH. 100\nI. 20\nJ. 5 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

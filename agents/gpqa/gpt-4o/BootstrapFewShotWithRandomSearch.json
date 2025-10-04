@@ -1,0 +1,46 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "inputs": "What is the correct answer to this question: 1-bromobenzene-2-d is treated with NaNH2 in condensed ammonia solvent. How many possible organic products are there in this reaction? \n\nChoices: \n(A) 1\n(B) 4\n(C) 2\n(D) 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: A Ph.D. student conducts experimental work on the interconversion of three hydrocarbon compounds, a well-known reaction in the chemical industry, typically used after a cracker.\nA professor of the chemistry department walks through the lab and notices the desperation in the eyes of the student of his young colleague. When asked what is bothering him, the student says the following: “I am supposed to vacate the lab in two weeks and write up my thesis. I performed the heterogeneously catalyzed reaction at 300 centigrade. I achieved excellent reaction selectivity and activities. My supervisor has recently told me that I need to substantially increase the conversion of the reactant per pass without compromising the reaction selectivity. I ran a series of experiments, using more catalyst or altering catalyst composition, but the composition at the exit of the reactor does not change. What shall I do?”\nThe professor, known for his experience and knowledge, looks at the results. What advice does he give the student? \n\nChoices: \n(A) You still have some time. Tell your supervisor that you will decrease the temperature by 20 and 40 centigrade and increase the catalyst amount to improve the conversion, taking advantage of the thermodynamics of the reaction.\n(B) Just accept the results. Tell your supervisor that you cannot increase the conversion and that you should stop the experiments and start writing up.\n(C) You still have some time. Tell your supervisor that you will increase the temperature by 20 and 40 centigrade and decrease the catalyst amount to improve the conversion whilst being aware of the possible polymerization of one of the products.\n(D) You still have some time. Tell your supervisor that you will decrease the temperature by 20 and 40 centigrade and increase the catalyst amount to improve the conversion whilst being aware of the possible polymerization of one of the products. \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: The reaction of an electron pair donor, nucleophile (Nu) with an electron pair acceptor is called nucleophilic substitution reaction. An sp3-hybridized electrophile needs to have a leaving group to proceed with the reaction. Substitution reactions have the following two types. One is SN1 and the other is the SN2 reaction. In contrast to the substitution reaction, the elimination reaction involves the removal of a pair or groups of atoms from a molecule. These are chemical reactions in which single carbon-carbon bonded organic compounds are converted to compounds containing double/triple bonds (unsaturated compounds).\nArrange the following nucleophiles more reactive to the poorest reactive in the aqueous solution.\n\n1. 4-methylcyclohexan-1-olate\n2. Hydroxide\n3. Propionate\n4. Methanol\n5. Ethanethiolate \n\nChoices: \n(A) 5, 2, 1, 3 and 4\n(B) 5, 2, 3, 1 and 4\n(C) 2, 5, 3, 4 and 3\n(D) 2, 5, 1, 4 and 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (A)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

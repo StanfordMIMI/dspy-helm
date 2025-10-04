@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: 1-bromobenzene-2-d is treated with NaNH2 in condensed ammonia solvent. How many possible organic products are there in this reaction? \n\nChoices: \n(A) 1\n(B) 4\n(C) 2\n(D) 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The reaction of 1-bromobenzene-2-d with NaNH2 in liquid ammonia is a benzyne reaction. The strong base NaNH2 will deprotonate the carbon adjacent to the carbon bearing the bromine. Since there is deuterium at the 2-position, deprotonation can occur at either the 2-position (removing deuterium) or the 6-position (removing hydrogen). This forms a benzyne intermediate. The benzyne intermediate can then be protonated (or deuterated) by the ammonia solvent.\n\nIf deprotonation occurs at the 2-position, the benzyne intermediate will have a deuterium at the position where the triple bond is. Addition of NH3 can occur at either carbon of the triple bond. If NH3 adds to the carbon that originally had the deuterium, the product will be aniline. If NH3 adds to the other carbon, the product will be aniline-2-d.\n\nIf deprotonation occurs at the 6-position, the benzyne intermediate will have a deuterium at the 1-position. Addition of NH3 can occur at either carbon of the triple bond. If NH3 adds to the carbon that originally had the bromine, the product will be aniline-3-d. If NH3 adds to the other carbon, the product will be aniline.\n\nTherefore, the possible products are aniline, aniline-2-d, and aniline-3-d.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: A planet with a mass equivalent to that of two Earths is orbiting in a circular orbit around a star with a mass three times that of the Sun, at a distance of two AU. On which of the following celestial objects does the gravitational force of the planet exceed the centrifugal force (i.e., the gravitational force of the planet dominates)?\n\na) An object with a 0.002 Earth masses located at 0.012 AU distance from the planet\nb) An object with a 0.006 Earth masses located at 0.014 AU distance from the planet\nc) An object with a 0.001 Earth masses located at 0.019 AU distance from the planet\nd) An object with a 0.003 Earth masses located at 0.021 AU distance from the planet \n\nChoices: \n(A) b and d\n(B) c and d\n(C) a and b\n(D) a and c \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The question asks when the gravitational force of the planet dominates over the centrifugal force. Since the objects are orbiting the planet, we need to compare the gravitational force of the planet on the object to the centrifugal force acting on the object due to its orbit around the planet. However, the question is simplified by asking when the gravitational force of the planet exceeds the centrifugal force, which is equivalent to asking when the object is gravitationally bound to the planet. We can determine this by comparing the gravitational force between the planet and the object to the gravitational force between the star and the object. However, since the objects are close to the planet, we can approximate this by simply comparing the gravitational force between the planet and the object.\n\nThe gravitational force between two objects is given by $F = G \\frac{m_1 m_2}{r^2}$, where $G$ is the gravitational constant, $m_1$ and $m_2$ are the masses of the two objects, and $r$ is the distance between them. We want to find the cases where the gravitational force of the planet on the object is significant. Since $G$ is constant, we can compare the ratio $\\frac{m_{object}}{r^2}$ for each case. The planet has a mass of 2 Earth masses.\n\na) $\\frac{0.002}{(0.012)^2} = \\frac{0.002}{0.000144} \\approx 13.89$\nb) $\\frac{0.006}{(0.014)^2} = \\frac{0.006}{0.000196} \\approx 30.61$\nc) $\\frac{0.001}{(0.019)^2} = \\frac{0.001}{0.000361} \\approx 2.77$\nd) $\\frac{0.003}{(0.021)^2} = \\frac{0.003}{0.000441} \\approx 6.80$\n\nWe are looking for the cases where the gravitational force of the planet dominates. Since the planet's mass is 2 Earth masses, we should multiply the above ratios by 2 to get a better comparison.\na) $2 \\times 13.89 \\approx 27.78$\nb) $2 \\times 30.61 \\approx 61.22$\nc) $2 \\times 2.77 \\approx 5.54$\nd) $2 \\times 6.80 \\approx 13.60$\n\nComparing the values, a and b have the largest values, suggesting that the gravitational force of the planet is more significant in these cases. Therefore, the answer is (C).",
+        "output": "The correct answer is (C)",
+        "answer": "The correct answer is (C)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: The spectrum of star A, plotted as a function of energy, peaks at a photon energy of 7.21 eV, while it is approximately 24 times as luminous as the sun. How does the radius of star A compare to the sun’s radius?\nNote that the spectrum of the sun peaks at 1.41 eV. \n\nChoices: \n(A) 0.21\n(B) 0.16\n(C) 0.19\n(D) 0.17 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (C)"
+      }
+    ],
+    "signature": {
+      "instructions": "Analyze the given multiple-choice question within the context of advanced scientific reasoning and logical deduction. Utilize structured reasoning to assess each choice systematically and provide step-by-step analysis that considers known scientific principles, pre-existing knowledge, and logical consistency. Your goal is to identify the most probable correct answer by integrating interdisciplinary cognitive strategies and evaluating the reasoning behind each choice. Format your response by concluding with the definitive correct answer choice, enclosed in quotation marks with the format \"The correct answer is (insert answer here)\", replacing \"insert answer here\" with the designated uppercase letter of the chosen answer.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: How many stereoisomers are there for the compound 6-chloro-9-ethyl-2-methylundeca-3,7-dien-5-ol? \n\nChoices: \n(A) 4\n(B) 8\n(C) 32\n(D) 16 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To determine the number of stereoisomers for the given compound, we analyze its structural features that contribute to stereoisomerism: chiral centers and double bonds that can exhibit cis/trans isomerism.\n\n1. **Identify Chiral Centers:** \n   - The compound 6-chloro-9-ethyl-2-methylundeca-3,7-dien-5-ol has a chain of 11 carbons with various substituents. \n   - Chiral centers are tetrahedrally-coordinated carbons bonded to four different groups.\n   - Possible chiral centers are at C5 (due to the alcohol group and chlorine influence), C6 (due to the chlorine group potentially making it chiral), and possibly other carbons depending on substituents.\n\n2. **Identify Double Bonds:**\n   - There are conjugated double bonds at positions 3 and 7. Check if these allow geometrical isomerism. These carbons may exhibit cis/trans (or E/Z) isomerism, contributing to stereoisomer count.\n\n3. **Calculate Stereoisomers:**\n   - Each chiral center gives 2 possible configurations (R and S).\n   - Each double bond allows for cis/trans configurations, contributing 2 possible arrangements.\n   - Combining these configurations, the formula for stereoisomers is 2^n, where n is the number of chiral centers and cis/trans double bonds.\n\n4. **Apply Formula:**\n   - Suppose there are 2 chiral centers and 2 double bonds allowing geometrical isomerism:\n     - Total stereoisomers = \\( 2^{2 \\text{ chiral}} \\times 2^{2 \\text{ cis/trans}} = 2^4 = 16 \\) stereoisomers.\n\nThus, given these considerations, the number of possible stereoisomers is likely 16.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Consider an electron fixed at the origin, and a magnetic field (with constant magnitude B_0 and aligned at an angle \\theta with the z-axis) processes with a frequency \\omega about the z-axis. Assume that \\omega is much less than eB0/m (e is electronic charge and m is electron's mass). If the electron is initially in the spin-up state, then, in time-asymptotic limit, \n\nChoices: \n(A) the probability that the electron is in spin up state will be nearly 0.5\n(B) the probability that the electron is in spin up state will be nearly zero\n(C) the probability that the electron is in spin down state will vary with time at a frequency (eB_0/m)-\\omega\\cos\\theta\n(D) the probability that the electron is in spin down state will be nearly zero \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: The state $\\psi$ of a system is given in terms of a complete and orthonormal set of basis vectors $|\\phi_1>,  |\\phi_2>,  |\\phi_3>$ and $| \\phi_4 >$ as $|\\psi> = \\sqrt{1/15} |\\phi_1> + \\sqrt{2/15} |\\phi_2> + 2/ \\sqrt{15} |\\phi_3> + 4/ \\sqrt{15} |\\phi_4>$. The basis vectors $|\\phi_n>$ are eigenstates of the Hamiltonian operator $H$ satisfying $H |\\phi_n> = n E_o |\\phi_n>; n=1, 2, 3, 4. Calculate the average energy of the system in some repeated measurements. \n\nChoices: \n(A) 81/15 E_o\n(B) 1/23 E_o\n(C) 81/23 E_o\n(D) E_o \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (C)"
+      }
+    ],
+    "signature": {
+      "instructions": "Analyze the given complex scientific problem along with the multiple-choice options. Use systematic and logical reasoning to break down the problem, explore the scientific context, and understand the elements and evidence presented. Generate a detailed step-by-step reasoning process to evaluate each choice in relation to the logical conclusions reached. Finally, determine the most appropriate answer based on the analysis, and format your response by stating \"The correct answer is (insert answer here)\" with the corresponding letter of your chosen answer.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: Bridgette and Alex are getting married. Bridgette is inviting 84 guests, and Alex is inviting two thirds of that number of guests. They hired a caterer to make a plated meal for each guest at the wedding reception. The caterer always makes ten extra plates just in case something goes wrong. Each plate of steak and asparagus in garlic butter will have 8 asparagus spears on it. How many asparagus spears will the caterer need in all?\nA:",
+        "reasoning": "First, calculate the number of guests that Alex is inviting. Alex invites two-thirds of the 84 guests Bridgette is inviting:  \n\\( \\frac{2}{3} \\times 84 = 56 \\) guests.  \n\nTotal guests invited by both Bridgette and Alex are:  \n\\( 84 + 56 = 140 \\) guests.  \n\nThe caterer makes ten extra plates to prepare for any unexpected issues, so the total number of plates is:  \n\\( 140 + 10 = 150 \\) plates.  \n\nEach plate has 8 asparagus spears, so the total number of asparagus spears required is:  \n\\( 150 \\times 8 = 1200 \\) asparagus spears.  \n\nTherefore, the caterer will need 1200 asparagus spears in total.",
+        "output": "1200",
+        "answer": "1200"
+      },
+      {
+        "augmented": true,
+        "inputs": "Q: Kira's cat eats a pound of kibble every 4 hours. Kira fills her cat's bowl with 3 pounds of kibble before going to work. When she returns, Kira weighs the bowl and there is still 1 pound left. How many hours was Kira away from home?\nA:",
+        "reasoning": "Kira fills her cat's bowl with 3 pounds of kibble. When she returns, there is still 1 pound left in the bowl, which means the cat has eaten 3 - 1 = 2 pounds of kibble while she was away. The cat eats 1 pound of kibble every 4 hours, so to consume 2 pounds, the cat would take 2 x 4 = 8 hours. Therefore, Kira was away from home for 8 hours.",
+        "output": "8",
+        "answer": "8"
+      },
+      {
+        "augmented": true,
+        "inputs": "Q: Lillian went out to forage for mushrooms with her handy guidebook. She found 32 mushrooms and used her guidebook to identify which ones were poisonous and which were safe to eat. In the end, she had 9 mushrooms she could safely eat for dinner. Of the rest, she identified twice the amount she ate as poisonous, and a remaining bunch she was uncertain about. How many mushrooms was she uncertain were safe or poisonous?\nA:",
+        "reasoning": "Lillian collected 32 mushrooms in total. She was able to identify 9 as safe to eat. According to the problem, twice the amount of mushrooms that were safe (9) were identified as poisonous. Therefore, the number of poisonous mushrooms is:\n\n2 * 9 = 18.\n\nWe have the safe mushrooms (9) and poisonous mushrooms (18) accounted for, totaling:\n\n9 (safe) + 18 (poisonous) = 27 mushrooms.\n\nSince Lillian found 32 mushrooms in total, the number of mushrooms she was uncertain about will be:\n\n32 total mushrooms - 27 identified mushrooms = 5 mushrooms.\n\nThus, the number of mushrooms she was uncertain about is 5.",
+        "output": "5",
+        "answer": "5"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In the alkylation reaction of benzene with ethylene, the selectivity to the C8 hydrocarbon is much higher for MFI-type catalyst than for homogeneous acids as catalysts. Why? \n\nChoices: \n(A) The acidity of this heterogeneous catalyst is much lower than those of acidic homogeneous catalysts, for which reason only one molecule of ethylene reacts with benzene.\n(B) Since MFI-type catalysts are heterogeneous catalysts, their selectivity is intrinsically better than those of homogeneous acidic catalysts.\n(C) The activity of this heterogeneous catalyst is much lower than those of acidic homogeneous catalysts, for which reason only one molecule of ethylene reacts with benzene.\n(D) Due to the spatial constraints inside this type of heterogeneous catalyst, the C8 compound is the preferred product. \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Let me analyze this question about the alkylation of benzene with ethylene using MFI-type catalysts versus homogeneous acid catalysts.\n\nFirst, let's understand what's happening in this reaction:\n- Benzene (C6H6) reacts with ethylene (C2H4) to form ethylbenzene (C8H10)\n- The question states that MFI-type catalysts have higher selectivity to the C8 hydrocarbon (ethylbenzene) compared to homogeneous acid catalysts\n\nNow let's evaluate each option:\n\n(A) Suggests that lower acidity of MFI catalysts limits the reaction to only one ethylene molecule. While acidity differences exist, this doesn't fully explain the selectivity mechanism.\n\n(B) Makes a general claim that heterogeneous catalysts are inherently more selective than homogeneous ones, which is an overgeneralization without scientific basis.\n\n(C) Suggests lower activity (reaction rate) causes the selectivity difference. However, activity and selectivity are different properties, and lower activity doesn't necessarily lead to higher selectivity.\n\n(D) Attributes the selectivity to spatial constraints in the MFI catalyst. MFI-type zeolites have a specific pore structure with channels of molecular dimensions. These spatial constraints can prevent larger molecules from forming or diffusing, favoring the formation of the C8 product (ethylbenzene) over larger polyalkylated products.\n\nOption D makes the most sense because MFI-type zeolites (like ZSM-5) are known for their shape-selective catalysis due to their specific pore architecture. The spatial constraints inside the catalyst channels would limit further alkylation reactions after the formation of ethylbenzene, preventing the formation of diethylbenzene or polyethylbenzene products.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Three spins S1, S2 and S3 in an isolated two-dimensional Edwards Anderson system form a triangular lattice. The spins can take values of ±1/2. The three coupling constants are -1, -1 and 1. Assuming only nearest neighbor interactions, what is the maximum possible energy of this system? \n\nChoices: \n(A) 1/2\n(B) -1/4\n(C) 1/4\n(D) -1/2 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Let's analyze this problem step by step.\n\nWe have three spins S₁, S₂, and S₃ arranged in a triangular lattice. Each spin can take values of ±1/2.\n\nThe energy of the system is given by the Hamiltonian:\nH = -J₁₂S₁S₂ - J₂₃S₂S₃ - J₃₁S₃S₁\n\nWhere J₁₂, J₂₃, and J₃₁ are the coupling constants between the respective spins.\n\nWe're told that the coupling constants are -1, -1, and 1, but we're not told which is which. Let's assign them:\nJ₁₂ = -1\nJ₂₃ = -1\nJ₃₁ = 1\n\nSo the Hamiltonian becomes:\nH = -(-1)S₁S₂ - (-1)S₂S₃ - (1)S₃S₁\nH = S₁S₂ + S₂S₃ - S₃S₁\n\nNow, we need to find the maximum possible energy of this system. To do this, we need to try all possible configurations of the spins and find the one that gives the highest energy.\n\nSince each spin can be ±1/2, there are 2³ = 8 possible configurations. Let's evaluate the energy for each:\n\n1. S₁ = 1/2, S₂ = 1/2, S₃ = 1/2\n   H = (1/2)(1/2) + (1/2)(1/2) - (1/2)(1/2) = 1/4 + 1/4 - 1/4 = 1/4\n\n2. S₁ = 1/2, S₂ = 1/2, S₃ = -1/2\n   H = (1/2)(1/2) + (1/2)(-1/2) - (-1/2)(1/2) = 1/4 - 1/4 + 1/4 = 1/4\n\n3. S₁ = 1/2, S₂ = -1/2, S₃ = 1/2\n   H = (1/2)(-1/2) + (-1/2)(1/2) - (1/2)(1/2) = -1/4 - 1/4 - 1/4 = -3/4\n\n4. S₁ = 1/2, S₂ = -1/2, S₃ = -1/2\n   H = (1/2)(-1/2) + (-1/2)(-1/2) - (-1/2)(1/2) = -1/4 + 1/4 + 1/4 = 1/4\n\n5. S₁ = -1/2, S₂ = 1/2, S₃ = 1/2\n   H = (-1/2)(1/2) + (1/2)(1/2) - (1/2)(-1/2) = -1/4 + 1/4 + 1/4 = 1/4\n\n6. S₁ = -1/2, S₂ = 1/2, S₃ = -1/2\n   H = (-1/2)(1/2) + (1/2)(-1/2) - (-1/2)(-1/2) = -1/4 - 1/4 - 1/4 = -3/4\n\n7. S₁ = -1/2, S₂ = -1/2, S₃ = 1/2\n   H = (-1/2)(-1/2) + (-1/2)(1/2) - (1/2)(-1/2) = 1/4 - 1/4 + 1/4 = 1/4\n\n8. S₁ = -1/2, S₂ = -1/2, S₃ = -1/2\n   H = (-1/2)(-1/2) + (-1/2)(-1/2) - (-1/2)(-1/2) = 1/4 + 1/4 - 1/4 = 1/4\n\nLooking at all these configurations, the maximum energy is 1/4, which occurs in several configurations.\n\nSo, the maximum possible energy of this system is 1/4.\n\nThe correct answer is (C) 1/4.",
+        "output": "The correct answer is (C)",
+        "answer": "The correct answer is (C)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: A series of experiments are conducted to unravel the function of a novel kinase X in cell survival. Overexpression of a full-length WT kinase X has no effect on cell viability while overexpression of a kinase dead (KD) variant impairs viability minimally. Additionally, a CRISPR experiment is conducted using two sgRNAs designed to the n-terminus of kinase X and two sgRNAs designed to the c-terminus. The two c-terminal sgRNAs are lethal while the two n-terminal ones only have a minimal negative effect on cell viability. When a western blot is run it is observed that all the sgRNAs are equally efficacious against the canonical form of kinase X. Unexpectedly, a smaller molecular weight band is observed to also be strongly depleted by the c-terminal but not the n-terminal sgRNAs. Overexpression of a WT or KD CRISPR-resistant kinase X completely rescues the cell viability decrease caused by the n-terminal and c-terminal sgRNAs. Two different tool compounds designed to inhibit the kinase function of X are strongly lethal. An in vitro kinase panel run for both compounds demonstrates that both compounds strongly inhibit kinase X as well as several other kinases. What is the best explanation of these results? \n\nChoices: \n(A) The kinase activity of kinase X is required for cell survival. This is demonstrated by the effect of the kinase X inhibitors as well as the rescue of the c-terminal sgRNAs.\n(B) The kinase activity of kinase X is not required for cell survival. The kinase activity of a n-terminally truncated variant of kinase X is essential for cell survival.\n(C) Kinase X is required for cell survival. This is demonstrated by the rescue of the c-terminal sgRNAs.\n(D) The kinase activity of kinase X is not required for cell survival. A n-terminally truncated variant of kinase X has alternative functions that are essential for cell survival. \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Let's analyze the experimental results step by step:\n\n1. Overexpression of WT kinase X has no effect on viability, while KD variant impairs viability minimally.\n   - This suggests that the kinase activity of the full-length protein is not critical for cell survival.\n\n2. CRISPR experiment with sgRNAs:\n   - C-terminal sgRNAs are lethal\n   - N-terminal sgRNAs have minimal negative effect\n   - All sgRNAs equally deplete canonical kinase X\n   - A smaller molecular weight band is depleted by c-terminal but not n-terminal sgRNAs\n\n3. This smaller band that's affected by c-terminal sgRNAs but not n-terminal sgRNAs strongly suggests the existence of an N-terminally truncated variant of kinase X.\n\n4. Overexpression of WT or KD CRISPR-resistant kinase X rescues the viability decrease from both n-terminal and c-terminal sgRNAs.\n   - This indicates that the protein itself, not its kinase activity, is important since even the KD variant rescues.\n\n5. Two tool compounds that inhibit kinase X function are strongly lethal.\n   - However, these compounds also inhibit several other kinases, so this lethality could be due to off-target effects.\n\nPutting this together:\n- The full-length kinase X doesn't seem essential for viability (based on overexpression experiments)\n- There appears to be an N-terminally truncated variant (smaller band affected only by c-terminal sgRNAs)\n- The c-terminal sgRNAs are lethal, suggesting this truncated variant is important\n- The fact that KD rescue works suggests kinase activity isn't the critical function\n- The tool compounds' effects are likely due to off-target effects on other kinases\n\nThe best explanation is that an N-terminally truncated variant of kinase X has non-kinase functions that are essential for cell survival. This aligns with option (D).",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

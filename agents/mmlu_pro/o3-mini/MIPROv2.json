@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which of the following cases established the precedent that a defendant must be informed of the right to remain silent, the right to a lawyer, and protection from self-incrimination? \n\nChoices:\nA. Brown v. Board of Education\nB. Miranda v. Arizona\nC. Roe v. Wade\nD. Betts v. Brady\nE. Plessy v. Ferguson\nF. Dred Scott v. Sandford\nG. Weeks v. United States\nH. Gideon v. Wainwright\nI. Marbury v. Madison\nJ. Mapp v. Ohio \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Miranda v. Arizona is the case that established that a defendant must be informed of the right to remain silent, the right to a lawyer, and protection from self-incrimination. This is commonly known as the \"Miranda rights\" ruling.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: A compiler generates code for the following assignment statement.\nG := (A + B) * C - (D + E) * F\nThe target machine has a single accumulator and a single-address instruction set consisting of instructions load, store, add, subtract, and multiply. For the arithmetic operations, the left operand is taken from the accumulator and the result appears in the accumulator. The smallest possible number of instructions in the resulting code is \n\nChoices:\nA. 7\nB. 5\nC. 12\nD. 4\nE. 11\nF. 6\nG. 8\nH. 10\nI. 9\nJ. 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "We start with the expression:\n  G := (A + B) * C – (D + E) * F\n\nOn a target machine with a single accumulator and single‐address instructions (load, store, add, subtract, multiply) where the left operand is always the accumulator’s content, we must schedule our calculations so that no result is overwritten before it is used.\n\nA typical strategy is to compute one of the subexpressions first, save it in memory (a temporary location), then compute the other subexpression, subtract it from the saved value, and finally store the result in G.\n\nFor example, one can use the following steps:\n1. Compute (A+B)*C:\n  load A\n  add B\n  multiply C\n  store Temp                 – (4 instructions)\n2. Compute (D+E)*F:\n  load D\n  add E\n  multiply F                 – (3 instructions)\n3. Subtract the second subexpression from the first:\n  subtract Temp\n  store G                  – (2 instructions)\n\nTotal instructions = 4 + 3 + 2 = 9.\n\nAmong the answer choices provided, 9 corresponds to choice I.",
+        "output": "The correct answer is (I)",
+        "answer": "The correct answer is (I)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: _______ is the direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices and programmes. \n\nChoices:\nA. Operational management\nB. Corporate governance\nC. Environmental management\nD. Business ethics management\nE. Sustainability\nF. Stakeholder management\nG. Social marketing\nH. Human resource management\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)"
+      }
+    ],
+    "signature": {
+      "instructions": "Consider a multiple-choice question presented along with several answer choices. Analyze the question and the options given, utilizing logical reasoning and critical thinking to deduce the correct answer. Articulate your thought process step by step and format your conclusion with the correct answer choice in uppercase. For example, if option B is the correct answer, your response should say, \"The correct answer is B.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

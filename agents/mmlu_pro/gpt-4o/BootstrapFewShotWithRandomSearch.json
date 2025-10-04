@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "inputs": "What is the correct answer to this question: What is the sign of the covenant for Jewish males? \n\nChoices:\nA. Fasting on Yom Kippur\nB. Lighting Shabbat candles\nC. The rainbow\nD. Circumcision\nE. The Torah\nF. Bar mitzvah\nG. Keeping kosher\nH. Wearing a kippah\nI. A son\nJ. The Star of David \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: A refracting telescope consists of two converging lenses separated by 100 cm. The eye-piece lens has a focal length of 20 cm. The angular magnification of the telescope is \n\nChoices:\nA. 10\nB. 40\nC. 6\nD. 25\nE. 15\nF. 50\nG. 30\nH. 4\nI. 5\nJ. 20 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (H)",
+        "answer": "The correct answer is (H)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: A compiler generates code for the following assignment statement.\nG := (A + B) * C - (D + E) * F\nThe target machine has a single accumulator and a single-address instruction set consisting of instructions load, store, add, subtract, and multiply. For the arithmetic operations, the left operand is taken from the accumulator and the result appears in the accumulator. The smallest possible number of instructions in the resulting code is \n\nChoices:\nA. 7\nB. 5\nC. 12\nD. 4\nE. 11\nF. 6\nG. 8\nH. 10\nI. 9\nJ. 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (I)",
+        "answer": "The correct answer is (I)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

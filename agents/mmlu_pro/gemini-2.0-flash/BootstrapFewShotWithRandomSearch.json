@@ -1,0 +1,52 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: _______ is the direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices and programmes. \n\nChoices:\nA. Operational management\nB. Corporate governance\nC. Environmental management\nD. Business ethics management\nE. Sustainability\nF. Stakeholder management\nG. Social marketing\nH. Human resource management\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The question describes the management of ethical issues through policies, practices, and programs. This aligns most closely with the definition of business ethics management.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Where do most short-period comets come from and how do we know? \n\nChoices:\nA. The Kuiper belt; short period comets tend to be in the plane of the solar system just like the Kuiper belt.\nB. The asteroid belt; short period comets tend to come from random directions indicating a spherical distribution of comets called the asteroid belt.\nC. The asteroid belt; short period comets tend to be in the plane of the solar system just like the asteroid belt.\nD. The Oort cloud; short period comets have orbital periods similar to asteroids like Vesta and are found in the plane of the solar system just like the Oort cloud.\nE. The Oort Cloud; short period comets tend to come from random directions indicating a spherical distribution of comets called the Oort Cloud.\nF. The Oort cloud; short period comets tend to be in the plane of the solar system just like the Oort cloud.\nG. The asteroid belt; short period comets have orbital periods similar to asteroids like Vesta and are found in the plane of the solar system just like the asteroid belt.\nH. N/A\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Short-period comets are believed to originate from the Kuiper Belt. The Kuiper Belt is a region beyond Neptune's orbit that contains icy bodies. Short-period comets have orbital periods of less than 200 years and their orbits tend to lie in the plane of the solar system, similar to the objects in the Kuiper Belt. The Oort cloud is a spherical cloud much further out and is the source of long-period comets. The asteroid belt is located between Mars and Jupiter and is primarily composed of rocky and metallic objects, not icy ones.\n\nTherefore, the correct answer is A.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: What is the judge ad hoc? \n\nChoices:\nA. Judge ad hoc is the president of the ICJ\nB. Judge ad hoc is a temporary judge appointed for a specific period of time\nC. Judge ad hoc is the judge that each party will always nominate in every contentious case\nD. Judge ad hoc is the member of the bench of the ICJ with a casting vote\nE. Judge ad hoc is a judge who is nominated by the parties involved in a contentious case, irrespective of their nationality\nF. Judge ad hoc is a judge who decides on the admissibility of cases before the ICJ\nG. Judge ad hoc is a judge appointed by the Security Council of the United Nations\nH. Judge ad hoc is a surrogate judge, in case a judge is disqualified or passes away\nI. If a party to a contentious case before the ICJ does not have a national sitting as judge, it is entitled to nominate someone as a judge solely for that case, with the title of judge ad hoc\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (I)",
+        "answer": "The correct answer is (I)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

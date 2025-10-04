@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: A kilogram of pork costs $6 while a kilogram of chicken costs $2 less. How much will a 3-kilogram of chicken and a kilogram of pork cost?\nA:",
+        "reasoning": "A kilogram of pork costs $6. Chicken costs $2 less than pork, so it costs $6 - $2 = $4 per kilogram. For 3 kilograms, the chicken costs 3 x $4 = $12. Adding the cost of 1 kilogram of pork ($6) gives a total of $12 + $6 = $18.",
+        "output": "18",
+        "answer": "18"
+      },
+      {
+        "augmented": true,
+        "inputs": "Q: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nA:",
+        "reasoning": "Let the number of bluebirds be B.\nSince there are half as many swallows as bluebirds, we have:\n  Swallows = B/2.\nGiven there are 2 swallows, solve:\n  B/2 = 2  =>  B = 4.\nNext, there are three times more cardinals than bluebirds:\n  Cardinals = 3 × B = 3 × 4 = 12.\nThus, the total number of birds is:\n  Total = Bluebirds + Swallows + Cardinals = 4 + 2 + 12 = 18.",
+        "output": "18",
+        "answer": "18"
+      },
+      {
+        "augmented": true,
+        "inputs": "Q: Kenny played 10 hours of basketball last week. He ran for twice as long as he played basketball, and he practiced on the trumpet for twice as long as he ran. How many hours did Kenny practice on the trumpet last week?\nA:",
+        "reasoning": "Kenny played basketball for 10 hours. He ran for twice that time, which is 2 × 10 = 20 hours. Then, he practiced on the trumpet for twice as long as he ran, so he practiced for 2 × 20 = 40 hours.",
+        "output": "40",
+        "answer": "40"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

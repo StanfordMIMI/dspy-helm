@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In contrast to _______, _______ aim to reward favourable behaviour by companies. The success of such campaigns have been heightened through the use of ___________, which allow campaigns to facilitate the company in achieving _________ . \n\nChoices:\nA. Boycotts, Buyalls, Blockchain technology, Increased Sales\nB. Buycotts, Boycotts, Digital technology, Decreased Sales\nC. Boycotts, Buycotts, Digital technology, Decreased Sales\nD. Buycotts, Boycotts, Blockchain technology, Charitable donations\nE. Boycotts, Buyalls, Blockchain technology, Charitable donations\nF. Boycotts, Buycotts, Digital technology, Increased Sales\nG. Buycotts, Boycotts, Digital technology, Increased Sales\nH. Boycotts, Buycotts, Physical technology, Increased Sales\nI. Buycotts, Buyalls, Blockchain technology, Charitable donations\nJ. Boycotts, Buycotts, Blockchain technology, Decreased Sales \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To determine the correct answer, let's analyze the sentence and fill in the blanks logically with the given context and choices:\n\n1. The first blank contrasts two concepts related to consumer campaigns. Typically, a boycott is a form of protest where consumers abstain from purchasing from certain companies to express dissatisfaction with their behavior. In contrast, a \"buycott\" is aimed at rewarding companies for favorable behavior by encouraging purchasing their products. Thus, the first correct pairing is: \"In contrast to boycotts, buycotts...\"\n\n2. The second blank refers to what enhances the success of such campaigns. \"Digital technology\" is a general term that makes sense as it can be broadly applicable to campaigns, helping them reach more people and facilitate easier transactions, information dissemination, etc.\n\n3. The third blank refers to what campaigns aim to help companies achieve. Campaigns that reward favorable behavior likely aim to increase sales, as they encourage more people to buy from the company.\n\nThis analysis points toward the answer choice that correctly completes the sentence as: \"In contrast to boycotts, buycotts aim to reward favorable behavior by companies. The success of such campaigns has been heightened through the use of digital technology, which allow campaigns to facilitate the company in achieving increased sales.\"\n\nTherefore, the correct answer should be:\n\nThe correct answer is F: Boycotts, Buycotts, Digital technology, Increased Sales.",
+        "output": "The correct answer is (F)",
+        "answer": "The correct answer is (F)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: A compiler generates code for the following assignment statement.\nG := (A + B) * C - (D + E) * F\nThe target machine has a single accumulator and a single-address instruction set consisting of instructions load, store, add, subtract, and multiply. For the arithmetic operations, the left operand is taken from the accumulator and the result appears in the accumulator. The smallest possible number of instructions in the resulting code is \n\nChoices:\nA. 7\nB. 5\nC. 12\nD. 4\nE. 11\nF. 6\nG. 8\nH. 10\nI. 9\nJ. 3 \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To generate the target code for the expression `G := (A + B) * C - (D + E) * F` using a single accumulator, we have to break down the expression into smaller parts that can be computed sequentially using the available instructions: load, store, add, subtract, and multiply. Below are the steps to compute the expression with the minimal number of instructions:\n\n1. Compute the value of `A + B` and store it in a temporary location.\n   - `LOAD A`       (accumulator = A)\n   - `ADD B`        (accumulator = A + B)\n   - `STORE TEMP1`  (store A + B in TEMP1)\n\n2. Multiply the result of step 1 with `C`.\n   - `LOAD TEMP1`   (accumulator = A + B)\n   - `MULTIPLY C`   (accumulator = (A + B) * C)\n   - `STORE TEMP2`  (store (A + B) * C in TEMP2)\n\n3. Compute the value of `D + E` and store it in another temporary location.\n   - `LOAD D`       (accumulator = D)\n   - `ADD E`        (accumulator = D + E)\n   - `STORE TEMP3`  (store D + E in TEMP3)\n\n4. Multiply the result of step 3 with `F`.\n   - `LOAD TEMP3`   (accumulator = D + E)\n   - `MULTIPLY F`   (accumulator = (D + E) * F)\n   - `STORE TEMP4`  (store (D + E) * F in TEMP4)\n\n5. Subtract the second multiplication result from the first multiplication result to get the final result to store in `G`.\n   - `LOAD TEMP2`   (accumulator = (A + B) * C)\n   - `SUBTRACT TEMP4` (accumulator = (A + B) * C - (D + E) * F)\n   - `STORE G`      (store result in G)\n\nLet's count these instructions:\n- 3 instructions for computing and storing `A + B`\n- 3 instructions for multiplying with `C` and storing\n- 3 instructions for computing and storing `D + E`\n- 3 instructions for multiplying with `F` and storing\n- 3 instructions for final subtraction and storing result in G\n\nIn total, we have:\n3 + 3 + 3 + 3 + 3 = 15 instructions.\n\nHowever, we can try to minimize some of the steps:\n1. Load and compute each operation only as needed without extra stores (minimize store instructions).\n2. We can further optimize by realizing that storing intermediate results isn’t always necessary if they’re used immediately after their computation.\n\nCounting the necessary load, operate, and store instructions in the optimal way (still combining operations smartly):\n\n- `LOAD A` (1)\n- `ADD B` (1)\n- `MULTIPLY C` (1)\n- `STORE TEMP` (1)\n- `LOAD D` (1)\n- `ADD E` (1)\n- `MULTIPLY F` (1)\n- `SUBTRACT TEMP` (1)\n- `STORE G` (1)\n\nNow it's:\n1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 9 instructions.\n\nTherefore, the minimal number of instructions is 9.",
+        "output": "The correct answer is (I)",
+        "answer": "The correct answer is (I)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which one of the following items is an example of nonmaterial culture? \n\nChoices:\nA. A dove feather\nB. Dove symbol\nC. Dove body lotion\nD. Dove deodorant\nE. Dove soap\nF. Dove candy bar\nG. Dove conditioner\nH. A dove (bird).\nI. Dove chocolate\nJ. Dove shampoo \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To determine which of the given items is an example of nonmaterial culture, we need to first understand what nonmaterial culture is. Nonmaterial culture refers to the intangible aspects of culture, such as ideas, beliefs, symbols, and values, which are not physical objects. It includes things like language, religion, morals, laws, and symbols.\n\n- Choice A, a dove feather, is a physical object and thus not nonmaterial.\n- Choice B, dove symbol, is an intangible idea or representation and fits the definition of nonmaterial culture.\n- Choices C, D, E, F, G, H, I, and J (Dove body lotion, Dove deodorant, Dove soap, Dove candy bar, Dove conditioner, a dove (bird), Dove chocolate, Dove shampoo) all refer to tangible, physical products or a physical bird, none of which are considered nonmaterial culture.\n\nTherefore, based on the definition of nonmaterial culture and the given choices, the correct answer is:",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      }
+    ],
+    "signature": {
+      "instructions": "You are an expert in logical reasoning and deduction, tasked with analyzing input multiple-choice questions to derive the correct answer. For each question you receive, follow these steps: first, carefully read and understand the question and its choices. Next, engage in a step-by-step reasoning process to evaluate each option based on the given context. Determine the most suitable choice by considering logical deductions, conceptual understanding, and any relevant contrasts or analogies provided in the question. Finally, communicate both your reasoning and the correct answer clearly, using the format: \"The correct answer is (insert answer here).",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

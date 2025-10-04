@@ -1,0 +1,50 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Two long parallel conductors carry 100 A. If the conductors are separated by 20 mm, the force per meter of length of each conductor will be \n\nChoices:\nA. 100 N.\nB. 0.01 N.\nC. 10 N.\nD. 0.5 N.\nE. 0.001 N.\nF. 5 N.\nG. 1 N.\nH. 50 N.\nI. 0.1 N.\nJ. 0.0001 N. \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "I need to calculate the force per unit length between two parallel conductors carrying current.\n\nThe formula for the force per unit length between two parallel conductors is:\nF/L = (μ₀ × I₁ × I₂) / (2π × d)\n\nWhere:\n- μ₀ is the permeability of free space = 4π × 10⁻⁷ H/m\n- I₁ and I₂ are the currents in the two conductors (100 A each)\n- d is the separation distance (20 mm = 0.02 m)\n\nLet's calculate:\nF/L = (4π × 10⁻⁷ × 100 × 100) / (2π × 0.02)\nF/L = (4π × 10⁻⁷ × 10⁴) / (2π × 0.02)\nF/L = (4 × 10⁻⁷ × 10⁴) / (2 × 0.02)\nF/L = (4 × 10⁻³) / 0.04\nF/L = 0.1 N/m\n\nSo the force per meter of length is 0.1 N.",
+        "output": "The correct answer is (I)",
+        "answer": "The correct answer is (I)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: In the program below, the initial value of X is 5 and the initial value of Y is 10.\nIF (X < 0){\n DISPLAY (\"Foxtrot\")\n} ELSE {\n IF (X > Y){\n  DISPLAY (\"Hotel\")\n } ELSE {\n  IF (Y > 0){\n   DISPLAY (\"November\")\n  } ELSE {\n   DISPLAY (\"Yankee\")\n  }\n }\n}\nWhat is displayed as a result of running the program? \n\nChoices:\nA. November\nB. Foxtrot\nC. Zulu\nD. Alpha\nE. Charlie\nF. Bravo\nG. Yankee\nH. Echo\nI. Hotel\nJ. Delta \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (A)",
+        "answer": "The correct answer is (A)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Which of the given formulas of PL is the best symbolization of the following sentence?\nTurtles live long lives and are happy creatures, unless they are injured. \n\nChoices:\nA. (L • H) ≡ I\nB. (L • H) ∨ I\nC. L • (H ∨ I)\nD. L • (H ⊃ R).\nE. N/A\nF. N/A\nG. N/A\nH. N/A\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

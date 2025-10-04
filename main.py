@@ -27,6 +27,8 @@ if __name__ == "__main__":
 
     if "o3-mini" in args.model or "deepseek" in args.model:
         lm = dspy.LM(model=args.model, api_base=args.api_base, api_key=args.api_key, temperature=1.0, max_tokens=100000)
+    elif "claude" in args.model:
+        lm = dspy.LM(model=args.model, api_base=args.api_base, api_key=args.api_key, max_tokens=64000)
     else:
         lm = dspy.LM(model=args.model, api_base=args.api_base, api_key=args.api_key)
     
