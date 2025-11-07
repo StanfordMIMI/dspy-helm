@@ -1,11 +1,11 @@
-# Toward Reliable, Holistic Evaluation of Language Models with Prompt Optimization
+# Toward More Robust, Holistic Evaluation of Language Models with Structured Prompting
 
 [![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/tbd)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="650">
 
-**Figure 1** | **HELM Optimization Pipeline**. Pipeline describing (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
+**Figure 1** | **Pipeline**. (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
 
 ## What is DSPy-HELM?
 
@@ -56,7 +56,6 @@ num_threads=1
 | MMLU-Pro          | Reasoning Question → Answer           | Multi-Task Reasoning   |
 | GPQA              | Graduate Question → Answer            | Graduate-Level QA      |
 | GSM8K             | Math Problem → Solution               | Numeric Problem-Solving|
-| FinQA             | Financial Report → Answer             | Numeric Reasoning      |
 | MedCalc-Bench     | Patient Note → Computed Value         | Computational Reasoning|
 | Medec             | Medical Narrative → Errors            | Error Classification   |
 | HeadQA            | Medical Question → Answer             | USMLE-Style QA         |
