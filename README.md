@@ -9,7 +9,7 @@
 
 ## What is DSPy-HELM?
 
-A comprehensive framework for optimizing language models on HELM benchmarks using DSPy. This toolkit enables automated prompt optimization (APO), leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
+A comprehensive framework for optimizing language model performance on benchmarks using DSPy, enabling more robust evaluation. This toolkit allows automated prompt optimization (APO) for benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
 
 ## Installation
 
@@ -73,14 +73,14 @@ num_threads=1
 dspy-helm/
 ├── main.py              # Main optimization script
 ├── scenarios.py         # Benchmark implementations
-├── run.sh              # Batch optimization runner
-├── requirements.txt    # Python dependencies
-├── agents/            # Optimized DSPy agents
+├── run.sh               # Batch optimization runner
+├── requirements.txt     # Python dependencies
+├── agents/              # Optimized DSPy agents
 │   ├── medcalc_bench/
 │   ├── head_qa/
 │   ├── medbullets/
 │   └── ...
-└── README.md          # This file
+└── README.md            # This file
 ```
 
 ## 📈 Results and Evaluation
@@ -122,7 +122,7 @@ class my_benchmark:
 
 ## 🙏 Acknowledgments
 
-This repository is built using [DSPy](https://github.com/stanfordnlp/dspy) for language model optimization.
+This repository is built using [DSPy](https://github.com/stanfordnlp/dspy) for prompt optimization.
 
 ## 📎 Citation
 
