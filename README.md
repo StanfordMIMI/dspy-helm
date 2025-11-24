@@ -5,11 +5,11 @@
 
 <img src="assets/fig.png" alt="Overview" width="650">
 
-**Figure 1** | **Pipeline**. (a) DSPy-based prompt optimization for each model, and (b) performance analysis of baseline prompt vs DSPy prompt across models on the HELM leaderboard.
+**Figure 1** | **Pipeline overview**. (a) DSPy takes HELM's baseline prompt and produces structured prompt variants. (b) HELM evaluates models under each prompt variant. With structured prompting, we observe more robust performance evaluation.
 
 ## What is DSPy-HELM?
 
-A comprehensive framework for optimizing language models on HELM benchmarks using DSPy. This toolkit enables automated prompt optimization, leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
+A comprehensive framework for optimizing language models on HELM benchmarks using DSPy. This toolkit enables automated prompt optimization (APO), leveraging benchmarks from the HELM (Holistic Evaluation of Language Models) ecosystem.
 
 ## Installation
 
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 **Configure settings** in `run.sh`:
 ```bash
-scenarios=("mmlu_pro" "gpqa" "gsm8k" "fin_qa" "medcalc_bench" "medec" "head_qa" "medbullets")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "medcalc_bench" "medec" "head_qa" "medbullets")
 optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
 
 # Language model to be optimized
