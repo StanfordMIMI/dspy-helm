@@ -1,4 +1,4 @@
-scenarios=("mmlu_pro" "gpqa" "gsm8k" "fin_qa" "medcalc_bench" "medec" "head_qa" "medbullets")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "medcalc_bench" "medec" "head_qa" "medbullets")
 optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
 
 model=openai/gpt-4o
