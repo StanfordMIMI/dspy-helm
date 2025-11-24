@@ -1,4 +1,4 @@
-# Toward More Robust, Holistic Evaluation of Language Models with Structured Prompting
+# Structured Prompting Enables More Robust, Holistic Evaluation of Language Models
 
 [![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/tbd)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
