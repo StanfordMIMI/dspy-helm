@@ -1,6 +1,6 @@
-# Structured Prompting Enables More Robust, Holistic Evaluation of Language Models
+# Structured Prompting Enables More Robust Evaluation of Language Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/tbd)
+[![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2511.20836)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="650">
@@ -129,4 +129,10 @@ This repository is built using [DSPy](https://github.com/stanfordnlp/dspy) for p
 If you find this repository useful for your work, please cite the following paper:
 
 ```bibtex
+@article{aali2025structured,
+  title={Structured Prompting Enables More Robust Evaluation of Language Models},
+  author={Aali, Asad and Mohsin, Muhammad Ahmed and Bikia, Vasiliki and Singhvi, Arnav and Gaus, Richard and Bedi, Suhana and Cui, Hejie and Fuentes, Miguel and Unell, Alyssa and Mai, Yifan and others},
+  journal={arXiv preprint arXiv:2511.20836},
+  year={2025}
+}
 ```
