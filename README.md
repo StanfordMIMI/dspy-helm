@@ -1,6 +1,6 @@
 # Structured Prompting Enables More Robust Evaluation of Language Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-tbd-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2511.20836)
+[![arXiv](https://img.shields.io/badge/arXiv-2511.20836-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2511.20836)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="650">
