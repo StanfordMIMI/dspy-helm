@@ -9,7 +9,7 @@
 
 ## What is DSPy-HELM?
 
-A comprehensive framework for optimizing language model performance on benchmarks using [DSPy](https://github.com/stanfordnlp/dspy), enabling more robust evaluation. This toolkit allows automated prompt optimization (APO) for benchmarks from the [HELM (Holistic Evaluation of Language Models)](https://github.com/stanford-crfm/helm) ecosystem.
+A comprehensive framework for optimizing language model performance on benchmarks using [DSPy](https://github.com/stanfordnlp/dspy), enabling more robust evaluation. This toolkit allows automated prompt optimization (APO) for benchmarks from the [HELM](https://github.com/stanford-crfm/helm) (Holistic Evaluation of Language Models) ecosystem.
 
 ## Installation
 
