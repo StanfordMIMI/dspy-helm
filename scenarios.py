@@ -635,7 +635,7 @@ class wildbench:
             if trace is not None:
                 return score >= 8.0
             else:
-                return score
+                return (score-1.0)/9.0
             
         except Exception as e:
             print(f"Error calling OpenAI GPT-4o API for evaluation: {e}")
