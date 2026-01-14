@@ -56,6 +56,7 @@ num_threads=1
 | MMLU-Pro          | Reasoning Question → Answer           | Multi-Task Reasoning   |
 | GPQA              | Graduate Question → Answer            | Graduate-Level QA      |
 | GSM8K             | Math Problem → Solution               | Numeric Problem-Solving|
+| WildBench         | User Conversation → Response          | Instruction Following  |
 | MedCalc-Bench     | Patient Note → Computed Value         | Computational Reasoning|
 | Medec             | Medical Narrative → Errors            | Error Classification   |
 | HeadQA            | Medical Question → Answer             | USMLE-Style QA         |
