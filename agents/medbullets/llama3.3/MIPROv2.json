@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 36-year-old woman, G1P1001, presents to her gynecologist for an annual visit. She has a medical history of hypertension for which she takes hydrochlorothiazide. The patient’s mother had breast cancer at age 68, and her sister has endometriosis. She states that she feels well and has no complaints. Her temperature is 98.6°F (37.0°C), blood pressure is 138/74 mmHg, pulse is 80/min, and respirations are 13/min. Her BMI is 32.4 kg/m^2. A pelvic exam reveals a non-tender, 12-week-size uterus with an irregular contour. A transvaginal ultrasound is performed and demonstrates two intramural leiomyomas. Which of the following is a likely complication of this patient’s condition?\nA. Endometrial cancer\nB. Iron deficiency anemia\nC. Uterine prolapse\nD. Uterine sarcoma\nAnswer:",
+        "reasoning": "The patient presents with a 12-week-size uterus and an irregular contour due to two intramural leiomyomas, which are a type of uterine fibroid. Uterine fibroids are common in women of reproductive age and can cause various symptoms, including heavy menstrual bleeding, pelvic pressure, and infertility. Given the patient's symptoms and the characteristics of the fibroids, we need to consider potential complications associated with uterine leiomyomas. \n\nOption A, endometrial cancer, is not directly related to the presence of leiomyomas, although the patient's BMI and potential for unopposed estrogen exposure could increase her risk for endometrial hyperplasia or cancer. Option D, uterine sarcoma, is rare and not typically a direct complication of leiomyomas. Option C, utine prolapse, might be seen in cases of very large fibroids or significant uterine enlargement, but it's less directly related to the mere presence of intramural leiomyomas compared to other options.\n\nOption B, iron deficiency anemia, is a likely complication due to the potential for heavy or prolonged menstrual bleeding associated with uterine fibroids. This condition can lead to chronic blood loss, resulting in decreased iron levels and, eventually, anemia.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 27-year-old man presents for an appointment to establish care. He recently was released from prison. He has felt very fatigued and has had a cough. He has lost roughly 15 pounds over the past 3 weeks. He attributes this to intravenous drug use in prison. His temperature is 99.5°F (37.5°C), blood pressure is 127/68 mmHg, pulse is 100/min, respirations are 18/min, and oxygen saturation is 98% on room air. QuantiFERON gold testing is positive. The patient is started on appropriate treatment. Which of the following is the most likely indication to discontinue this patient's treatment?\nA. Peripheral neuropathy\nB. Red body excretions\nC. Hyperuricemia\nD. Elevated liver enzymes\nAnswer:",
+        "reasoning": "The patient in the scenario is presenting with symptoms such as fatigue, cough, and significant weight loss, which are common indicators of tuberculosis (TB), especially given his history of intravenous drug use in prison—a high-risk environment for TB transmission. The positive QuantiFERON gold test result is a strong indicator of latent TB infection. Treatment for latent TB infection typically involves the use of isoniazid (INH) for 9 months, among other regimens. Common side effects and indications for discontinuation of TB treatment include hepatotoxicity (elevated liver enzymes), peripheral neuropathy (especially in malnourished patients or those with predisposing conditions), and other severe adverse effects. \n\nGiven the options, peripheral neuropathy (A) is a known side effect of isoniazid, a common medication used to treat latent TB. Red body excretions (B) could be related to rifampicin, another drug used in TB treatment, but this is not typically a reason to discontinue treatment. Hyperuricemia (C) is not directly associated with first-line TB medications as a reason for discontinuation. Elevated liver enzymes (D) are a significant concern and a common reason to adjust or discontinue TB treatment due to the risk of hepatotoxicity associated with several anti-TB drugs, including isoniazid and rifampicin.\n\nConsidering the potential for severe side effects and the necessity to balance the risk of treatment against the benefits, especially in a patient with a history that might suggest compromised health status, the most critical indication to discontinue treatment among the provided options would be related to liver health.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 55-year-old woman presents to the primary care clinic for her annual visit. She has no complaints and is asymptomatic. She has a history of hypertension, hyperlipidemia, and diabetes. Her medications are lisinopril, amlodipine, atorvastatin, and metformin. There is no family history of malignancy. She is a non-smoker and drinks 3-4 standard drinks per week. Her temperature is 98.2°F (36.8°C), blood pressure is 142/84 mmHg, pulse is 82/min, and respirations are 16/min. On physical exam, a solid, immobile neck mass is palpated inferior to the cricoid cartilage to the left of midline. An ultrasound is obtained and shows a 1.2 cm hypoechoic mass with microcalcifications. Serum thyroid-stimulating hormone (TSH) concentration is 7.2 µU/mL. Which of the following is the most appropriate next step in management?\nA. Propylthiouracil\nB. Fine needle aspiration\nC. Radioiodine ablation\nD. Surgical removal of the mass\nAnswer:",
+        "output": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

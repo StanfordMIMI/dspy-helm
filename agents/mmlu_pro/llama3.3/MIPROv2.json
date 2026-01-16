@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In contrast to _______, _______ aim to reward favourable behaviour by companies. The success of such campaigns have been heightened through the use of ___________, which allow campaigns to facilitate the company in achieving _________ . \n\nChoices:\nA. Boycotts, Buyalls, Blockchain technology, Increased Sales\nB. Buycotts, Boycotts, Digital technology, Decreased Sales\nC. Boycotts, Buycotts, Digital technology, Decreased Sales\nD. Buycotts, Boycotts, Blockchain technology, Charitable donations\nE. Boycotts, Buyalls, Blockchain technology, Charitable donations\nF. Boycotts, Buycotts, Digital technology, Increased Sales\nG. Buycotts, Boycotts, Digital technology, Increased Sales\nH. Boycotts, Buycotts, Physical technology, Increased Sales\nI. Buycotts, Buyalls, Blockchain technology, Charitable donations\nJ. Boycotts, Buycotts, Blockchain technology, Decreased Sales \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To solve this question, let's analyze the given sentence and the options provided. The sentence structure implies that the first blank is a contrasting action, the second blank is an action that rewards favorable behavior, the third blank is a technology or method that enhances this rewarding action, and the fourth blank is the outcome of this action.\n\n1. **Contrasting Action and Rewarding Action**: The contrasting action to rewarding favorable behavior would logically be punishing unfavorable behavior. \"Boycotts\" are actions that punish companies by withholding sales, while \"Buycotts\" are actions that reward companies by encouraging sales. Therefore, the correct contrasting pair should start with \"Boycotts\" as the punishing action and \"Buycotts\" as the rewarding action.\n\n2. **Technology or Method**: The options mention \"Digital technology\" and \"Blockchain technology\" as potential methods for enhancing these campaigns. Between the two, \"Digital technology\" is a broader term that encompasses various forms of technology, including social media, online platforms, and more, which can be used to facilitate and enhance campaigns. \"Blockchain technology\" is more specific and is often associated with secure, transparent transactions, which might not directly relate to the facilitation of campaigns aimed at increasing sales or charitable donations through consumer behavior.\n\n3. **Outcome**: The outcome of such campaigns, given that they aim to reward favorable behavior, would logically be \"Increased Sales\" rather than \"Decreased Sales\" or \"Charitable donations,\" as the primary goal of buycotts is to support companies through increased purchasing.\n\nGiven these considerations, the correct answer should start with \"Boycotts\" as the contrasting action, followed by \"Buycotts\" as the action that rewards favorable behavior, \"Digital technology\" as the method that enhances these campaigns, and \"Increased Sales\" as the outcome.",
+        "output": "The correct answer is (F)",
+        "answer": "The correct answer is (F)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which one of the following items is an example of nonmaterial culture? \n\nChoices:\nA. A dove feather\nB. Dove symbol\nC. Dove body lotion\nD. Dove deodorant\nE. Dove soap\nF. Dove candy bar\nG. Dove conditioner\nH. A dove (bird).\nI. Dove chocolate\nJ. Dove shampoo \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To answer this question, we need to understand what nonmaterial culture is. Nonmaterial culture refers to the non-physical aspects of a culture, such as symbols, language, beliefs, values, and norms. It is the opposite of material culture, which includes physical objects and artifacts.\n\nGiven the choices, we need to identify which one represents a non-physical aspect of culture. Choices A, C, D, E, F, G, H, I, and J are all physical objects or items that can be held or consumed. These represent material culture.\n\nChoice B, \"Dove symbol,\" stands out because a symbol is something that represents an idea, concept, or object. Symbols are part of nonmaterial culture because they convey meaning and are not physical objects themselves.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: _______ is the direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices and programmes. \n\nChoices:\nA. Operational management\nB. Corporate governance\nC. Environmental management\nD. Business ethics management\nE. Sustainability\nF. Stakeholder management\nG. Social marketing\nH. Human resource management\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To solve this question, we need to analyze the definition given and match it with the most suitable option. The definition talks about the \"direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices, and programmes.\" This implies we are looking for a term that directly relates to the management of ethical issues within an organization.\n\nOptions like A (Operational management), C (Environmental management), E (Sustainability), F (Stakeholder management), G (Social marketing), and H (Human resource management) are all important aspects of organizational management, but they don't directly focus on ethical issues as their primary concern.\n\nB (Corporate governance) is about the system of rules, practices, and processes by which a company is directed and controlled. It involves ethical management but is broader, encompassing legal, regulatory, and financial aspects as well.\n\nD (Business ethics management) directly involves the management of ethical issues within a business, making it a strong candidate.\n\nGiven the choices, D (Business ethics management) is the most direct and relevant answer because it specifically deals with managing ethical issues, which aligns with the definition provided.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      }
+    ],
+    "signature": {
+      "instructions": "You are a reasoning expert tasked with evaluating multiple-choice questions. Your goal is to carefully analyze each question and the answer choices presented. Begin by considering the question statement thoroughly, breaking it down into its essential components. Then compare the options using logical reasoning to identify the choice that aligns best with the context and details of the question. Through this methodical process, determine the most likely correct answer and provide it in the format: \"The correct answer is (insert answer here).\" Be certain to use an uppercase letter that corresponds to your selected answer choice.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

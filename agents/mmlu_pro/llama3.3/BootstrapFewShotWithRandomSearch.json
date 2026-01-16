@@ -1,0 +1,50 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Pascale is interested in the processing strategies children use to learn new information. Pascale would best be classified as what type of psychologist? \n\nChoices:\nA. social\nB. school\nC. sociocultural\nD. forensic\nE. behaviorist\nF. health\nG. clinical\nH. cognitive\nI. psychoanalytic\nJ. developmental \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "To answer this question, we need to consider the focus of Pascale's interest, which is the processing strategies children use to learn new information. This focus indicates an emphasis on how children develop and learn, which falls under the umbrella of developmental psychology. Developmental psychology is concerned with the study of human development across the lifespan, including cognitive, social, and emotional development. Since Pascale is specifically interested in how children process new information, this aligns with the cognitive aspect of developmental psychology. However, the key term here is \"developmental\" because it directly relates to the study of development across the lifespan, particularly in children.",
+        "output": "The correct answer is (H)",
+        "answer": "The correct answer is (H)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Select the best translation into predicate logic.George borrows Hector's lawnmower. (g: George; h: Hector; l: Hector's lawnmower; Bxyx: x borrows y from z). \n\nChoices:\nA. Bhgh\nB. Bggh\nC. Bhlh\nD. Bghl\nE. Bhlg\nF. Blhg\nG. Bllg\nH. Blgh\nI. Bhhg\nJ. Bglh \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (J)",
+        "answer": "The correct answer is (J)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: In contrast to _______, _______ aim to reward favourable behaviour by companies. The success of such campaigns have been heightened through the use of ___________, which allow campaigns to facilitate the company in achieving _________ . \n\nChoices:\nA. Boycotts, Buyalls, Blockchain technology, Increased Sales\nB. Buycotts, Boycotts, Digital technology, Decreased Sales\nC. Boycotts, Buycotts, Digital technology, Decreased Sales\nD. Buycotts, Boycotts, Blockchain technology, Charitable donations\nE. Boycotts, Buyalls, Blockchain technology, Charitable donations\nF. Boycotts, Buycotts, Digital technology, Increased Sales\nG. Buycotts, Boycotts, Digital technology, Increased Sales\nH. Boycotts, Buycotts, Physical technology, Increased Sales\nI. Buycotts, Buyalls, Blockchain technology, Charitable donations\nJ. Boycotts, Buycotts, Blockchain technology, Decreased Sales \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (F)",
+        "answer": "The correct answer is (F)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

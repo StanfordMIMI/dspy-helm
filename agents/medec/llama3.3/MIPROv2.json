@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 70-year-old man comes to the physician for a follow-up evaluation.\n1 Eight months ago, he presented with a 6-month history of increased urinary frequency, difficulty to initiate urination, and straining to maintain the urinary stream.\n2 Digital rectal examination showed symmetrically enlarged, nontender prostate with rubbery texture.\n3 Laboratory studies showed a prostate-specific antigen (PSA) level of 2 ng/mL. Abdominal ultrasound showed a post-void residual urine volume of 250 ml and bladder wall thickening.\n4 The patient received appropriate treatment.\n5 His vital signs are within normal limits.\n6 Laboratory studies now show a PSA level of 1 ng/mL. Dutasteride was prescribed.\n\nAnswer:",
+        "reasoning": "To evaluate the clinical text for any medical errors, let's examine each sentence in detail:\n\n0. A 70-year-old man comes to the physician for a follow-up evaluation. - This sentence is introductory and does not contain any medical errors.\n\n1. Eight months ago, he presented with a 6-month history of increased urinary frequency, difficulty to initiate urination, and straining to maintain the urinary stream. - These symptoms are consistent with benign prostatic hyperplasia (BPH) or other urinary issues, so there's no error here.\n\n2. Digital rectal examination showed symmetrically enlarged, nontender prostate with rubbery texture. - This finding is also consistent with BPH, so no error is identified.\n\n3. Laboratory studies showed a prostate-specific antigen (PSA) level of 2 ng/mL. Abdominal ultrasound showed a post-void residual urine volume of 250 ml and bladder wall thickening. - A PSA level of 2 ng/mL is within a range that could be considered normal for some men, depending on age and other factors. The post-void residual and bladder wall thickening are relevant findings for urinary obstruction, which could be related to an enlarged prostate. No error is apparent.\n\n4. The patient received appropriate treatment. - Without specifics on the treatment, it's hard to judge its appropriateness, but the statement itself does not contain an error.\n\n5. His vital signs are within normal limits. - This is a positive finding indicating the patient's overall stability, with no error.\n\n6. Laboratory studies now show a PSA level of 1 ng/mL. Dutasteride was prescribed. - A decrease in PSA level could indicate a positive response to treatment, especially if the patient was being treated for BPH or prostatitis. Dutasteride is a medication used to treat BPH, so its prescription seems appropriate given the context.\n\nGiven the information provided and the context of each sentence, there does not appear to be any medical error in the text provided.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 61-year-old man with Alzheimer disease is brought to the emergency department 20 minutes after ingesting an unknown amount of his medications in a suicide attempt.\n1 He reports abdominal cramps, diarrhea, diaphoresis, and muscular weakness and spasms in his extremities.\n2 His temperature is 38.4 C (101.1 F), pulse is 51/min, respirations are 12/min and labored, and blood pressure is 88/56 mm\n3 Hg.\n4 Physical examination shows excessive salivation and tearing, and small pupils bilaterally.\n5 Treatment with atropine is initiated.\n6 Shortly after, most of his symptoms have resolved, but physostigmine is administered as he continues to have muscular spasms.\n\nAnswer:",
+        "reasoning": "The clinical note describes a patient with symptoms consistent with organophosphate poisoning or other cholinesterase inhibitor overdose, given the excessive salivation, tearing, small pupils, and muscular weakness and spasms. The administration of atropine is appropriate as it is an antidote that can help alleviate the muscarinic symptoms of such poisoning. However, the administration of physostigmine is questionable because physostigmine is a cholinesterase inhibitor itself and would theoretically exacerbate the symptoms of cholinesterase inhibitor poisoning, not alleviate them. Physostigmine is sometimes used in the treatment of severe anticholinergic toxicity, but its use in the context of cholinesterase inhibitor poisoning, as suggested by the patient's symptoms and the initial treatment with atropine, would be incorrect.",
+        "output": "6 Shortly after, most of his symptoms have resolved, but pralidoxime is administered as he continues to have muscular spasms.",
+        "answer": "6 Shortly after, most of his symptoms have resolved, but pralidoxime is administered as he continues to have muscular spasms."
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 21-year-old college student comes to the physician for intermittent palpitations.\n1 She does not have chest pain or shortness of breath.\n2 The symptoms started 2 days ago, on the night after she came back to her dormitory after a 4-hour-long bus trip from home.\n3 A day ago, she went to a party with friends.\n4 The palpitations have gotten worse since then and occur more frequently.\n5 The patient has smoked 5 cigarettes daily for the past 3 years.\n6 She drinks 4â€“6 alcoholic beverages with friends once or twice a week and occasionally uses marijuana.\n7 She is sexually active with her boyfriend and takes oral contraceptive pills.\n8 She does not appear distressed.\n9 Her pulse is 100/min and irregular, blood pressure is 140/85 mm\n10 Hg, and respirations are at 25/min.\n11 Physical examination shows a fine tremor in both hands, warm extremities, and swollen lower legs.\n12 The lungs are clear to auscultation.\n13 An ECG is shown below.\n14 Order pending to administer intravenous adenosine.\n\nAnswer:",
+        "output": "14 Order pending to measure TSH levels."
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

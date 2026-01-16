@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 57-year-old man is brought to a neurologist by his wife for abnormal behavior. He was normal until around 3 months ago when he started forgetting important meetings and misplacing items around the house. One month ago, the patient was fired from his job as a software engineer after attempting to grope a coworker. The patient expresses frustration that he is no longer able to concentrate enough to enjoy his hobby of solving puzzles. His medical history is significant for gastroesophageal reflux disease for which he takes omeprazole. He has no family history of neurologic disease. His temperature is 98.6°F (37.0°C), blood pressure is 120/75 mmHg, pulse is 70/min, and respirations are 16/min. During the examination, the patient’s cell phone rings unexpectedly causing the patient to suddenly jerk his arms and legs. Further diagnostic investigation is performed which reveals an elevated 14-3-3 protein on cerebrospinal fluid analysis. Which of the following is the most likely diagnosis?\nA. Alzheimer disease\nB. Creutzfeldt-Jacob disease\nC. Frontotemporal dementia\nD. Subcortical leukoencephalopathy\nAnswer:",
+        "reasoning": "The patient presents with a rapid decline in cognitive function, including memory loss and difficulty concentrating, over a period of 3 months. This rapid progression, along with the presence of myoclonus (sudden jerking of arms and legs in response to a startling noise), suggests a prion disease. The elevation of 14-3-3 protein in the cerebrospinal fluid (CSF) is a supportive diagnostic marker for Creutzfeldt-Jakob disease (CJD), a type of prion disease. Alzheimer disease typically has a more gradual onset and does not usually present with myoclonus early in the disease course. Frontotemporal dementia can present with changes in behavior and personality, as seen in this patient, but the presence of myoclonus and elevated 14-3-3 protein in CSF points more towards CJD. Subcortical leukoencephalopathy, also known as Binswanger's disease, is a form of vascular dementia that does not typically present with such rapid cognitive decline or myoclonus.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 27-year-old woman presents for her first prenatal visit at an estimated gestational age of 16 weeks and 4 days by last menstrual period. She is presenting late to prenatal care due to significant anxiety about her pregnancy, as she and her husband had struggled with infertility for several years prior to conceiving. She has had nausea and vomiting for about 2 months, tender and swollen breasts, and cravings for foods she typically does not eat. She took a pregnancy test about 10 weeks ago and was too nervous to read the result immediately. After 24 hours, she saw that it was positive. The patient has a past medical history of bulimia nervosa but has not been symptomatic in 2 years. She also had an appendectomy at age 15 for appendicitis. She is a Ph.D. student and her husband is a physician. Her temperature is 98.5°F (36.9°C), pulse is 75/min, blood pressure is 122/76 mmHg, and respirations are 13/min. The patient’s affect is normal and she is pleasant and excited about her pregnancy. A physical exam is notable for abdominal distension but is otherwise unremarkable. Ultrasound is shown in Figure A, and urine human chorionic gonadotropin is negative in the office. Which of the following is the most likely diagnosis?\nA. Pseudocyesis\nB. Couvade syndrome\nC. Feigned pregnancy\nD. Recent miscarriage\nAnswer:",
+        "output": "A"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 32-year-old woman presents to her primary care provider with pelvic pain. She reports that for the last several years, she has had chronic pain that is worse just before her menstrual period. Over the past 2 months, she has also had worsening pain during intercourse. She denies dysuria, vaginal discharge, or vaginal pruritus. The patient has never been pregnant and previously used a copper intrauterine device (IUD) for contraception, but she had the IUD removed 1 year ago because it worsened her menorrhagia. She has now been using combined oral contraceptive pills (OCPs) for nearly 1 year. The patient reports improvement in her menorrhagia on the OCPs but denies any improvement in her pain. Her medical history is otherwise unremarkable. Her temperature is 98.0°F (36.7°C), blood pressure is 124/73 mmHg, pulse is 68/min, and respirations are 12/min. The patient has pain with lateral displacement of the cervix on pelvic exam. A pelvic ultrasound shows no abnormalities, and a urine pregnancy test is negative. Which of the following is most likely to confirm the diagnosis?\nA. Hysteroscopy\nB. Abdominal ultrasound\nC. Hysterosalpingogram\nD. Laparoscopy\nAnswer:",
+        "output": "D"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
