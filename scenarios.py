@@ -34,6 +34,19 @@ class medcalc_bench:
         example["answer"] = example["output"]
         pred["answer"] = pred["output"]
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = medcalc_bench.metric(example, pred, trace)
+        expected_answer = example["output"]
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            feedback = f"You correctly computed the medical value as '{expected_answer}'. Your calculation is accurate."
+        else:
+            feedback = f"You incorrectly computed the medical value as '{predicted_answer}'. The correct answer is '{expected_answer}'. Review your medical calculation carefully."
+        
+        return dspy.Prediction(score=score, feedback=feedback)
         
     def load_data(self):
         dataset = load_dataset("ncbi/MedCalc-Bench-v1.0")
@@ -74,6 +87,25 @@ class medec:
         example["answer"] = example["output"]
         pred["answer"] = pred["output"]
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = medec.metric(example, pred, trace)
+        expected_answer = example["output"]
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            if expected_answer == "CORRECT":
+                feedback = "You correctly identified that the clinical text is error-free."
+            else:
+                feedback = f"You correctly identified the medical error and provided the correction: '{expected_answer}'."
+        else:
+            if expected_answer == "CORRECT":
+                feedback = f"You incorrectly identified an error in the text. The text is actually correct. Your response: '{predicted_answer}' should have been 'CORRECT'."
+            else:
+                feedback = f"You failed to identify the medical error correctly. The correct response should be: '{expected_answer}'. Your response: '{predicted_answer}'."
+        
+        return dspy.Prediction(score=score, feedback=feedback)
 
     def _download_csv(self):
         local_path = "MEDEC-Full-TrainingSet-with-ErrorType.csv"
@@ -146,6 +178,19 @@ class head_qa:
         pred["answer"] = pred["output"]
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
 
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = head_qa.metric(example, pred, trace)
+        expected_answer = example["output"]
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            feedback = f"You correctly selected answer '{expected_answer}' for the biomedical question."
+        else:
+            feedback = f"You incorrectly selected answer '{predicted_answer}'. The correct answer is '{expected_answer}'. Review the biomedical question and options carefully."
+
+        return dspy.Prediction(score=score, feedback=feedback)
+
     def load_data(self):
         dataset = load_dataset("dvilares/head_qa", "en")
         split = dataset["train"].train_test_split(test_size=self.test_size, seed=self.seed)
@@ -191,6 +236,19 @@ class medbullets:
         example["answer"] = example["output"]
         pred["answer"] = pred["output"]
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
+
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = medbullets.metric(example, pred, trace)
+        expected_answer = example["output"]
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            feedback = f"You correctly selected answer '{expected_answer}' for the USMLE-style medical question."
+        else:
+            feedback = f"You incorrectly selected answer '{predicted_answer}'. The correct answer is '{expected_answer}'. Review the clinical scenario and medical options carefully."
+
+        return dspy.Prediction(score=score, feedback=feedback)
 
     def _download_csv(self):
         local_path = "medbullets_op4.csv"
@@ -302,6 +360,19 @@ class mmlu_pro:
         pred["answer"] = mmlu_pro._extract_letter(pred.get("output", "")) or ""
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
 
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = mmlu_pro.metric(example, pred, trace)
+        expected_answer = str(example["output"]).strip().upper()
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            feedback = f"You correctly identified the answer as '{expected_answer}'. Your response properly follows the required format and contains the correct answer letter."
+        else:
+            feedback = f"You incorrectly identified the answer by outputting '{predicted_answer}'.\n\nThe correct answer is '{expected_answer}'. Review the question and options carefully to identify the right answer."
+        
+        return dspy.Prediction(score=score, feedback=feedback)
+
     def load_data(self):
         ds_all = load_dataset("TIGER-Lab/MMLU-Pro", revision=self.revision)
         ds = ds_all["validation"]
@@ -405,6 +476,19 @@ class gpqa:
         pred["answer"] = gpqa._extract_letter(pred.get("output", "")) or ""
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
 
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = gpqa.metric(example, pred, trace)
+        expected_answer = str(example["output"]).strip().upper()
+        predicted_answer = pred["output"]
+        
+        if score == 1.0:
+            feedback = f"You correctly selected answer '{expected_answer}' for the graduate-level question."
+        else:
+            feedback = f"You incorrectly answered the question by outputting '{predicted_answer}'. The correct answer is '{expected_answer}'. Review the complex question and options carefully."
+
+        return dspy.Prediction(score=score, feedback=feedback)
+
     def load_data(self):
         ds = load_dataset("Idavidrein/gpqa", self.subset, revision=self.revision, split="train")
         split = ds.train_test_split(test_size=self.test_size, seed=self.seed)
@@ -446,6 +530,20 @@ class gsm8k:
         pred["answer"] = gsm8k._extract_final_number(pred.get("output", ""))
         return dspy.evaluate.metrics.answer_exact_match(example, pred, trace)
 
+    @staticmethod
+    def metric_with_feedback(example, pred, trace=None, pred_name=None, pred_trace=None):
+        score = gsm8k.metric(example, pred, trace)
+        expected_answer = str(example["output"]).strip()
+        predicted_answer = gsm8k._extract_final_number(pred.get("output", ""))
+        full_solution = example["solution"]
+        
+        if score == 1.0:
+            feedback = f"You correctly solved the math problem. The answer is '{expected_answer}'."
+        else:
+            feedback = f"You incorrectly calculated the answer as '{predicted_answer}'. The correct answer is '{expected_answer}'.\n\nFull solution: {full_solution}\n\nReview your math problem solving steps carefully and follow the proper reasoning approach."
+
+        return dspy.Prediction(score=score, feedback=feedback)
+
     def _load_split(self, split_name):
         cache_dir = ".cache"
         os.makedirs(cache_dir, exist_ok=True)
@@ -472,8 +570,8 @@ class gsm8k:
         ds = Dataset.from_list(dataset)
         split = ds.train_test_split(test_size=self.test_size, seed=self.seed)
 
-        train_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"])} for row in split["train"]]
-        val_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"])} for row in split["test"]]
+        train_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"]), "solution": row["answer"]} for row in split["train"]]
+        val_examples = [{"inputs": self.make_prompt(row), "output": self._extract_final_number(row["answer"]), "solution": row["answer"]} for row in split["test"]]
 
         trainset = [to_example(x) for x in train_examples]
         valset = [to_example(x) for x in val_examples]
@@ -485,6 +583,7 @@ class wildbench:
         self.test_size = test_size
         self.seed = seed
         self.revision = "7c05c1b4550282b2ed6a2e6ac5db069f1e07df5c"
+        self.return_feedback = False
     
     def make_prompt_with_checklist(self, row: Dict) -> tuple:
         conversation = row["conversation_input"]
@@ -629,17 +728,22 @@ class wildbench:
             score = _extract_score_from_response(response_text)
             
             if score is None:
-                print(f"Error calling OpenAI GPT-4o API for evaluation: {response_text}")
-                return 0.0
+                print(f"Error calling OpenAI API for evaluation: {response_text}")
+                return 0.0 if not self.return_feedback else (0.0, "")
             
-            if trace is not None:
-                return score >= 8.0
+            if self.return_feedback:
+                return (score-1.0)/9.0, response_text
             else:
-                return (score-1.0)/9.0
+                return score >= 8.0 if trace is not None else (score-1.0)/9.0
             
         except Exception as e:
-            print(f"Error calling OpenAI GPT-4o API for evaluation: {e}")
-            return 0.0
+            print(f"Error calling OpenAI API for evaluation: {e}")
+            return 0.0 if not self.return_feedback else (0.0, "")
+
+    def metric_with_feedback(self, example, pred, trace=None, pred_name=None, pred_trace=None):
+        self.return_feedback = True
+        score, feedback = self.metric(example, pred, trace)
+        return dspy.Prediction(score=score, feedback=feedback)
     
     def load_data(self):
         ds = load_dataset("allenai/WildBench", self.subset, split="test", revision=self.revision)

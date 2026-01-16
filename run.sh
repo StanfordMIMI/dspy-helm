@@ -1,5 +1,5 @@
 scenarios=("mmlu_pro" "gpqa" "gsm8k" "wildbench" "medcalc_bench" "medec" "head_qa" "medbullets")
-optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
+optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch" "GEPA")
 
 model=openai/gpt-4o
 api_base=""

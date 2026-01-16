@@ -26,8 +26,8 @@ pip install -r requirements.txt
 
 **Configure settings** in `run.sh`:
 ```bash
-scenarios=("mmlu_pro" "gpqa" "gsm8k" "medcalc_bench" "medec" "head_qa" "medbullets")
-optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "wildbench" "medcalc_bench" "medec" "head_qa" "medbullets")
+optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch" "GEPA")
 
 # Language model to be optimized
 model=openai/gpt-4o
@@ -93,7 +93,8 @@ agents/
 └── {scenario}/
     └── {model_name}/
         ├── MIPROv2.json
-        └── BootstrapFewShotWithRandomSearch.json
+        ├── BootstrapFewShotWithRandomSearch.json
+        └── GEPA.json
 ```
 
 ## Creating Custom Scenarios

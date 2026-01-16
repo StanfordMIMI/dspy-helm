@@ -4,3 +4,7 @@ scikit-learn==1.6.1
 requests==2.32.3
 urllib3==2.3.0
 cloudpickle==3.1.0
+openai==1.106.0
+pydantic==2.10.6
+pydantic-core==2.27.2
+Pillow==12.1.0

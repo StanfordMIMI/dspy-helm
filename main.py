@@ -39,6 +39,8 @@ if __name__ == "__main__":
     
     if args.optimizer == "MIPROv2":
         teleprompter = dspy_optimizer(metric=scenario.metric, max_bootstrapped_demos=args.max_bootstrapped_demos, max_labeled_demos=args.max_labeled_demos, num_threads=args.num_threads, prompt_model=prompt_model)
+    elif args.optimizer == "GEPA":
+        teleprompter = dspy_optimizer(metric=scenario.metric_with_feedback, reflection_lm=prompt_model, max_metric_calls=500, auto="light")
     else:
         teleprompter = dspy_optimizer(metric=scenario.metric, max_bootstrapped_demos=args.max_bootstrapped_demos, max_labeled_demos=args.max_labeled_demos, num_threads=args.num_threads)
     
