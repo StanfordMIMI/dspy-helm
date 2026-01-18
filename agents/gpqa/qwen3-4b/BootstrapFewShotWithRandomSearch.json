@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Consider a system with Hamiltonian operator $H = \\varepsilon \\vec{\\sigma}.\\vec{n}$. Here, $\\vec{n}$ is an arbitrary unit vector, $\\varepsilon $ is a constant of dimension energy, and components of $\\vec{\\sigma}$ are the Pauli spin matrices. What are the eigenvalues of the Hamiltonian operator? \n\nChoices: \n(A) +\\varepsilon \\hbar/2, - \\varepsilon \\hbar/2\n(B) +1, -1\n(C) +\\hbar/2, -\\hbar/2\n(D) + \\varepsilon, -\\varepsilon \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The Hamiltonian operator is given as $ H = \\varepsilon \\vec{\\sigma} \\cdot \\vec{n} $. The Pauli matrices $ \\vec{\\sigma} $ have eigenvalues $ \\pm 1 $, and since $ \\vec{n} $ is a unit vector, the dot product $ \\vec{\\sigma} \\cdot \\vec{n} $ also has eigenvalues $ \\pm 1 $. Multiplying by the scalar $ \\varepsilon $, the eigenvalues of $ H $ become $ \\pm \\varepsilon $. This matches option (D). Other options involve $ \\hbar/2 $, which are relevant for spin-1/2 systems but not directly applicable here since the Hamiltonian is dimensionally scaled by $ \\varepsilon $, not by $ \\hbar $.",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Consider this annihilation process\n\n$p+\\bar{p}\\rightarrow2A^{+}+2A^{-}$\n\nThe antiproton is slowly moving and $m_{A}c^{2}=300MeV$.\n\nWhat is the velocity of particle A? \n\nChoices: \n(A) 0.91c\n(B) 0.86c\n(C) 0.96c\n(D) 0.77c \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (D)"
+      },
+      {
+        "inputs": "What is the correct answer to this question: Which of the following compounds has the molecular formula C9H16O2 and displays a distinctive IR absorption peak between 1680-1700 cm-1? Additionally, it produces three signals in the 1H-NMR spectra. \n\nChoices: \n(A) octane-4,5-dione\n(B) isobutyl 3-methylbutanoate\n(C) 2,6-dimethylheptane-3,5-dione\n(D) 3,5-dimethylheptane-2,6-dione \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\".\n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "output": "The correct answer is (C)"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
