@@ -1,0 +1,52 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 36-year-old woman, G1P1001, presents to her gynecologist for an annual visit. She has a medical history of hypertension for which she takes hydrochlorothiazide. The patient’s mother had breast cancer at age 68, and her sister has endometriosis. She states that she feels well and has no complaints. Her temperature is 98.6°F (37.0°C), blood pressure is 138/74 mmHg, pulse is 80/min, and respirations are 13/min. Her BMI is 32.4 kg/m^2. A pelvic exam reveals a non-tender, 12-week-size uterus with an irregular contour. A transvaginal ultrasound is performed and demonstrates two intramural leiomyomas. Which of the following is a likely complication of this patient’s condition?\nA. Endometrial cancer\nB. Iron deficiency anemia\nC. Uterine prolapse\nD. Uterine sarcoma\nAnswer:",
+        "reasoning": "The patient has multiple intramural leiomyomas (fibroids), which are common in women of reproductive age. Her BMI of 32.4 kg/m² indicates obesity, a known risk factor for iron deficiency anemia due to chronic blood loss. While fibroids can cause menorrhagia (heavy menstrual bleeding), the question asks for the most likely complication of her condition. Although endometrial cancer (A) and uterine sarcoma (D) are rare, the presence of fibroids in an obese woman with a history of heavy menstrual bleeding (implied by the irregular contour of the uterus) is more closely associated with iron deficiency anemia (B). Uterine prolapse (C) is less likely given the normal uterine size and the presence of fibroids.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 27-year-old man presents for an appointment to establish care. He recently was released from prison. He has felt very fatigued and has had a cough. He has lost roughly 15 pounds over the past 3 weeks. He attributes this to intravenous drug use in prison. His temperature is 99.5°F (37.5°C), blood pressure is 127/68 mmHg, pulse is 100/min, respirations are 18/min, and oxygen saturation is 98% on room air. QuantiFERON gold testing is positive. The patient is started on appropriate treatment. Which of the following is the most likely indication to discontinue this patient's treatment?\nA. Peripheral neuropathy\nB. Red body excretions\nC. Hyperuricemia\nD. Elevated liver enzymes\nAnswer:",
+        "reasoning": "The patient's history of intravenous drug use and recent weight loss, along with a positive QuantiFERON gold test, strongly suggests tuberculosis (TB). TB treatment typically involves medications like isoniazid (INH) and rifampin, which can cause hepatotoxicity. Elevated liver enzymes (option D) indicate potential liver damage, a serious adverse effect that would necessitate discontinuation of treatment to prevent further hepatic injury. While peripheral neuropathy (A) is a known side effect of INH, it is more commonly managed with dose reduction or adjunctive therapy rather than immediate discontinuation. \"Red body excretions\" (B) is vague and not directly linked to TB treatment. Hyperuricemia (C) is more associated with allopurinol, not standard TB therapy. Thus, elevated liver enzymes (D) are the most critical indication to stop treatment.",
+        "output": "D",
+        "answer": "D"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to answer medical questions similar to those found on the USMLE Step 2/3 exams. You will be provided with a clinical scenario followed by several multiple-choice options.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, D, or E).\n\nClinical Scenario: A 55-year-old woman presents to the primary care clinic for her annual visit. She has no complaints and is asymptomatic. She has a history of hypertension, hyperlipidemia, and diabetes. Her medications are lisinopril, amlodipine, atorvastatin, and metformin. There is no family history of malignancy. She is a non-smoker and drinks 3-4 standard drinks per week. Her temperature is 98.2°F (36.8°C), blood pressure is 142/84 mmHg, pulse is 82/min, and respirations are 16/min. On physical exam, a solid, immobile neck mass is palpated inferior to the cricoid cartilage to the left of midline. An ultrasound is obtained and shows a 1.2 cm hypoechoic mass with microcalcifications. Serum thyroid-stimulating hormone (TSH) concentration is 7.2 µU/mL. Which of the following is the most appropriate next step in management?\nA. Propylthiouracil\nB. Fine needle aspiration\nC. Radioiodine ablation\nD. Surgical removal of the mass\nAnswer:",
+        "output": "B",
+        "answer": "B"
+      }
+    ],
+    "signature": {
+      "instructions": "You are a highly knowledgeable AI assistant specializing in medicine. Your task is to solve clinical scenarios similar to those found on the USMLE Step 2/3 exams by analyzing the given information to make informed medical decisions. Given the `inputs` which include a clinical scenario and multiple-choice options, engage in step-by-step reasoning to emulate clinical decision-making. Produce the `output` by selecting and outputting only the letter corresponding to the most appropriate choice (A, B, C, D, or E), informed by thorough analysis and consideration of medical guidelines and evidence.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
