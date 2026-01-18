@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: Jason is making sand art. He wants to fill a rectangular patch 6 inches by 7 inches with blue sand, and a square path 5 inches by 5 inches with red sand. If it takes 3 grams of sand to fill one square inch, how many grams of sand does Jason need?\nA:",
+        "reasoning": "First, calculate the area of the rectangular patch: 6 inches × 7 inches = 42 square inches.  \nNext, calculate the area of the square path: 5 inches × 5 inches = 25 square inches.  \nTotal area to be filled = 42 + 25 = 67 square inches.  \nIt takes 3 grams of sand per square inch, so total sand needed = 67 × 3 = 201 grams.",
+        "output": "201",
+        "answer": "201"
+      },
+      {
+        "inputs": "Q: Penelope the pig eats 20 pounds of food per day, which is 10 times more than Greta the goose eats per day.  Milton the mouse eats 1/100 as much as Greta the goose eats per day, but Elmer the elephant eats 4000 times more than Milton the mouse does per day.  How much more, in pounds, does Elmer the elephant eat per day than Penelope the pig?\nA:",
+        "output": "60"
+      },
+      {
+        "inputs": "Q: Jessie invited 4 friends over to play. They made muffins for a snack and Jesse wants to divide them equally between herself and her friends. If they made 20 muffins in total, how many will each person have?\nA:",
+        "output": "4"
+      }
+    ],
+    "signature": {
+      "instructions": "You are tasked with solving complex arithmetic word problems that mimic real-world scenarios to improve mathematical skills. Each problem requires you to simulate human-like reasoning by extracting relevant information and processing it step-by-step to arrive at a numerical solution. Imagine you are in a high-pressure situation where your ability to accurately solve these problems impacts critical decision-making, like determining the budget for a large-scale event or assessing the resources needed for a significant project. Given the input problem statement, generate a detailed logical reasoning path and calculate the precise output. Ensure your process is transparent, and your final answer is accurate and contextually relevant.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

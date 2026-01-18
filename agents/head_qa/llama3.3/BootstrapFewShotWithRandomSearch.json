@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: The exergonic reactions of metabolism:\nA. Consume free energy.\nB. They are thermodynamically favorable.\nC. They are always quick reactions.\nD. They do not require the action of enzymes.\nE. They have high values ​​of activation energy.\nAnswer:",
+        "reasoning": "To answer this question, we first need to understand what \"exergonic reactions\" mean in the context of metabolism. Exergonic reactions are those that release energy, meaning they have a negative Gibbs free energy change (ΔG). This characteristic makes them thermodynamically favorable because they can proceed on their own without the need for external energy input.\n\nLet's evaluate the options based on this understanding:\nA. \"Consume free energy\" - This statement is incorrect regarding exergonic reactions. Exergonic reactions release free energy, rather than consuming it.\nB. \"They are thermodynamically favorable\" - This is correct. Exergonic reactions are favorable because they release energy, making the reaction spontaneous under the right conditions.\nC. \"They are always quick reactions\" - The speed of a reaction (kinetics) is not directly determined by whether it's exergonic or endergonic. Enzymes can catalyze reactions, making them faster, but the speed is not inherent to being exergonic.\nD. \"They do not require the action of enzymes\" - While exergonic reactions release energy and are thermodynamically favorable, they can still be catalyzed by enzymes to speed up the reaction. The requirement for an enzyme is related to the reaction's kinetics, not its thermodynamics.\nE. \"They have high values ​​of activation energy\" - Activation energy is related to the kinetics of a reaction, determining how easily the reaction can start. Exergonic reactions, by being thermodynamically favorable, do not inherently have high activation energies, though they may still require an enzyme to lower the activation energy and speed up the reaction.\n\nGiven the above analysis, the correct answer is related to the thermodynamic favorability of exergonic reactions.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Among the characteristic components of the adaptive immune system are:\nA. The epithelial cells.\nB. The macrophages.\nC. The NK lymphocytes.\nD. C-reactive protein\nE. The B lymphocytes\nAnswer:",
+        "output": "E"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Which of these statements is NOT a characteristic of phase I clinical trials?\nA. They usually have non-therapeutic goals.\nB. They can be done in healthy volunteers.\nC. They can be done in patients.\nD. They are usually randomized.\nE. They are usually open.\nAnswer:",
+        "output": "D"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: It is very common the use of rotary valves of 6 doors or routes, alternately switchable, for the injection of samples in liquid chromatography of high resolution. Which of the following answers is correct?\nA. In the injection position, the mobile phase flow is maintained towards the column without passing through the loop.\nB. In the loading position, the loop in charge of housing the sample remains open to the atmosphere whereby the sample can be deposited by means of a syringe.\nC. In the loading position, the mobile phase flow is maintained towards the column by previously passing through the loop.\nD. In the loading position, the sample is inserted into the column without disturbing the moving phase step towards the loop.\nE. In the injection position, the entire internal volume of the loop is directed to the waste while the mobile phase carries the sample.\nAnswer:",
+        "reasoning": "In high-performance liquid chromatography (HPLC), especially in high-resolution systems, rotary valves with multiple ports (such as 6-door valves) are commonly used for sample injection. These valves operate in a sequence of positions: loading, injection, and washing.\n\nDuring the loading position, the sample is introduced into the loop (sample loop) from a syringe. The mobile phase is typically stopped or redirected so that the loop remains open to the atmosphere, allowing the sample to be deposited without disturbing the flow. This ensures that the sample is properly loaded into the loop without interference from the mobile phase.\n\nOption A is incorrect because during injection, the mobile phase should not be maintained without passing through the loop—this would prevent sample introduction.\n\nOption B correctly describes the loading position: the loop remains open to the atmosphere, allowing the sample to be deposited via syringe. This is a standard and accurate description of how sample loading occurs in such systems.\n\nOption C is incorrect because maintaining mobile phase flow through the loop during loading would interfere with sample deposition.\n\nOption D is incorrect because the sample is not inserted directly into the column without disturbing the phase; the sample is first loaded into the loop.\n\nOption E is incorrect because the entire loop volume is not directed to waste during injection; instead, the sample is transferred to the column.\n\nTherefore, the most accurate and correct statement is B.",
+        "output": "B",
+        "answer": "B"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Among the characteristic components of the adaptive immune system are:\nA. The epithelial cells.\nB. The macrophages.\nC. The NK lymphocytes.\nD. C-reactive protein\nE. The B lymphocytes\nAnswer:",
+        "output": "E"
+      },
+      {
+        "inputs": "You are a highly knowledgeable AI assistant specializing in biomedical sciences. Your task is to answer multiple-choice questions accurately based on the options provided. Each question will relate to biomedical concepts, and you will be asked to choose the most appropriate answer.\n\nSelect the correct answer by outputting only the letter corresponding to your choice (A, B, C, or D).\n\nQuestion: Which of these statements is NOT a characteristic of phase I clinical trials?\nA. They usually have non-therapeutic goals.\nB. They can be done in healthy volunteers.\nC. They can be done in patients.\nD. They are usually randomized.\nE. They are usually open.\nAnswer:",
+        "output": "D"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

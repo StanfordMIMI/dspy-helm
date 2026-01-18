@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: A 32-year-old white woman comes to the physician because of fatigue, lethargy, and swelling of the lower legs for 2 months. She reports recurrent episodes of pain in both wrists, her right knee, and her right ankle in the past year. She has had skin problems that are aggravated by exposure to sunlight for the past 18 months. She has smoked one pack of cigarettes daily for 13 years and drinks one alcoholic beverage daily. Her temperature is 37°C (98.6°F), pulse is 92/min, and blood pressure is 115/75 mm Hg. Examination shows 2+ pretibial edema bilaterally and periorbital edema. There are erythematous patches with scaling on both cheeks.\n\nQuestion: What is patient's mean arterial pressure in mm Hg?\n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "Mean arterial pressure (MAP) is calculated using the formula:  \nMAP = diastolic blood pressure + 1/3 × (systolic blood pressure - diastolic blood pressure)  \nGiven the blood pressure is 115/75 mm Hg:  \nMAP = 75 + (1/3) × (115 - 75)  \nMAP = 75 + (1/3) × 40  \nMAP = 75 + 13.333  \nMAP = 88.333 mm Hg",
+        "output": "88.333",
+        "answer": "88.333"
+      },
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: A 23-year-old female patient admitted to endocrinology outpatient clinic with the complaint of hirsutism for the last year. Excessive hair growth was identified to originate from facial and mandibular areas initially and then to spread to abdominal and thoracic regions. She had regular menstrual cycles since her first period by the age of 12. Medical background and family history were unremarkable. Physical examination revealed that body temperature was 37°C, pulse rate was 80 beats/min, height was 156 cm, weight was 61 kg, BMI was 25.4 kg/m2, and the blood pressure was 120/80 mm Hg. She had acnes on her face while showed no signs of moon face or facial plethora. Thyroid gland was nonpalpable and abdominal examination was normal in superficial and deep palpation. No organomegaly or mass was detected. Examination of the urogenital system revealed normal findings with feminine type of hair growth and normal breast development. Absence of ecchymosis, normal turgor and tonus, and normal skin thickness were noted in the examination of the skin. There were no findings of purple stria and acanthosis nigricans, whereas hirsutism was remarkable. Ferriman Gallwey score was 23. There were no signs of virilization including vocal changes, muscular hypertrophy, breast atrophy, and hypertrophy of clitoris.\nGiven the findings of marked hirsutism and facial acne, laboratory tests were performed for the differential diagnosis of hirsutism which revealed total testosterone level of 4.2 ng/mL, free testosterone of >100 pg/mL, and DHEAS level of 574 μg/dL (). Pelvic USG revealed normal endometrial thickness besides normal size of uterus and normal size and appearance of ovaries. Based on these findings, the likelihood of an androgen-secreting adrenal tumor was considered in the initial diagnosis and, therefore, the adrenal MRI was performed. MRI revealed a 27 × 25 mm isointense solid mass lesion in the left adrenal gland in T1A and T2A series (). Afterwards, functional screening for adenoma was performed which revealed normal findings on a 24-hour urine test for metanephrine (73.91 mcg/day) and normetanephrine (133.95 mcg/day) besides normal levels for aldosterone (65 pg/mL) and renin (2.1 ng/mL). Lacking findings related to Cushing syndrome in the physical examination, our patient had basal ACTH levels of <5 pg/mL twice. Dexamethasone (1 mg) suppression test (DST) was 4.7 μg/dL and there was no suppression in cortisol levels also with 2 mg DST (5.4 μg/dL). Urinary cortisol level was normal (75 mcg/day), while the physiological cortisol circadian rhythm was determined to be disturbed.\nBased on consideration of overall findings, with the initial diagnosis of testosterone- and cortisol-secreting tumor in the left adrenal gland, the patient underwent laparoscopic left adrenalectomy with perioperative steroid replacement. Pathological examination confirmed the diagnosis of benign adrenocortical oncocytoma. Macroscopically, the tumor was a rounded, encapsulated, and well-circumscribed mass, with an average diameter of 2.2 × 2 cm. The microscopic appearance of oncocytic neoplasm included cells with eosinophilic cytoplasm arranged in solid pattern (). Immunohistochemical studies revealed that the case was positive for CD56, synaptophysin (), and vimentin and negative for chromogranin. Ki-67 proliferation index was found 3% in the tumor. Capsular and venous invasion, high mitotic rate, and atypical mitoses were not observed, so it was considered as benign according to the Lin-Weiss-Bisceglia criteria []. At the postoperative 72nd hour, cortisol level was 15.7 mcg/dL at 08:00 a.m., while ACTH level was 7.66 pg/mL. There was no need for postoperative steroid treatment. Postoperative total testosterone level was determined to regress to 1.05 ng/mL, free testosterone to 2.26 pg/mL, and DHEAS to 345.6 mcg/dL.\n\nQuestion: What is patient's mean arterial pressure in mm Hg?\n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "Mean arterial pressure (MAP) is calculated using the formula:  \nMAP = diastolic blood pressure + 1/3 × (systolic blood pressure - diastolic blood pressure)\n\nFrom the patient note, the blood pressure is given as 120/80 mm Hg.  \nSystolic pressure = 120 mm Hg  \nDiastolic pressure = 80 mm Hg  \n\nMAP = 80 + (1/3) × (120 - 80)  \nMAP = 80 + (1/3) × 40  \nMAP = 80 + 13.333  \nMAP = 93.333 mm Hg  \n\nRounded to the nearest thousandth, the value is 93.333.",
+        "output": "93.333",
+        "answer": "93.333"
+      },
+      {
+        "augmented": true,
+        "inputs": "Given a patient note and a clinical question, compute the requested medical value.\n\nPatient note: The patient's last menstrual period was on 02/18/2017. Her cycle length is 26 days.\n\nQuestion: Based on the patient's last menstrual period and cycle length, what is the the patient's estimated date of conception? Your answer should be in the format of M/D/Y (ie 08/31/2023, 07/03/2000) with just the date and not other text. \n\nAnswer only the requested quantity without units. No explanation needed:",
+        "reasoning": "The estimated date of conception is typically calculated by adding approximately 14 days to the last menstrual period (LMP), as ovulation usually occurs about 14 days after the start of menstruation in a regular 26-day cycle.\n\nThe patient's last menstrual period (LMP) was on 02/18/2017.  \nAdding 14 days to 02/18/2017:  \n02/18 + 14 days = 03/04/2017.\n\nThus, the estimated date of conception is 03/04/2017.",
+        "output": "03/04/2017",
+        "answer": "03/04/2017"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

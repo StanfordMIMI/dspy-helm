@@ -1,0 +1,51 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 45-year-old man comes to the physician because of intermittent lower back pain for 1 week.\n1 His symptoms began shortly after lifting heavy boxes at work.\n2 He has not had any fever, chills, or weight loss.\n3 He has a history of peptic ulcer disease.\n4 He does not smoke or drink alcohol.\n5 His vital signs are within normal limits.\n6 Examination shows mild paraspinal lumbar tenderness.\n7 Neurologic examination shows no focal findings.\n8 An x-ray of the spine shows no abnormalities.\n9 Acetaminophen was prescribed.\n\nAnswer:",
+        "reasoning": "The clinical narrative is mostly accurate and medically appropriate. Let's evaluate each sentence for potential errors:\n\n0. Describes a 45-year-old man with lower back pain after lifting heavy boxes — plausible and consistent with mechanical low back pain.\n\n1. Symptoms began after lifting heavy boxes — consistent with mechanical strain.\n\n2. No fever, chills, or weight loss — rules out systemic infection or malignancy.\n\n3. History of peptic ulcer disease — relevant, though not directly linked to back pain; no clear error.\n\n4. Does not smoke or drink alcohol — reasonable detail.\n\n5. Vital signs within normal limits — appropriate for a patient with mechanical back pain.\n\n6. Mild paraspinal lumbar tenderness — consistent with mechanical back pain.\n\n7. No focal neurologic findings — appropriate for a non-neurological cause.\n\n8. X-ray shows no abnormalities — consistent with mechanical back pain, as imaging is often normal in such cases.\n\n9. Acetaminophen was prescribed — appropriate first-line treatment for mild to moderate back pain.\n\nHowever, the diagnosis or management may be missing a key point: in a patient with mechanical back pain, especially after lifting, the initial treatment should often include rest, activity modification, and possibly physical therapy. However, prescribing only acetaminophen is reasonable for mild pain.\n\nBut here's a potential issue: the patient has a history of peptic ulcer disease. Acetaminophen is generally safe in patients with peptic ulcer disease, unlike NSAIDs, which can exacerbate ulcers. Therefore, prescribing acetaminophen is actually appropriate and safe in this context.\n\nNo sentence contains a clear medical error. All findings and management are consistent with clinical guidelines for mechanical low back pain.\n\nThus, the narrative is correct.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 53-year-old man comes to the physician because of a 1-day history of fever and chills, severe malaise, and cough with yellow-green sputum.\n1 He works as a commercial fisherman on Lake Superior.\n2 Current medications include metoprolol and warfarin.\n3 His temperature is 38.5 C (101.3 F), pulse is 96/min, respirations are 26/min, and blood pressure is 98/62 mm\n4 Hg.\n5 Examination shows increased fremitus and bronchial breath sounds over the right middle lung field.\n6 An x-ray of the chest shows consolidation of the right upper lobe.\n7 The causal pathogen is Streptococcus pneumoniae.\n\nAnswer:",
+        "reasoning": "The clinical narrative is mostly accurate, but there is a medical error in sentence 4. The sentence states: \"blood pressure is 98/62 mm Hg.\" While this value is numerically plausible, the unit is incorrectly written as \"mm Hg\" without a closing closing parenthesis. However, the more significant issue is in the context of the patient's presentation: a 53-year-old man with fever, chills, severe malaise, cough with yellow-green sputum, and findings of consolidation on chest X-ray strongly suggest a bacterial pneumonia. The most likely causative organism in such a case is indeed *Streptococcus pneumoniae*. However, the error lies in the blood pressure value: it is written as \"98/62 mm Hg\" with a missing closing parenthesis. While this is a formatting error, in medical documentation, such a missing parenthesis is not a clinical error per se. However, in strict adherence to medical documentation standards, the correct formatting should include the closing parenthesis. But more critically, the sentence 7 states \"The causal pathogen is Streptococcus pneumoniae,\" which is medically appropriate for the clinical picture. Therefore, the only error is in the formatting of the blood pressure value. However, the original sentence says \"blood pressure is 98/62 mm Hg\" — the correct formatting should be \"98/62 mm Hg\" with a closing parenthesis. Since the task specifies identifying a medical error, and formatting issues in units are not typically considered medical errors, we must assess whether any clinical content is incorrect. There is no error in diagnosis or clinical findings. The patient's presentation, history, physical exam, and imaging are consistent with community-acquired pneumonia, and *S. pneumoniae* is a common cause. Therefore, the only potential issue is the missing closing parenthesis in the blood pressure. However, in standard medical writing, \"mm Hg\" is correctly written with a closing parenthesis. The original sentence ends with \"mm Hg\" without a closing parenthesis — this is a typographical error. But since the task specifies \"medical error,\" and this is a formatting issue, not a clinical one, and no clinical fact is incorrect, the text is clinically correct. Thus, the correct response is CORRECT.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 47-year-old woman comes to the physician because of a 5-month history of insomnia.\n1 She frequently experiences leg discomfort when trying to fall asleep that is relieved temporarily by movement.\n2 Her husband tells her that she frequently flexes her ankles upward when she sleeps.\n3 She appears fatigued and anxious.\n4 Physical examination shows no abnormalities.\n5 Laboratory studies including a complete blood count and iron studies are within the reference range.\n6 Patient is prescribed ropinirole.\n\nAnswer:",
+        "output": "CORRECT"
+      }
+    ],
+    "signature": {
+      "instructions": "Read the provided clinical narrative, which may contain either no errors or one medical error per text. Analyze each sentence for clinical and factual correctness. If the narrative is entirely correct, respond with \"CORRECT\". If an error is identified, indicate the sentence ID followed by the corrected sentence. Ensure your response is precise and reflects standard medical practice.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

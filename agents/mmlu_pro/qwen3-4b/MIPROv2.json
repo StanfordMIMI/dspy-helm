@@ -1,0 +1,54 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: In contrast to _______, _______ aim to reward favourable behaviour by companies. The success of such campaigns have been heightened through the use of ___________, which allow campaigns to facilitate the company in achieving _________ . \n\nChoices:\nA. Boycotts, Buyalls, Blockchain technology, Increased Sales\nB. Buycotts, Boycotts, Digital technology, Decreased Sales\nC. Boycotts, Buycotts, Digital technology, Decreased Sales\nD. Buycotts, Boycotts, Blockchain technology, Charitable donations\nE. Boycotts, Buyalls, Blockchain technology, Charitable donations\nF. Boycotts, Buycotts, Digital technology, Increased Sales\nG. Buycotts, Boycotts, Digital technology, Increased Sales\nH. Boycotts, Buycotts, Physical technology, Increased Sales\nI. Buycotts, Buyalls, Blockchain technology, Charitable donations\nJ. Boycotts, Buycotts, Blockchain technology, Decreased Sales \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The question is about contrasting two types of consumer actions: one that opposes companies (boycotts) and one that rewards them. The term \"Buycotts\" is a portmanteau of \"buy\" and \"boycott,\" and it refers to consumer actions where people actively purchase products from companies to support them, especially in response to ethical or social initiatives. This is in contrast to boycotts, which involve avoiding products from certain companies.\n\nThe second blank asks for the mechanism that helps such campaigns succeed. \"Digital technology\" is widely used in modern marketing and consumer engagement campaigns to track behavior, personalize offers, and reach large audiences efficiently. It enables companies to monitor and respond to consumer preferences, thereby increasing the effectiveness of reward-based campaigns.\n\nThe final blank asks what the campaigns help companies achieve. Since the goal of rewarding favorable behavior (like ethical practices or sustainability) is to build goodwill and customer loyalty, the outcome is typically increased sales, not decreased sales or charitable donations (which may be a side effect but not the primary goal of such campaigns).\n\nNow, evaluating the choices:\n- A: \"Buyalls\" is not a recognized term; \"Blockchain\" is not typically used in this context for consumer reward campaigns.\n- B: Incorrect — \"Buycotts\" is correct, but \"decreased sales\" contradicts the goal.\n- C: \"Buycotts\" is correct, but \"decreased sales\" is incorrect.\n- D: \"Blockchain\" is not relevant here; \"charitable donations\" is not the primary goal.\n- E: \"Buyalls\" is not a valid term.\n- F: \"Buycotts\" vs \"Boycotts\" is correct; \"Digital technology\" is appropriate; \"Increased Sales\" is the logical outcome. This fits.\n- G: Same as F, but \"Buycotts, Boycotts\" is correct, but \"Digital technology\" is better than \"Blockchain\" in this context.\n- H: \"Physical technology\" is not relevant.\n- I: \"Buyalls\" is not a valid term.\n- J: \"Decreased sales\" is incorrect.\n\nThe best fit is F: \"Boycotts, Buycotts, Digital technology, Increased Sales\" — it correctly contrasts boycotts with buy-cotts, uses appropriate technology, and aligns with the goal of increasing sales.",
+        "output": "The correct answer is (F)",
+        "answer": "The correct answer is (F)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: Which one of the following items is an example of nonmaterial culture? \n\nChoices:\nA. A dove feather\nB. Dove symbol\nC. Dove body lotion\nD. Dove deodorant\nE. Dove soap\nF. Dove candy bar\nG. Dove conditioner\nH. A dove (bird).\nI. Dove chocolate\nJ. Dove shampoo \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "Nonmaterial culture refers to abstract elements such as beliefs, values, norms, symbols, and traditions that are not physical in nature. These include symbols, language, religion, customs, and social norms.\n\nNow, let's analyze the choices:\n\nA. A dove feather – this is a physical object, a material item.  \nB. Dove symbol – this is a symbol (e.g., the dove representing peace), which is a nonmaterial cultural element.  \nC. Dove body lotion – a physical product.  \nD. Dove deodorant – a physical product.  \nE. Dove soap – a physical product.  \nF. Dove candy bar – a physical product.  \nG. Dove conditioner – a physical product.  \nH. A dove (bird) – a living animal, a physical entity.  \nI. Dove chocolate – a physical product.  \nJ. Dove shampoo – a physical product.\n\nOnly option B refers to a symbol (the dove as a symbol of peace), which is a key component of nonmaterial culture. The other options are all tangible, physical products.\n\nTherefore, the correct answer must be the one representing a symbolic, abstract concept.",
+        "output": "The correct answer is (B)",
+        "answer": "The correct answer is (B)"
+      },
+      {
+        "augmented": true,
+        "inputs": "What is the correct answer to this question: _______ is the direct attempt to formally or informally manage ethical issues or problems, through specific policies, practices and programmes. \n\nChoices:\nA. Operational management\nB. Corporate governance\nC. Environmental management\nD. Business ethics management\nE. Sustainability\nF. Stakeholder management\nG. Social marketing\nH. Human resource management\nI. N/A\nJ. N/A \nLet’s think step by step. Based on your reasoning, what is the single, most likely answer choice? Format your response as follows: \"The correct answer is (insert answer here)\". \n\nIn your response, replace \"insert answer here\" with the single uppercase letter corresponding to your answer.",
+        "reasoning": "The question asks for the term that refers to the direct attempt to formally or informally manage ethical issues through specific policies, practices, and programs. Let's evaluate the options:\n\n- A. Operational management: Focuses on day-to-day operations, not specifically on ethics.\n- B. Corporate governance: Deals with the structure and accountability of a company, including oversight, but not primarily focused on ethical management.\n- C. Environmental management: Concerned with environmental impact and sustainability, not ethics per se.\n- D. Business ethics management: This term directly refers to the formal or informal management of ethical issues through policies, practices, and programs. This matches the definition in the question perfectly.\n- E. Sustainability: Broader concept involving environmental, social, and economic factors, not specifically about ethical management.\n- F. Stakeholder management: Involves managing relationships with stakeholders, not directly about ethical issues.\n- G. Social marketing: A marketing strategy focused on promoting social change, not ethical management.\n- H. Human resource management: Focuses on people management, not ethics per se.\n- I and J. N/A: Not appropriate, as there is a clear answer.\n\nThus, the most accurate and directly relevant term is \"Business ethics management.\"",
+        "output": "The correct answer is (D)",
+        "answer": "The correct answer is (D)"
+      }
+    ],
+    "signature": {
+      "instructions": "You are an artificial intelligence language model adept at handling complex reasoning tasks. Your task is to analyze multiple-choice questions and carefully evaluate the provided choices. Given a question under `inputs`, perform a step-by-step reasoning analysis to determine the most appropriate answer choice. Consider context-specific elements and logical deductions essential for distinguishing the correct answer. Format your response by elaborating on the reasoning process leading to your decision and ultimately, provide the answer by saying, \"The correct answer is (insert answer here).\" Ensure that the answer is represented by the letter corresponding to your choice.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

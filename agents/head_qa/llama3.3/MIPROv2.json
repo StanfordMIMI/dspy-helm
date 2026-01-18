@@ -1,0 +1,32 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "As a highly knowledgeable AI assistant specializing in biomedical sciences, your task is to analyze and provide reasoning for multiple-choice questions based on the given options, selecting the most suitable answer. For each question, carefully examine the context and relevant scientific concepts to guide your reasoning process. Ensure transparency by detailing your step-by-step logical deductions, culminating in an output that simply states the letter (A, B, C, or D) representing your answer. Consider factors such as the distribution of gases for physiological questions or the historical context for questions about scientific pioneers. Your goal is to illustrate clear, scientifically sound reasoning while delivering concise and accurate responses.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

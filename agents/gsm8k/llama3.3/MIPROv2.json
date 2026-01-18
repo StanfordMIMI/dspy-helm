@@ -1,0 +1,50 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: Jason is making sand art. He wants to fill a rectangular patch 6 inches by 7 inches with blue sand, and a square path 5 inches by 5 inches with red sand. If it takes 3 grams of sand to fill one square inch, how many grams of sand does Jason need?\nA:",
+        "reasoning": "To find out how many grams of sand Jason needs, we first need to calculate the area of the rectangular patch and the square patch. The area of a rectangle is calculated as length times width, so the area of the rectangular patch is 6 * 7 = 42 square inches. The area of the square patch is 5 * 5 = 25 square inches. Since it takes 3 grams of sand to fill one square inch, we multiply the total area by 3 grams. The total area is 42 + 25 = 67 square inches. So, Jason needs 67 * 3 = 201 grams of sand.",
+        "output": "201",
+        "answer": "201"
+      },
+      {
+        "inputs": "Q: Penelope the pig eats 20 pounds of food per day, which is 10 times more than Greta the goose eats per day.  Milton the mouse eats 1/100 as much as Greta the goose eats per day, but Elmer the elephant eats 4000 times more than Milton the mouse does per day.  How much more, in pounds, does Elmer the elephant eat per day than Penelope the pig?\nA:",
+        "output": "60",
+        "solution": "Greta the goose eats 20/10=<<20/10=2>>2 pounds of food per day.\nMilton the mouse eats (1/100)*2=1/50 of a pound of food per day.\nElmer the elephant eats 4000*(1/50)=<<4000*(1/50)=80>>80 pounds of food per day.\nThus, Elmer eats 80-20=60 pounds more food per day than does Penelope the pig.\n#### 60"
+      },
+      {
+        "inputs": "Q: Jessie invited 4 friends over to play. They made muffins for a snack and Jesse wants to divide them equally between herself and her friends. If they made 20 muffins in total, how many will each person have?\nA:",
+        "output": "4",
+        "solution": "There will be a total of 1 + 4 = <<1+4=5>>5 people who will share the muffins.\nEach of them will have 20/5 = <<20/5=4>>4 muffins.\n#### 4"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

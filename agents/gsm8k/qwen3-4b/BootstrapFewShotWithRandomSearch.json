@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "Q: Marlon had 42 lollipops in the beginning. On his way home, he saw Emily and gave her 2/3 of his lollipops. Then, Marlon kept 4 lollipops and gave the rest to Lou. How many lollipops did Lou receive?\nA:",
+        "reasoning": "Marlon initially had 42 lollipops. He gave Emily 2/3 of his lollipops.  \nFirst, calculate 2/3 of 42:  \n(2/3) × 42 = 28  \nSo, Marlon gave Emily 28 lollipops.  \n\nRemaining lollipops with Marlon:  \n42 - 28 = 14  \n\nMarlon then kept 4 lollipops for himself.  \nSo, the rest he gave to Lou:  \n14 - 4 = 10  \n\nTherefore, Lou received 10 lollipops.",
+        "output": "10",
+        "answer": "10"
+      },
+      {
+        "inputs": "Q: Justin and Sabrina at Pine Grove Elementary have 50 pencils combined. Justin has 8 more than twice as many pencils as Sabrina. How many pencils does Sabrina have?\nA:",
+        "output": "14"
+      },
+      {
+        "inputs": "Q: A cake of 400 grams is divided into eight equal parts. Nathalie eats one-eighth of the cake, and Pierre eats double what Nathalie ate. How much did Pierre eat, in grams?\nA:",
+        "output": "100"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

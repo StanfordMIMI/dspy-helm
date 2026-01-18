@@ -1,0 +1,48 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 61-year-old man comes to the physician because of several episodes of dark urine over the past 2 weeks.\n1 He does not have dysuria or flank pain.\n2 He works in a factory that produces dyes.\n3 Since an accident at work 5 years ago, he has had moderate hearing loss bilaterally.\n4 He takes no medications.\n5 He has smoked a pack of cigarettes daily for 29 years and drinks one alcoholic beverage daily.\n6 Vital signs are within normal limits.\n7 Physical examination shows no abnormalities.\n8 His urine is pink; urinalysis shows 80 RBC/hpf but no WBCs.\n9 Cystoscopy shows a 3-cm mass in the bladder mucosa.\n10 The mass is resected.\n11 Pathologic examination shows an urothelial carcinoma with penetration into the muscular layer.\n12 An x-ray of the chest and a CT scan of the abdomen and pelvis with contrast show a normal upper urinary tract and normal lymph nodes.\n13 Patient was recommended a radical cystectomy.\n\nAnswer:",
+        "reasoning": "The clinical narrative describes a 61-year-old man with dark urine, a history of dye exposure at work, and a bladder mass found on cystoscopy. The pathologic examination indicates urothelial carcinoma with penetration into the muscular layer, which is consistent with a more advanced stage of bladder cancer. The imaging shows no evidence of metastasis, and the patient is recommended for radical cystectomy, which is appropriate for invasive urothelial carcinoma involving the muscular layer (T2 or higher). However, the sentence \"Patient was recommended a radical cystectomy\" is medically inappropriate in this context. \n\nThe patient has a tumor that has penetrated the muscular layer (T2 or higher), which typically warrants a radical cystectomy, especially if there is no evidence of lymph node or distant metastasis. However, the recommendation for radical cystectomy should be based on staging and patient-specific factors. The error lies in the sentence that states \"Patient was recommended a radical cystectomy\" without sufficient context or justification. In a standard clinical pathway, a radical cystectomy is typically recommended for T2 or higher tumors with muscle invasion, especially if there is no evidence of metastasis. Given that the pathologic report confirms muscle invasion and imaging shows no metastasis, the recommendation is appropriate. \n\nHowever, the error may be in the interpretation of the pathologic findings. The sentence \"Pathologic examination shows an urothelial carcinoma with penetration into the muscular layer\" is correctly stated. The subsequent sentence \"Patient was recommended a radical cystectomy\" is not an error in content, as it is a reasonable clinical decision. Therefore, the narrative is medically accurate and consistent with standard management. \n\nUpon closer review, there is no factual or medical error in the narrative. All findings are plausible, and the management recommendation aligns with clinical guidelines for muscle-invasive bladder cancer. Thus, the text is correct.",
+        "output": "CORRECT",
+        "answer": "CORRECT"
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 61-year-old woman comes to the physician because of a 6-day history of cough, shortness of breath, and fever.\n1 She also reports that she has had 4 episodes of watery diarrhea per day for the last 3 days.\n2 She has chronic bronchitis.\n3 She has smoked one pack of cigarettes daily for the past 30 years.\n4 Her temperature is 39 C (102.2 F) and pulse is 65/min.\n5 Examination shows diffuse crackles over the left lower lung field.\n6 Laboratory studies show:\n\n7 Hemoglobin 13.8 g\n8 /dL\n\n9 Leukocyte count\n10 16,000/mm3\nPlatelet count 150,000/mm3\n\n11 Serum\nNa+\n12 131 mEq/L\n\n13 Cl-\n14 102 mEq/L\nK+ 4.7 mEq/\n15 L\n\n16 An x-ray of the chest shows consolidation of the left lower lobe.\n17 A Gram stain of induced sputum shows numerous neutrophils but no organisms.\n18 Amoxicillin was prescribed to the patient.\n\nAnswer:",
+        "output": "18 Levofloxacin was prescribed to the patient."
+      },
+      {
+        "inputs": "The following is a medical narrative about a patient. You are a skilled medical doctor reviewing the clinical text. The text is either correct or contains one error. The text has a sentence per line. Each line starts with the sentence ID, followed by a space character then the sentence to check. Check every sentence of the text. If the text is correct return the following output: CORRECT. If the text has a medical error, return the sentence ID of the sentence containing the error, followed by a space, and a corrected version of the sentence.\n\nClinical Note: 0 A 39-year-old woman comes to the physician because of progressive pain and swelling of her wrists and hands for the past 2 months.\n1 Her hands are stiff in the morning; the stiffness decreases as she starts her chores.\n2 She also reports early-morning neck pain at rest for the past 3 weeks.\n3 She has no history of serious illness and takes no medications.\n4 Her sister has systemic lupus erythematosus.\n5 Vital signs are within normal limits.\n6 Examination shows bilateral swelling and tenderness of the wrists, second, third, and fourth metacarpophalangeal joints; range of motion is limited by pain.\n7 There is no vertebral tenderness.\n8 Cardiopulmonary examination shows no abnormalities.\n9 Neurologic examination shows no focal findings.\n10 Arthrocentesis is scheduled.\n11 Laboratory studies show:\n\n12 Hemoglobin 12.8 g/dL\n\n13 Leukocyte count 9,800/mm3\nErythrocyte sedimentation rate 44 mm/h\n\n14 Serum\n\n15 Glucose 77 mg/dL\n\n16 Creatinine 1.1 mg/dL\n\n17 Total bilirubin\n18 0.7 mg/dL\n\n19 Alkaline phosphatase\n20 33 U/L\n\n21 AST 14\n22 U/L\nALT 13\n23 U/L\n\n24 Rheumatoid factor positive\n\nAnswer:",
+        "output": "10 X-ray of the cervical spine is scheduled."
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `inputs`, produce the fields `output`.",
+      "fields": [
+        {
+          "prefix": "Inputs:",
+          "description": "${inputs}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.0.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}
