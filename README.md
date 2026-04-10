@@ -1,15 +1,15 @@
-# Structured Prompting Enables More Robust Evaluation of Language Models
+# Structured Prompts Improve Evaluation of Language Models
 
 [![arXiv](https://img.shields.io/badge/arXiv-2511.20836-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2511.20836)
 [![License](https://img.shields.io/github/license/stanfordmimi/helm-optimizer?style=for-the-badge)](LICENSE)
 
 <img src="assets/fig.png" alt="Overview" width="650">
 
-**Figure 1** | **Pipeline overview**. (a) DSPy takes HELM's baseline prompt and produces structured prompt variants. (b) HELM evaluates models under each prompt variant. With structured prompting, we observe more robust performance evaluation.
+**Figure 1** | **Pipeline overview**. (a) DSPy takes HELM’s baseline prompt and produces structured prompt variants. (b) HELM evaluates models under each prompt variant. With structured prompting, evaluation improves and benchmark conclusions change materially.
 
 ## What is DSPy-HELM?
 
-A comprehensive framework for optimizing language model performance on benchmarks using [DSPy](https://github.com/stanfordnlp/dspy), enabling more robust evaluation. This toolkit allows automated prompt optimization (APO) for benchmarks from the [HELM](https://github.com/stanford-crfm/helm) (Holistic Evaluation of Language Models) ecosystem.
+A comprehensive framework for optimizing language model performance on benchmarks using [DSPy](https://github.com/stanfordnlp/dspy). This toolkit allows automated prompt optimization (APO) for benchmarks from the [HELM](https://github.com/stanford-crfm/helm) (Holistic Evaluation of Language Models) ecosystem.
 
 ## Installation
 
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 **Configure settings** in `run.sh`:
 ```bash
-scenarios=("mmlu_pro" "gpqa" "gsm8k" "wildbench" "medcalc_bench" "medec" "head_qa" "medbullets")
+scenarios=("mmlu_pro" "gpqa" "gsm8k" "medcalc_bench" "medec" "head_qa" "medbullets")
 optimizers=("MIPROv2" "BootstrapFewShotWithRandomSearch" "GEPA")
 
 # Language model to be optimized
@@ -56,7 +56,6 @@ num_threads=1
 | MMLU-Pro          | Reasoning Question → Answer           | Multi-Task Reasoning   |
 | GPQA              | Graduate Question → Answer            | Graduate-Level QA      |
 | GSM8K             | Math Problem → Solution               | Numeric Problem-Solving|
-| WildBench         | User Conversation → Response          | Instruction Following  |
 | MedCalc-Bench     | Patient Note → Computed Value         | Computational Reasoning|
 | Medec             | Medical Narrative → Errors            | Error Classification   |
 | HeadQA            | Medical Question → Answer             | USMLE-Style QA         |
@@ -132,7 +131,7 @@ If you find this repository useful for your work, please cite the following pape
 
 ```bibtex
 @article{aali2025structured,
-  title={Structured Prompting Enables More Robust Evaluation of Language Models},
+  title={Structured Prompts Improve Evaluation of Language Models},
   author={Aali, Asad and Mohsin, Muhammad Ahmed and Bikia, Vasiliki and Singhvi, Arnav and Gaus, Richard and Bedi, Suhana and Cui, Hejie and Fuentes, Miguel and Unell, Alyssa and Mai, Yifan and others},
   journal={arXiv preprint arXiv:2511.20836},
   year={2025}
