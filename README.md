@@ -5,7 +5,7 @@
 
 <img src="assets/fig.png" alt="Overview" width="650">
 
-**Figure 1** | **Pipeline overview**. (a) DSPy takes HELM’s baseline prompt and produces structured prompt variants. (b) HELM evaluates models under each prompt variant. With structured prompting, evaluation improves and benchmark conclusions change materially.
+**Figure 1** | **Pipeline overview**. (a) DSPy takes HELM’s baseline prompt and produces structured prompt variants. (b) HELM evaluates models under each prompt variant. With structured prompting, evaluation improves.
 
 ## What is DSPy-HELM?
 
