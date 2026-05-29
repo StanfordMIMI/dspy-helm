@@ -25,7 +25,7 @@ class medcalc_bench:
         return (
             "Given a patient note and a clinical question, compute the requested medical value.\n\n"
             f"Patient note: {row['Patient Note']}\n\n"
-            f"Question: {row['Question']}\n\n"wil
+            f"Question: {row['Question']}\n\n"
             "Answer only the requested quantity without units. No explanation needed:"
         )
 
